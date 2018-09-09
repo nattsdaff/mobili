@@ -1,0 +1,81 @@
+header {
+    .topBar {
+        background: $verde;
+        color: $blanco;
+        padding: 0 1rem;
+        .promo {
+            padding: 1rem 0;
+            p {
+                font-size: 1.5em;
+                margin: 0;
+                text-align: center;
+            }
+        }
+        .social {
+            text-align: center;
+            padding: 1rem 0;
+            a {
+                font-size: 2em;
+                margin-left: 0.5rem;
+                opacity: 0.75;
+                transition: all 0.2s linear;
+                &:first-of-type {
+                    margin-left: 0;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    #mainNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 0 1.5rem;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+        .logo {
+            max-width: 175px;
+            img {
+                max-width: 100%;
+            }
+        }
+        .toggle a,
+        .cart a {
+            font-size: 2.5em;
+        }
+        .menu {
+            position: absolute;
+            top: 8rem;
+            left: 0;
+            right: 0;
+            background: $gris-claro;
+            width: 100%;
+            padding: 0 1.5rem;
+            display: none;
+            ul {
+                li {
+                    display: block;
+                    text-align: center;
+                    margin: 5px 0;
+                    a {
+                        text-decoration: none;
+                        padding: 10px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width:415px) {
+    header {
+        .topBar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

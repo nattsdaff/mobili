@@ -1,1 +1,32 @@
-/*Testeo*/
+/* HELPERS */
+@import "helpers/_variables";
+
+/* ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-size:10px;
+    font-family: $main-font;
+    color:$gris-oscuro;
+}
+h4 {
+    font-size:2em;
+}
+p {
+    font-size:1.6em;
+}
+a {
+    color:inherit;
+    font-size:1.6em;
+}
+ul {
+    list-style-type: none;
+    padding-left:0;
+}
+/* LAYOUT */
+@import "layout/_footer";
+@import "layout/_header";
+
+/* PAGES */
+@import "pages/_home";
