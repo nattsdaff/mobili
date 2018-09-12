@@ -1,0 +1,14 @@
+/* Borrar cuando haya contenido real en el Home*/
+.borrame {height:1200px;}
+/* /Borrar cuando haya contenido real en el Home*/
+
+.login{
+  background: $blanco;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  &-title{
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight:500;
+  }
+}
