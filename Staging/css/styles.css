@@ -9,13 +9,14 @@
 html, body {
   font-size: 10px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  color: #454341; }
+  color: #413F3D; }
 
 h4 {
   font-size: 2em; }
 
 p {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  line-height: 2.2em; }
 
 a {
   color: inherit;
@@ -30,7 +31,7 @@ footer {
   background: url(../img/footer-bg.jpg) no-repeat;
   background-size: cover;
   color: #fff;
-  padding: 1.5rem 1rem; } /*REM=Relative to font-size of the root element*/
+  padding: 1.5rem 1rem; }
   footer .altMenu {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -115,7 +116,7 @@ header #mainNav {
     top: 8rem;
     left: 0;
     right: 0;
-    background: #D4D5D3;
+    background: #E3E3E3;
     width: 100%;
     padding: 0 1.5rem;
     display: none; }
@@ -147,7 +148,7 @@ header #mainNav {
 
 /* /Borrar cuando haya contenido real en el Home*/
 .newsletter {
-  background: #D4D5D3;
+  background: #E3E3E3;
   text-align: center;
   padding: 2rem 1.5rem; }
   .newsletter-title {
@@ -176,10 +177,24 @@ header #mainNav {
       background: #B1D398;
       padding: 1rem 0;
       cursor: pointer;
-      color: #454341;
+      color: #413F3D;
       -webkit-transition: all 0.2s linear;
       -o-transition: all 0.2s linear;
       transition: all 0.2s linear; }
       .newsletter form .formBtn:hover {
-        background: #454341;
+        background: #413F3D;
         color: #B1D398; }
+
+/* Borrar cuando haya contenido real en el Home*/
+.borrame {
+  height: 1200px; }
+
+/* /Borrar cuando haya contenido real en el Home*/
+.login {
+  background: #fff;
+  text-align: center;
+  padding: 2rem 1.5rem; }
+  .login-title {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 500; }
