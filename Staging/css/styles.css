@@ -231,6 +231,23 @@ form {
   -ms-flex-pack: center;
   justify-content: center; }
 
+.tus-ambientes img {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 50%;
+  margin: -1px; }
+
+.tus-ambientes h3 {
+  font-size: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 15px; }
+
 /* PAGES */
 .newsletter {
   background: #E3E3E3;
@@ -256,3 +273,21 @@ form {
     font-weight: 100; }
   .login-aside {
     padding: 0.6rem 2rem; }
+
+.preguntas-frecuentes h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.preguntas-frecuentes p {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.preguntas-frecuentes .pregunta {
+  font-weight: bold; }
+
+.preguntas-frecuentes .respuesta {
+  font-size: 1.5em; }

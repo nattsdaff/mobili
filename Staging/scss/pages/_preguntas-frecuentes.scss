@@ -1,0 +1,19 @@
+.preguntas-frecuentes {
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .pregunta {
+    font-weight: bold;
+  }
+
+  .respuesta {
+    font-size: 1.5em;
+  }
+}

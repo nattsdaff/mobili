@@ -62,6 +62,14 @@
       <h2>LOS MÁS DESEADOS</h2>
     </section>
 
+    <section class="tus-ambientes">
+      <h3>TUS AMBIENTES</h3>
+        <img src="img/tus-ambientes/tus-ambientes-1.jpg" alt="">
+        <img src="img/tus-ambientes/tus-ambientes-2.jpg" alt="">
+        <img src="img/tus-ambientes/tus-ambientes-3.jpg" alt="">
+        <img src="img/tus-ambientes/tus-ambientes-4.jpg" alt="">
+    </section>
+
     <section class="newsletter">
         <div class="container">
             <h4 class="form-title">Suscribite al newsletter</h4>
@@ -93,7 +101,8 @@
     <!--JS CUSTOM-->
     <script src="js/scripts.js"></script>
     <!--SLICK(SLIDER SCRIPTS)-->
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
@@ -103,6 +112,20 @@
         autoplay: true
       });
       });
+    </script>
+    <!--CARRUSEL-->
+    <script type="text/javascript">
+      const cards = document.querySelectorAll('.card');
+
+      function transition() {
+      if (this.classList.contains('active')) {
+        this.classList.remove('active')
+      } else {
+        this.classList.add('active');
+      }
+      }
+
+      cards.forEach(card => card.addEventListener('click', transition));
     </script>
   </body>
 </html>
