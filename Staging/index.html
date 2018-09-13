@@ -10,6 +10,9 @@
     <!--CSS EXTERNOS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!--SLICK(SLIDER CSS)-->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <!--CSS CUSTOM-->
     <link rel="stylesheet" href="css/styles.css">
     <title>m o b i l i • h o m e</title>
@@ -49,9 +52,15 @@
         </nav>
     </header>
 
-    <!--CONTENIDO DE RELLENO - Borrar cuando haya contenido real-->
-    <section class="borrame"></section>
-    <!--/CONTENIDO DE RELLENO - Borrar cuando haya contenido real-->
+    <section class="slider">
+        <div><img src="img\home\slider-1.jpg" alt=""></div>
+        <div><img src="img\home\slider-2.jpg" alt=""></div>
+        <div><img src="img\home\slider-3.jpg" alt=""></div>
+    </section>
+
+    <section class="carrusel">
+      <h2>LOS MÁS DESEADOS</h2>
+    </section>
 
     <section class="newsletter">
         <div class="container">
@@ -83,5 +92,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--JS CUSTOM-->
     <script src="js/scripts.js"></script>
+    <!--SLICK(SLIDER SCRIPTS)-->
+
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $('.slider').slick({
+        arrows: false,
+        dots: true,
+        autoplay: true
+      });
+      });
+    </script>
   </body>
 </html>
