@@ -10,16 +10,24 @@ html, body {
     font-family: $main-font;
     color:$gris-oscuro;
 }
+h2{
+    font-size: 2em;
+}
 h4 {
-    font-size:2em;
+    font-size:1.8em;
 }
 p {
-    font-size:1.6em;
-    line-height: 2.2em;
+    font-size:1.8em;
+    line-height: 1.6em;
+    font-weight: 300;
 }
 a {
+    // font-size:1.8em;
     color:inherit;
-    font-size:1.6em;
+    font-weight: $light;
+    &:hover{
+      color: $verde-claro;
+    }
 }
 ul {
     list-style-type: none;
@@ -28,6 +36,7 @@ ul {
 /* LAYOUT */
 @import "layout/_footer";
 @import "layout/_header";
+@import "layout/_forms";
 
 /* PAGES */
 @import "pages/_home";

@@ -1,14 +1,17 @@
 header {
     .topBar {
-        background: $verde;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background: $verde-claro;
         color: $blanco;
         padding: 0 1rem;
         .promo {
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             p {
-                font-size: 1.5em;
                 margin: 0;
                 text-align: center;
+                text-transform: uppercase;
             }
         }
         .social {
@@ -47,10 +50,11 @@ header {
         }
         .menu {
             position: absolute;
+            height: 100vh;
             top: 8rem;
             left: 0;
             right: 0;
-            background: $gris-claro;
+            background: $blanco;
             width: 100%;
             padding: 0 1.5rem;
             display: none;
@@ -60,6 +64,7 @@ header {
                     text-align: center;
                     margin: 5px 0;
                     a {
+                        font-size: 1.8em;
                         text-decoration: none;
                         padding: 10px;
                         display: inline-block;

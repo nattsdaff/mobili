@@ -1,15 +1,23 @@
-/* Borrar cuando haya contenido real en el Home*/
-.borrame {height:1200px;}
-/* /Borrar cuando haya contenido real en el Home*/
 
 .login{
-  background: $blanco;
   text-align: center;
-  padding: 2rem 1.5rem;
-  &-title{
-    text-transform: uppercase;
-    font-size: 2em;
-    font-weight:500;
+  &-container{
+    background: $gris-claro;
+    padding: 3rem 2rem 4rem;
   }
-  
+  // &-title{
+  //   display: inline-block;
+  //   text-transform: uppercase;
+  //   font-size: 2em;
+  //   font-weight:$bold;
+  //   letter-spacing: $interletrado;
+  //   border-bottom: 2px solid $verde-claro;
+  // }
+  &-info{
+    margin-top:0;
+    font-weight: 100;
+  }
+  &-aside{
+    padding: 0.6rem 2rem;
+  }
 }
