@@ -220,18 +220,11 @@ footer {
   align-items: center;
   background: #B1D398;
   color: #fff;
-<<<<<<< HEAD
   padding: 0 1.5rem; }
   .topBar .promo {
     padding: 0.5rem 0;
     max-width: 180px; }
     .topBar .promo p {
-=======
-  padding: 0 1rem; }
-  header .topBar .promo {
-    padding: 0.5rem 0; }
-    header .topBar .promo p {
->>>>>>> 7d2302b2703805cf9df0da1f4bb649bceee1e3e5
       margin: 0;
       text-align: center;
       text-transform: uppercase;
@@ -306,23 +299,37 @@ footer {
       display: none; }
     #mainNav .menu ul li {
       display: block;
-      text-align: center;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #B1D398;
-      -webkit-transition: all 0.2s linear;
-      -o-transition: all 0.2s linear;
-      transition: all 0.2s linear;
-      cursor: pointer; }
-      #mainNav .menu ul li:hover {
-        background: #B1D398; }
-        #mainNav .menu ul li:hover a {
-          color: #fff; }
-      #mainNav .menu ul li a {
-        text-decoration: none;
-        padding: 20px 0 10px;
-        display: block;
-        text-transform: uppercase;
-        font-size: 1.6em; }
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      background: #B1D398;
+      color: #fff;
+      padding: 0 1rem; }
+      #mainNav .menu ul li .promo {
+        padding: 0.5rem 0;
+        max-width: 180px; }
+        #mainNav .menu ul li .promo p {
+          margin: 0;
+          text-align: center;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #B1D398;
+          -webkit-transition: all 0.2s linear;
+          -o-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+          cursor: pointer; }
+          #mainNav .menu ul li .promo p:hover {
+            background: #B1D398; }
+            #mainNav .menu ul li .promo p:hover a {
+              color: #fff; }
+          #mainNav .menu ul li .promo p a {
+            text-decoration: none;
+            padding: 20px 0 10px;
+            display: block;
+            text-transform: uppercase;
+            font-size: 1.6em; }
 
 /* Fix para el texto de promo */
 @media all and (min-width: 370px) {

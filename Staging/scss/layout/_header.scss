@@ -42,14 +42,14 @@
     position: relative;
     padding: 1.5rem 1.5rem;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-    z-index:100;
+    z-index: 100;
     .bloqueDer {
         a {
             font-size: 2em;
-            margin-left:1rem;
-            padding:0.5rem;
+            margin-left: 1rem;
+            padding: 0.5rem;
             &:last-child {
-                padding-right:0;
+                padding-right: 0;
             }
             &:first-child {
                 margin-left: 0;
@@ -69,7 +69,7 @@
         max-width: 125px;
         margin-left: 0.5rem;
         a {
-            font-size:0;
+            font-size: 0;
         }
         img {
             max-width: 100%;
@@ -97,34 +97,38 @@
                 background: $verde-claro;
                 color: $blanco;
                 padding: 0 1rem;
-            .promo {
-                padding: 0.5rem 0;
-                max-width:180px;
-            p {
-                margin: 0;
-                text-align: center;
-                padding-bottom: 10px;
-                border-bottom: 1px solid $verde-claro;
-                transition: all 0.2s linear;
-                cursor: pointer;
-                &:hover {
-                    background: $verde-claro;
-                    a {
-                        color: $blanco;
+                .promo {
+                    padding: 0.5rem 0;
+                    max-width: 180px;
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid $verde-claro;
+                        transition: all 0.2s linear;
+                        cursor: pointer;
+                        &:hover {
+                            background: $verde-claro;
+                            a {
+                                color: $blanco;
+                            }
+                        }
+                        a {
+                            text-decoration: none;
+                            padding: 20px 0 10px;
+                            display: block;
+                            text-transform: uppercase;
+                            font-size: 1.6em;
+                        }
                     }
-                }
-                a {
-                    text-decoration: none;
-                    padding: 20px 0 10px;
-                    display: block;
-                    text-transform: uppercase;
-                    font-size: 1.6em;
                 }
             }
         }
     }
 }
+
 /* Fix para el texto de promo */
+
 @media all and (min-width:370px) {
     .topBar {
         .promo {
@@ -133,56 +137,56 @@
     }
     #mainNav {
         .logo {
-            max-width:135px;
-            margin-left:1rem;
+            max-width: 135px;
+            margin-left: 1rem;
         }
     }
 }
 
-@media all and (min-width:400px){
+@media all and (min-width:400px) {
     .topBar {
-        font-size:1.1em;
+        font-size: 1.1em;
     }
     .bloqueDer {
-        font-size:1.3em;
+        font-size: 1.3em;
     }
     #mainNav {
         .logo {
-            max-width:160px;
-            margin-left:1.5rem;
+            max-width: 160px;
+            margin-left: 1.5rem;
         }
         .toggle {
-            font-size:2.4em;
+            font-size: 2.4em;
         }
         .menu {
-            top:7rem;
+            top: 7rem;
         }
     }
 }
 
-@media all and (min-width:575px){
+@media all and (min-width:575px) {
     .topBar {
         padding: 0 3rem;
         .social {
             a {
-                margin-left:2rem;
+                margin-left: 2rem;
             }
         }
     }
     #mainNav {
-        padding:1.5rem 3rem;
+        padding: 1.5rem 3rem;
         .logo {
-            margin-left:2rem;
+            margin-left: 2rem;
         }
         .bloqueDer {
-            a{
-                margin-left:2rem;
+            a {
+                margin-left: 2rem;
             }
         }
     }
 }
 
-@media all and (min-width:768px){
+@media all and (min-width:768px) {
     #mainNav {
         .toggle {
             display: none;
@@ -192,9 +196,9 @@
             max-width: 200px;
         }
         .menu {
-            height:auto;
+            height: auto;
             position: static;
-            border:none;
+            border: none;
             &.mobile {
                 display: block;
             }
@@ -203,22 +207,22 @@
                 justify-content: space-around;
                 li {
                     text-align: left;
-                    border:none;
-                    padding:0;
+                    border: none;
+                    padding: 0;
                     &.mobile {
                         display: none;
                     }
                     &:hover {
                         background: none;
                         a {
-                            color:$verde-claro;
+                            color: $verde-claro;
                         }
                     }
                     a {
-                        padding:0 0.5rem;
+                        padding: 0 0.5rem;
                         display: inline-block;
-                        font-size:1.4em;
-                        margin-left:1rem;
+                        font-size: 1.4em;
+                        margin-left: 1rem;
                     }
                 }
             }
@@ -226,11 +230,11 @@
     }
 }
 
-@media all and (min-width:991px){
+@media all and (min-width:991px) {
     #mainNav {
-        padding:1rem 5rem;
+        padding: 1rem 5rem;
     }
     .topBar {
-        padding:0 5rem;
+        padding: 0 5rem;
     }
 }
