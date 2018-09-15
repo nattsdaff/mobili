@@ -36,7 +36,7 @@
 /* Estilos para grilla de fotos sin espacio blanco entre las mismas */
 .tus-ambientes {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: stretch;
