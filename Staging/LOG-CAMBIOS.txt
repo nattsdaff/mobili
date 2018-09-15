@@ -1,0 +1,77 @@
+// Archivo para volcar cambios, dudas, sugerencias y comentarios sobre distintas partes del código, para no tener que estar buscando online los commits o los chats de slack.
+
+************************************************************************************************************
+************************************************************************************************************
+
+=============
+Fecha: 14/09
+Autor: Damián
+=============
+
+** _header.scss **
+
++ Corregido el problema de superposición con el slider. 
++ Agregado estilos acorde al diseño
++ Cambio de estilos en la barra superior verde para que en mobile no se superpongan, ni se caigan a 2 líneas los íconos de social media.
++ Modifiqué los links del menú en todos los html así todas las páginas tienen el menú completo. Temporalmente saqué el link de Contacto y dividí el login / register en dos separados, así se puede navegar individualmente a cada uno (luego cuando unamos las páginas lo cambiamos).
+
+--------------------------------------------------------------------------------------------------------------
+
+** _home.scss **
+:: Sección TUS AMBIENTES ::
+
++ Modifiqué los estilos para que la grilla de fotos no tenga espacios en blanco entre cada imagen.
+
++ Sugerencia: en mobile dividiéndolo en 4 me parece que queda muy chico. Probaría dos alternativas: Ponerle un overlay fijo que indique a que ambiente se refiere cada imagen. O poner cada foto por fila, y luego con una animación al scrollear aparezca el overlay que indique a dónde te llevaría cada imagen. Obviamente, no para hacerlo ahora, pero sí para ir teniéndolo en cuenta y ajustando el html si hiciera falta. (por ej, las imágenes ya podrían ser links por más que no lleven a ningún lado todavía.)
+
+--------------------------------------------------------------------------------------------------------------
+
+** _main.scss **
+
++ No me parece práctico que los <a> no tengan declarado un tamaño de fuente por default. No siempre van a ser hijos de un <p> u otra etiqueta de texto, por lo cual deberían tener un font-size que prevea esos casos. 
+También le saqué por default el subrrayado, ya que no suele ser algo que se use ni que quede bien.
+
++ Agregada la clase .alt-title para los títulos en negrita y subrrayado verde (ex .form-title). Le cambié el nombre porque me parece que tiene más sentido que esos títulos sean tratados como un título alternativo, y no como título de un formulario exclusivamente. Una cuestión semántica nada más.
+
++ Agregada la clase .main-title para los títulos principales (actualmente solo en el home, "tus ambientes", "los más deseados").
+
+--------------------------------------------------------------------------------------------------------------
+
+** _login.scss **
+
++ En base a lo anterior, agregué estilo para el <a> así tiene el tamaño de letra previamente establecido.
+
++ Sugerencia: Yo le sacaría el underline a los links de recuperar contraseña / crear cuenta. Se lo podrías poner solo al :hover de última. Y sino, si te parece que les hace falta el subrrayado, podés probar de ponerle un border-bottom en vez del text-decoration, cosa de que al menos tengas la posibilidad de manipularlo un poquito más dándole más/menos espacio, otro tono de color y demás.
+Si el miedo es que no se destaque o se entienda que es un link, podés ponerle el color verde u otro a esos <a> en vez de ser del mismo que los textos estáticos. Y en :hover en vez de cambiar al color verde que ya tienen declarado, se les agrega el subrrayado, o cambia a otro tono de verde que se destaque un poco más.
+
+--------------------------------------------------------------------------------------------------------------
+
+** _preguntas-frecuentes.scss // preguntas-frecuentes.html **
+
++ Agregué un container en el html que probablemente necesite cuando se agrande la pantalla. Cambié la clase del título (.alt-title) por lo que comenté más arriba.
++ Agregué el bloque de Newsletter que faltaba.
+
++ En el css cambié lo de flex que no era necesario, y dejé todo centrado para pantallas chicas. Hice un ajuste en el título para cuando se pasa a dos líneas, y agregué un media query para cuando ya le da el ancho para estar sólo en una línea.
+
+--------------------------------------------------------------------------------------------------------------
+
+** register.html **
+
++ Sugerencia: Hay que sacarle la parte que dice "no tenés una cuenta en mobili, crea una" porque ya estás en la página de registro. Ahí debería linkear al login y decir onda "ya tenés una cuenta? logeate".
+
+--------------------------------------------------------------------------------------------------------------
+
+** index.html **
+
++ Cambié el <h4> de "Tus ambientes" por un <h2> ya que tiene más relevancia que el título del newsletter. Puede que en un futuro pase a ser un <h3> si ponemos algún otro titular que sea más importante (en el slider por ejemplo), cosa que es probable.
+
+--------------------------------------------------------------------------------------------------------------
+
+** PENDIENTES **
+
+- Me queda actualizar la barra del menú con los íconos nuevos.
+- Agregar el bloque de Productos deseados en el home.
+- Media queries para todo el header, productos deseados, newsletter y footer.
+
+************************************************************************************************************
+************************************************************************************************************

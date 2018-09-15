@@ -11,7 +11,7 @@ html, body {
     color:$gris-oscuro;
 }
 h2{
-    font-size: 2em;
+    font-size: 2.5em;
 }
 h4 {
     font-size:1.8em;
@@ -22,9 +22,11 @@ p {
     font-weight: 300;
 }
 a {
-    // font-size:1.8em;
+    font-size:1.8em;
     color:inherit;
     font-weight: $light;
+    text-decoration: none;
+    transition:all 0.2s linear;
     &:hover{
       color: $verde-claro;
     }
@@ -33,14 +35,27 @@ ul {
     list-style-type: none;
     padding-left:0;
 }
+.main-title {
+    text-transform: uppercase;
+    font-weight: $light;
+    text-align: center;
+}
+.alt-title{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight:$bold;
+    letter-spacing: $interletrado;
+    border-bottom: 2px solid $verde-claro;
+}
+/* COMPONENTS */
+@import "components/_slider";
+@import "components/_carrusel";
+@import "components/_iconos";
+@import "components/_forms";
+
 /* LAYOUT */
 @import "layout/_footer";
 @import "layout/_header";
-@import "layout/_forms";
-@import "layout/_slider";
-@import "layout/_carrusel";
-@import "layout/_tus-ambientes";
-@import "layout/_iconos";
 
 /* PAGES */
 @import "pages/_home";

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* HELPERS */
 /* Google Fonts - Montserrat (Light, Normal, Semibold) */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600");
@@ -12,7 +13,7 @@ html, body {
   color: #413F3D; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 2.5em; }
 
 h4 {
   font-size: 1.8em; }
@@ -23,14 +24,98 @@ p {
   font-weight: 300; }
 
 a {
+  font-size: 1.8em;
   color: inherit;
-  font-weight: 300; }
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
   a:hover {
     color: #B1D398; }
 
 ul {
   list-style-type: none;
   padding-left: 0; }
+
+.main-title {
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center; }
+
+.alt-title {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #B1D398; }
+
+/* COMPONENTS */
+.slider img {
+  width: 100%;
+  height: 280px; }
+
+.slider .slick-dots {
+  padding-bottom: 25px; }
+
+.carrusel h4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  form .formField {
+    padding: 1.7rem 1.7rem;
+    margin-bottom: 2rem;
+    font-size: 1.8em;
+    font-weight: 300;
+    border: 0px solid #707070; }
+    form .formField.contacto {
+      border: 1px solid #707070; }
+  form ::-webkit-input-placeholder {
+    color: #E3E3E3; }
+  form :-ms-input-placeholder {
+    color: #E3E3E3; }
+  form ::-ms-input-placeholder {
+    color: #E3E3E3; }
+  form ::placeholder {
+    color: #E3E3E3; }
+  form .formBtn {
+    font-size: 2em;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    background: #B1D398;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    color: #413F3D;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
+    form .formBtn:hover {
+      background: #413F3D;
+      color: #B1D398; }
+    form .formBtn.gris {
+      background: #707070;
+      color: #fff; }
+      form .formBtn.gris:hover {
+        background: #413F3D; }
+    form .formBtn.verde {
+      background: #73A84D;
+      color: #fff; }
+      form .formBtn.verde:hover {
+        background: #73A84D; }
 
 /* LAYOUT */
 footer {
@@ -85,11 +170,13 @@ header .topBar {
   color: #fff;
   padding: 0 1rem; }
   header .topBar .promo {
-    padding: 0.5rem 0; }
+    padding: 0.5rem 0;
+    max-width: 180px; }
     header .topBar .promo p {
       margin: 0;
       text-align: center;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-size: 1.6em; }
   header .topBar .social {
     text-align: center;
     padding: 1rem 0; }
@@ -99,7 +186,8 @@ header .topBar {
       opacity: 0.75;
       -webkit-transition: all 0.2s linear;
       -o-transition: all 0.2s linear;
-      transition: all 0.2s linear; }
+      transition: all 0.2s linear;
+      color: #fff; }
       header .topBar .social a:first-of-type {
         margin-left: 0; }
       header .topBar .social a:hover {
@@ -129,22 +217,33 @@ header #mainNav {
   header #mainNav .menu {
     position: absolute;
     height: 100vh;
-    top: 8rem;
+    top: 7.8rem;
     left: 0;
     right: 0;
     background: #fff;
     width: 100%;
     padding: 0 1.5rem;
-    display: none; }
+    display: none;
+    z-index: 99;
+    border-top: 1px solid #E3E3E3; }
     header #mainNav .menu ul li {
       display: block;
       text-align: center;
-      margin: 5px 0; }
+      padding-bottom: 10px;
+      border-bottom: 1px solid #B1D398;
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      cursor: pointer; }
+      header #mainNav .menu ul li:hover {
+        background: #B1D398; }
+        header #mainNav .menu ul li:hover a {
+          color: #fff; }
       header #mainNav .menu ul li a {
-        font-size: 1.8em;
         text-decoration: none;
-        padding: 10px;
-        display: inline-block; }
+        padding: 20px 0 10px;
+        display: block;
+        text-transform: uppercase; }
 
 @media all and (min-width: 415px) {
   header .topBar {
@@ -158,95 +257,6 @@ header #mainNav {
     -ms-flex-align: center;
     align-items: center; } }
 
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  form .formField {
-    padding: 1.7rem 1.7rem;
-    margin-bottom: 2rem;
-    font-size: 1.8em;
-    font-weight: 300;
-    border: 0px solid #707070; }
-    form .formField.contacto {
-      border: 1px solid #707070; }
-  form ::-webkit-input-placeholder {
-    color: #E3E3E3; }
-  form :-ms-input-placeholder {
-    color: #E3E3E3; }
-  form ::-ms-input-placeholder {
-    color: #E3E3E3; }
-  form ::placeholder {
-    color: #E3E3E3; }
-  form .formBtn {
-    font-size: 2em;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: none;
-    background: #B1D398;
-    padding: 1.5rem 0;
-    cursor: pointer;
-    color: #413F3D;
-    -webkit-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
-    form .formBtn:hover {
-      background: #413F3D;
-      color: #B1D398; }
-    form .formBtn.gris {
-      background: #707070;
-      color: #fff; }
-      form .formBtn.gris:hover {
-        background: #413F3D; }
-    form .formBtn.verde {
-      background: #73A84D;
-      color: #fff; }
-      form .formBtn.verde:hover {
-        background: #73A84D; }
-
-.form-title {
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  border-bottom: 2px solid #B1D398; }
-
-.slider img {
-  width: 100%;
-  height: 280px; }
-
-.slider .slick-dots {
-  padding-bottom: 25px; }
-
-.carrusel h4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.tus-ambientes img {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 50%;
-  margin: -1px; }
-
-.tus-ambientes h4 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 15px; }
-
 /* PAGES */
 .newsletter {
   background: #E3E3E3;
@@ -259,8 +269,28 @@ form {
     margin-top: 0;
     font-weight: 100; }
 
-.borrame {
-  height: 400px; }
+/* Estilos para grilla de fotos sin espacio blanco entre las mismas */
+.tus-ambientes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  padding: 0; }
+  .tus-ambientes img {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: calc(100%/2);
+    height: 100%; }
+  .tus-ambientes .main-title {
+    margin: 15px;
+    width: 100%; }
 
 .login {
   text-align: center; }
@@ -272,21 +302,28 @@ form {
     font-weight: 100; }
   .login-aside {
     padding: 0.6rem 2rem; }
+    .login-aside a {
+      font-size: 1em;
+      text-decoration: underline; }
 
-.preguntas-frecuentes h2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+.preguntas-frecuentes {
+  text-align: center;
+  padding: 50px 15px; }
+  .preguntas-frecuentes .alt-title {
+    max-width: 220px;
+    line-height: 1.3em; }
+  .preguntas-frecuentes p {
+    padding-left: 7%;
+    padding-right: 7%; }
+  .preguntas-frecuentes .pregunta {
+    font-weight: 600; }
+  .preguntas-frecuentes .respuesta {
+    font-size: 1.5em; }
 
-.preguntas-frecuentes p {
-  padding-left: 7%;
-  padding-right: 7%; }
-
-.preguntas-frecuentes .pregunta {
-  font-weight: bold; }
-
-.preguntas-frecuentes .respuesta {
-  font-size: 1.5em; }
+/* Media query para que el título se expanda y ocupe un solo renglón */
+@media all and (min-width: 440px) {
+  .preguntas-frecuentes .alt-title {
+    max-width: none;
+    line-height: normal; }
+  .preguntas-frecuentes p {
+    text-align: left; } }
