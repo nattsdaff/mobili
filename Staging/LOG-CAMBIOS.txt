@@ -114,3 +114,10 @@ Autor: Natalia
 
 + .promo => Comentado //max-width:180px; Se caía en dos líneas en todos los widths. Chrome mac.
 + Cambio en la estructura html del login y sus scss para economizar :)
++ Agregué menu para icono user cambiando código en:
+  -scss/layout/header.scss
+    agregué línea 118/157
+    agregué líneas 259/297
+  -js/scripts.js
+    amplié la función a otra clase
+  -modifiqué login.html, si está OK, replicar.

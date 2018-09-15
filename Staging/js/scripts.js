@@ -1,11 +1,17 @@
 /* TOGGLE PARA EL MENU RESPONSIVE */
 $(document).ready(function(){
-    $(".toggle").click(function(){
-       $("#mainNav .menu").slideToggle(400, function(){
-           $(this).toggleClass("mobile");
-           $(this).css("display", "");
-       }); 
-    });
+  $(".toggle").click(function(){
+     $("#mainNav .menu").slideToggle(400, function(){
+         $(this).toggleClass("mobile");
+         $(this).css("display", "");
+     });
+  });
+  $(".toggleusermenu").click(function(){
+     $("#mainNav .usermenu").slideToggle(400, function(){
+         $(this).toggleClass("mobile");
+         $(this).css("display", "");
+     });
+  });
 });
 
 
