@@ -310,7 +310,14 @@ header #mainNav {
 
 @media only screen and (min-width: 922px) {
   .login {
-    text-align: center; }
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
     .login-container {
       background: #E3E3E3;
       padding: 2rem 4rem 4rem;
