@@ -92,6 +92,16 @@
         ul {
             li {
                 display: block;
+                flex-direction: row;
+                justify-content: space-around;
+                background: $verde-claro;
+                color: $blanco;
+                padding: 0 1rem;
+            .promo {
+                padding: 0.5rem 0;
+                max-width:180px;
+            p {
+                margin: 0;
                 text-align: center;
                 padding-bottom: 10px;
                 border-bottom: 1px solid $verde-claro;

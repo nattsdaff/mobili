@@ -10,7 +10,7 @@ Autor: Damián
 
 ** _header.scss **
 
-+ Corregido el problema de superposición con el slider. 
++ Corregido el problema de superposición con el slider.
 + Agregado estilos acorde al diseño
 + Cambio de estilos en la barra superior verde para que en mobile no se superpongan, ni se caigan a 2 líneas los íconos de social media.
 + Modifiqué los links del menú en todos los html así todas las páginas tienen el menú completo. Temporalmente saqué el link de Contacto y dividí el login / register en dos separados, así se puede navegar individualmente a cada uno (luego cuando unamos las páginas lo cambiamos).
@@ -28,7 +28,7 @@ Autor: Damián
 
 ** _main.scss **
 
-+ No me parece práctico que los <a> no tengan declarado un tamaño de fuente por default. No siempre van a ser hijos de un <p> u otra etiqueta de texto, por lo cual deberían tener un font-size que prevea esos casos. 
++ No me parece práctico que los <a> no tengan declarado un tamaño de fuente por default. No siempre van a ser hijos de un <p> u otra etiqueta de texto, por lo cual deberían tener un font-size que prevea esos casos.
 También le saqué por default el subrrayado, ya que no suele ser algo que se use ni que quede bien.
 
 + Agregada la clase .alt-title para los títulos en negrita y subrrayado verde (ex .form-title). Le cambié el nombre porque me parece que tiene más sentido que esos títulos sean tratados como un título alternativo, y no como título de un formulario exclusivamente. Una cuestión semántica nada más.
@@ -104,3 +104,12 @@ También cambié el texto de Preguntas Frecuentes por FAQ, porque era demasiado 
 
 - Queda resolver lo del login como mencioné arriba. Diganme qué opinan y en base a lo que hablemos lo termino.
 - Me queda adaptar la parte de Newsletter, que en parte quiero ver y compararla con la de login, porque para mi gusto quedaron demasiado grandes los botones y los campos por defecto. Así que voy a esperar a tener los cambios en css de la parte de forms, y ahí en todo caso ajusto y aviso para que veamos si los dejamos de una forma u otra.
+
+=============
+Fecha: 15/09
+Autor: Natalia
+=============
+
+** _header.scss **
+
++ .promo => Comentado //max-width:180px; Se caía en dos líneas en todos los widths. Chrome mac.
