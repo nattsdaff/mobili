@@ -1,34 +1,88 @@
+// .login{
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+//   .container{
+//     background: $gris-claro;
+//     padding: 4rem 2rem 4rem;
+//     &.aside{
+//       background: $blanco;
+//       font-size:1em;
+//       a {
+//           font-size:1em;
+//           color:$verde-oscuro;
+//       }
+//     }
+//   }
+//   &-info{
+//     margin-top:0;
+//     font-weight: 100;
+//   }
+// }
 .login{
   text-align: center;
-  &-container{
-    background: $gris-claro;
-    padding: 3rem 2rem 4rem;
-  }
-  &-info{
-    margin-top:0;
-    font-weight: 100;
-  }
-  &-aside{
-    text-align: center;
-    padding: 0 2rem;
-      a {
-          font-size:1em;
+  display: flex;
+  flex-direction: column;
+  .container{
+    background: $blanco;
+    padding: 0rem;
+    flex-grow: 1;
+    a {
+      font-size: 1em;
+      color:$verde-oscuro;
+    }
+    &-form{
+      padding: 2rem;
+      background: $gris-claro;
+    }
+    &-forgot{
+      background: $blanco;
+    }
+    &.aside{
+      background: $blanco;
+      font-size:1em;
+      flex-grow: 1;
+      padding: 2em;
+      p {
+        margin-top: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
       }
+    }
   }
 }
-@media only screen and (min-width:922px){
+
+@media only screen and (min-width:992px){
   .login{
     text-align: center;
+    padding: 6rem 14rem;
     display: flex;
     flex-direction: row;
-    &-container{
-      background: $gris-claro;
-      padding: 2rem 4rem 4rem;
-      width: 600px;
-      margin: 6rem auto 4rem;
+    justify-content: center;
+    align-items: center;
+    .container{
+      background: $blanco;
+      padding: 0rem;
+      min-width:400px;
+      a {
+        font-size: 1em;
+        color:$verde-oscuro;
       }
-    &-aside{
-      margin-bottom: 4rem;
+      &-form{
+        padding: 2rem;
+        background: $gris-claro;
+      }
+      &-forgot{
+        background: $blanco;
+        a{
+          font-size:0.9em;
+        }
+      }
+      &.aside{
+        background: $blanco;
+        font-size:1.3em;
+        flex-grow: 1;
+      }
     }
   }
 }

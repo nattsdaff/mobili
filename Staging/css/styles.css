@@ -449,36 +449,77 @@ footer {
     width: 100%; }
 
 .login {
-  text-align: center; }
-  .login-container {
-    background: #E3E3E3;
-    padding: 3rem 2rem 4rem; }
-  .login-info {
-    margin-top: 0;
-    font-weight: 100; }
-  .login-aside {
-    text-align: center;
-    padding: 0 2rem; }
-    .login-aside a {
-      font-size: 1em; }
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .login .container {
+    background: #fff;
+    padding: 0rem;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+    .login .container a {
+      font-size: 1em;
+      color: #73A84D; }
+    .login .container-form {
+      padding: 2rem;
+      background: #E3E3E3; }
+    .login .container-forgot {
+      background: #fff; }
+    .login .container.aside {
+      background: #fff;
+      font-size: 1em;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      padding: 2em; }
+      .login .container.aside p {
+        margin-top: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem; }
 
-@media only screen and (min-width: 922px) {
+@media only screen and (min-width: 992px) {
   .login {
     text-align: center;
+    padding: 6rem 14rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    flex-direction: row; }
-    .login-container {
-      background: #E3E3E3;
-      padding: 2rem 4rem 4rem;
-      width: 600px;
-      margin: 6rem auto 4rem; }
-    .login-aside {
-      margin-bottom: 4rem; } }
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .login .container {
+      background: #fff;
+      padding: 0rem;
+      min-width: 400px; }
+      .login .container a {
+        font-size: 1em;
+        color: #73A84D; }
+      .login .container-form {
+        padding: 2rem;
+        background: #E3E3E3; }
+      .login .container-forgot {
+        background: #fff; }
+        .login .container-forgot a {
+          font-size: 0.9em; }
+      .login .container.aside {
+        background: #fff;
+        font-size: 1.3em;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1; } }
 
 .preguntas-frecuentes {
   text-align: center;
