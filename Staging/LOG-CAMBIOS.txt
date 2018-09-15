@@ -75,3 +75,32 @@ Si el miedo es que no se destaque o se entienda que es un link, podés ponerle e
 
 ************************************************************************************************************
 ************************************************************************************************************
+
+=============
+Fecha: 15/09
+Autor: Damián
+=============
+
+** Cambios Generales **
+
++ Saqué la carpeta de Slick y moví los archivos necesarios para que funcione a sus respectivas carpetas dentro de nuestro proyecto (css/vendor y js/vendor). De acá en adelante, todo plugin o css que se incorpore que no sea de nuestra autoría, se mete en esas carpetas para diferenciarlo de lo que sí escribimos nosotros desde 0.
++ Borré el _carrusel.scss que estaba de más, y ahora todos los estilos referidos a Sliders los pueden ver en _slider.scss.
++ No me acuerdo si lo hice ayer, así que lo anoto de nuevo por las dudas. "Tus ambientes" es parte del home, así que los estilos los moví a _home.scss.
+
+--------------------------------------------------------------------------------------------------------------
+
+** Cambios en mis pendientes **
+
++ El footer ya es responsive (no necesitaba mucho tampoco). Agregué el href a "Preguntas frecuentes".
++ Agregué el slider para productos destacados y el bloque de íconos. Creo que en el diseño se usaron íconos pagos de fontawesome, así que usé las versiones gratuitas más parecidas. Revisar y cambiarlos si hiciera falta.
++ Ya tiene varios ajustes responsive la sección anteriormente mencionada, pero me quedan algunos detalles para pulir.
++ El header ya tiene los íconos que faltaban, le hice varias correcciones y ajustes para pantallas grandes. Lo estuve evaluando y me parece que tener un ícono de login por fuera del menú y otros dos botones en el menú interno para lo mismo, no tiene mucho sentido. Además de que al expandir y salir del menú de celulares, son demasiados elementos para que entren en la misma barra que el logo y los demás íconos. 
+Lo que se me ocurrió para hacer es lo siguiente: sacar del menú los botones de login y registrarse, y que el ícono de usuario que tenemos por fuera, despliegue otro menú con esas dos opciones. Al menos para la primer entrega, porque si después vamos a tener el login unificado en una sola página, el ícono de usuario ya no necesita ser un menú secundario.. simplemente linkea al .php que tiene ambos formularios, y ya en mobile esos dos botones que tenemos hoy pueden dejar de existir.
+También cambié el texto de Preguntas Frecuentes por FAQ, porque era demasiado largo para entrar en una línea con las otras 3 secciones.
+
+--------------------------------------------------------------------------------------------------------------
+
+** PENDIENTES **
+
+- Queda resolver lo del login como mencioné arriba. Diganme qué opinan y en base a lo que hablemos lo termino.
+- Me queda adaptar la parte de Newsletter, que en parte quiero ver y compararla con la de login, porque para mi gusto quedaron demasiado grandes los botones y los campos por defecto. Así que voy a esperar a tener los cambios en css de la parte de forms, y ahí en todo caso ajusto y aviso para que veamos si los dejamos de una forma u otra.

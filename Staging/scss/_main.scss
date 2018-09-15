@@ -10,10 +10,16 @@ html, body {
     font-family: $main-font;
     color:$gris-oscuro;
 }
+h1 {
+    margin:0;
+}
 h2{
     font-size: 2.5em;
 }
-h4 {
+h3 {
+    font-size:2em;
+}
+h4, h5, h6 {
     font-size:1.8em;
 }
 p {
@@ -49,7 +55,6 @@ ul {
 }
 /* COMPONENTS */
 @import "components/_slider";
-@import "components/_carrusel";
 @import "components/_iconos";
 @import "components/_forms";
 
