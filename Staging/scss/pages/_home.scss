@@ -34,12 +34,13 @@
     }
 }
 /* Estilos para grilla de fotos sin espacio blanco entre las mismas */
-.tus-ambientes {
+.ambientes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: stretch;
+    align-items: center;
     padding: 0;
     img {
         flex: 0 0 auto;
@@ -50,9 +51,25 @@
         margin: 15px;
         width: 100%;
     }
+    &-image{
+      position: relative;
+    }
+    &-title{
+      display: flex;
+      position: absolute;
+      left: 0;
+      top:0px;
+      font-size:1.2em;
+      text-transform: uppercase;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: $blanco;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
 }
-@media only screen and (min-width:992px){
-  .tus-ambientes {
+@media only screen and (min-width:575px){
+  .ambientes {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
