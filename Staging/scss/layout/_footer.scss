@@ -39,3 +39,14 @@ footer {
         }
     }
 }
+
+@media all and (min-width:575px){
+    footer {
+        font-size:1.2em;
+        .altMenu {
+            img {
+                max-width: 170px;
+            }
+        }
+    }
+}

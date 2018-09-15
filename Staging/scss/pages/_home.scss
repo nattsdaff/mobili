@@ -2,13 +2,35 @@
     background: $gris-claro;
     text-align: center;
     padding: 3rem 2rem 4rem;
-    &-title {
-        text-transform: uppercase;
-        font-size: 1.6em;
-    }
     &-info {
         margin-top: 0;
         font-weight: 100;
+    }
+}
+.deseados {
+    padding:1rem 3rem;
+    .main-title {
+        margin-bottom:2em;
+    }
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top:1px solid $verde-claro;
+    border-bottom:1px solid $verde-claro;
+    padding:2rem 0;
+    margin:4rem 0;
+    &-item {
+        margin:0 1rem;
+    }
+    &-icon {
+        font-size: 4.5em;
+    }
+    &-title{
+        margin:1rem 0 0;
+        font-size:1.2em;
+        text-transform: uppercase;
     }
 }
 /* Estilos para grilla de fotos sin espacio blanco entre las mismas */
