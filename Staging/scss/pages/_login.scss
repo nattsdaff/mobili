@@ -9,6 +9,10 @@
     a {
       font-size: 1em;
       color:$verde-oscuro;
+      &:hover{
+        color: $gris-oscuro;
+      }
+
     }
     &-form{
       padding: 2rem;

@@ -466,6 +466,8 @@ footer {
     .login .container a {
       font-size: 1em;
       color: #73A84D; }
+      .login .container a:hover {
+        color: #413F3D; }
     .login .container-form {
       padding: 2rem;
       background: #E3E3E3; }
