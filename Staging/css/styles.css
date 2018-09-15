@@ -21,6 +21,7 @@ h4 {
 p {
   font-size: 1.8em;
   line-height: 1.6em;
+  font-weight: 300;
   font-weight: 300; }
 
 a {
@@ -30,7 +31,8 @@ a {
   text-decoration: none;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
-  transition: all 0.2s linear; }
+  transition: all 0.2s linear;
+  color: #73A84D; }
   a:hover {
     color: #B1D398; }
 
@@ -145,7 +147,8 @@ footer {
         display: inline-block;
         -webkit-transition: all 0.2s linear;
         -o-transition: all 0.2s linear;
-        transition: all 0.2s linear; }
+        transition: all 0.2s linear;
+        color: #fff; }
         footer .altMenu ul li a:hover {
           color: #B1D398; }
   footer .copy {
@@ -300,10 +303,21 @@ header #mainNav {
     margin-top: 0;
     font-weight: 100; }
   .login-aside {
-    padding: 0.6rem 2rem; }
+    text-align: center;
+    padding: 0 2rem; }
     .login-aside a {
-      font-size: 1em;
-      text-decoration: underline; }
+      font-size: 1em; }
+
+@media only screen and (min-width: 922px) {
+  .login {
+    text-align: center; }
+    .login-container {
+      background: #E3E3E3;
+      padding: 2rem 4rem 4rem;
+      width: 600px;
+      margin: 6rem auto 4rem; }
+    .login-aside {
+      margin-bottom: 4rem; } }
 
 .preguntas-frecuentes {
   text-align: center;

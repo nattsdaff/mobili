@@ -20,6 +20,7 @@ p {
     font-size:1.8em;
     line-height: 1.6em;
     font-weight: 300;
+    font-weight: $light;
 }
 a {
     font-size:1.8em;
@@ -27,6 +28,7 @@ a {
     font-weight: $light;
     text-decoration: none;
     transition:all 0.2s linear;
+    color: $verde-oscuro;
     &:hover{
       color: $verde-claro;
     }

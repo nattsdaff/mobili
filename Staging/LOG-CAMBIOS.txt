@@ -85,6 +85,3 @@ Autor: Natalia
 ** _header.scss **
 
 + .promo => Comentado //max-width:180px; Se caía en dos líneas en todos los widths. Chrome mac.
-
-
---------------------------------------------------------------------------------------------------------------
