@@ -170,8 +170,7 @@ header .topBar {
   color: #fff;
   padding: 0 1rem; }
   header .topBar .promo {
-    padding: 0.5rem 0;
-    max-width: 180px; }
+    padding: 0.5rem 0; }
     header .topBar .promo p {
       margin: 0;
       text-align: center;
