@@ -258,8 +258,9 @@
         }
         .usermenu {
             position: absolute;
-            height: 30vh;
-            top: 6.9rem;
+            height: auto;
+            top: 6rem;
+            left: auto;
             right: 0;
             background: $blanco;
             width: 30%;

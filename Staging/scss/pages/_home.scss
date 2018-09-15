@@ -36,18 +36,35 @@
 /* Estilos para grilla de fotos sin espacio blanco entre las mismas */
 .tus-ambientes {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: stretch;
     padding: 0;
     img {
         flex: 0 0 auto;
-        width: calc(100%/2);
-        height: 100%;
+        width: 100%;
     }
     .main-title {
         margin: 15px;
         width: 100%;
     }
 }
-
+@media only screen and (min-width:992px){
+  .tus-ambientes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      padding: 0;
+      img {
+          flex: 0 0 auto;
+          width: calc(100%/2);
+          height: 100%;
+      }
+      .main-title {
+          margin: 15px;
+          width: 100%;
+      }
+  }
+}

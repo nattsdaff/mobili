@@ -420,8 +420,9 @@ footer {
           margin-left: 1rem; }
   #mainNav .usermenu {
     position: absolute;
-    height: 30vh;
-    top: 6.9rem;
+    height: auto;
+    top: 6rem;
+    left: auto;
     right: 0;
     background: #fff;
     width: 30%;
@@ -497,6 +498,10 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-pack: start;
@@ -509,11 +514,33 @@ footer {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    width: calc(100%/2);
-    height: 100%; }
+    width: 100%; }
   .tus-ambientes .main-title {
     margin: 15px;
     width: 100%; }
+
+@media only screen and (min-width: 992px) {
+  .tus-ambientes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    padding: 0; }
+    .tus-ambientes img {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: calc(100%/2);
+      height: 100%; }
+    .tus-ambientes .main-title {
+      margin: 15px;
+      width: 100%; } }
 
 .login {
   text-align: center;
