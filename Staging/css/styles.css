@@ -38,7 +38,7 @@ a {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  color: #73A84D; }
+  color: #413F3D; }
   a:hover {
     color: #B1D398; }
 
@@ -299,37 +299,25 @@ footer {
       display: none; }
     #mainNav .menu ul li {
       display: block;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -ms-flex-pack: distribute;
-      justify-content: space-around;
-      background: #B1D398;
-      color: #fff;
-      padding: 0 1rem; }
-      #mainNav .menu ul li .promo {
-        padding: 0.5rem 0;
-        max-width: 180px; }
-        #mainNav .menu ul li .promo p {
-          margin: 0;
-          text-align: center;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #B1D398;
-          -webkit-transition: all 0.2s linear;
-          -o-transition: all 0.2s linear;
-          transition: all 0.2s linear;
-          cursor: pointer; }
-          #mainNav .menu ul li .promo p:hover {
-            background: #B1D398; }
-            #mainNav .menu ul li .promo p:hover a {
-              color: #fff; }
-          #mainNav .menu ul li .promo p a {
-            text-decoration: none;
-            padding: 20px 0 10px;
-            display: block;
-            text-transform: uppercase;
-            font-size: 1.6em; }
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.6em;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #B1D398;
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      cursor: pointer; }
+      #mainNav .menu ul li:hover {
+        background: #B1D398; }
+        #mainNav .menu ul li:hover a {
+          color: #fff; }
+      #mainNav .menu ul li a {
+        text-decoration: none;
+        padding: 20px 0 10px;
+        display: block;
+        text-transform: uppercase;
+        font-size: 1em; }
 
 /* Fix para el texto de promo */
 @media all and (min-width: 370px) {
@@ -395,7 +383,6 @@ footer {
         #mainNav .menu ul li a {
           padding: 0 0.5rem;
           display: inline-block;
-          font-size: 1.4em;
           margin-left: 1rem; } }
 
 @media all and (min-width: 991px) {
