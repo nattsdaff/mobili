@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Ecommerce de muebles">
@@ -13,12 +14,13 @@
     <!--CSS CUSTOM-->
     <link rel="stylesheet" href="css/styles.css">
     <title>m o b i l i • h o m e</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
         <div class="topBar">
             <div class="promo">
-              <p>25% off en todo cocina</p>
+                <p>25% off en todo cocina</p>
             </div>
             <div class="social">
                 <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -32,10 +34,13 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Ambientes</a></li>
+                    <li><a href="#">Ideas</a></li>
+                    <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                    <!--<li><a href="#">Contacto</a></li> Oculto temporalmente -->
+                    <li><a href="login.html">Ingresar</a></li>
+                    <li><a href="register.html">Registrarse</a></li>
                 </ul>
             </div>
             <div class="logo">
@@ -48,13 +53,25 @@
     </header>
 
     <section class="preguntas-frecuentes">
-      <h2 class="form-title">PREGUNTAS FRECUENTES</h2>
-      <p class="pregunta">¿Qué medios de pago aceptan?</p>
-      <p class="respuesta">Podés abonar vía transferencia bancaria o con todas las tarjetas de crédito a través de MercadoPago.</p>
-      <p class="pregunta">¿Qué métodos de envío tengo para elegir?</p>
-      <p class="respuesta">Contamos con servicio de MercadoEnvíos.</p>
-      <p class="pregunta">¿Qué sucede si el producto llega fallado o con algún raspón?</p>
-      <p class="respuesta">Comunicate con nosotros al 0114444444.</p>
+        <div class="container">
+            <h2 class="alt-title">PREGUNTAS FRECUENTES</h2>
+            <p class="pregunta">¿Qué medios de pago aceptan?</p>
+            <p class="respuesta">Podés abonar vía transferencia bancaria o con todas las tarjetas de crédito a través de MercadoPago.</p>
+            <p class="pregunta">¿Qué métodos de envío tengo para elegir?</p>
+            <p class="respuesta">Contamos con servicio de MercadoEnvíos.</p>
+            <p class="pregunta">¿Qué sucede si el producto llega fallado o con algún raspón?</p>
+            <p class="respuesta">Comunicate con nosotros al 0114444444.</p>
+        </div>
+    </section>
+    <section class="newsletter">
+        <div class="container">
+            <h4 class="alt-title">Suscribite al newsletter</h4>
+            <p class="newsletter-info">Recibí nuestras ofertas y novedades directamente en tu e-mail.</p>
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Ingrese su e-mail" required class="formField">
+                <input type="submit" value="Enviar" class="formBtn">
+            </form>
+        </div>
     </section>
 
     <!--FOOTER-->
@@ -79,5 +96,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--JS CUSTOM-->
     <script src="js/scripts.js"></script>
-  </body>
+</body>
+
 </html>
