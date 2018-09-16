@@ -319,40 +319,45 @@ footer {
         display: block;
         text-transform: uppercase;
         font-size: 1em; }
-  #mainNav .usermenu {
+  #mainNav .userMenu {
     position: absolute;
-    height: 100vh;
-    top: 6.2rem;
-    left: 0;
-    right: 0;
+    top: 6.8rem;
+    right: 1rem;
+    border: 1px solid #acacac;
+    border-radius: 4px;
     background: #fff;
-    width: 100%;
-    padding: 0 1.5rem;
-    z-index: 99;
-    border-top: 1px solid #E3E3E3; }
-    #mainNav .usermenu.mobile {
+    padding: 1rem 2rem;
+    z-index: 99; }
+    #mainNav .userMenu:after {
+      content: "";
+      position: absolute;
+      top: -1.5rem;
+      left: 6.3rem;
+      border-style: solid;
+      border-width: 0 10px 15px 10px;
+      border-color: transparent transparent #fff transparent; }
+    #mainNav .userMenu:before {
+      content: "";
+      position: absolute;
+      top: -1.6rem;
+      left: 6.3rem;
+      border-style: solid;
+      border-width: 0 10px 15px 10px;
+      border-color: transparent transparent #848382 transparent; }
+    #mainNav .userMenu.mobile {
       display: none; }
-    #mainNav .usermenu ul li {
-      display: block;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 1.6em;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #B1D398;
-      -webkit-transition: all 0.2s linear;
-      -o-transition: all 0.2s linear;
-      transition: all 0.2s linear;
-      cursor: pointer; }
-      #mainNav .usermenu ul li:hover {
-        background: #B1D398; }
-        #mainNav .usermenu ul li:hover a {
-          color: #fff; }
-      #mainNav .usermenu ul li a {
-        text-decoration: none;
-        padding: 20px 0 10px;
-        display: block;
-        text-transform: uppercase;
-        font-size: 1em; }
+    #mainNav .userMenu ul {
+      margin: 0; }
+      #mainNav .userMenu ul li {
+        text-align: center; }
+        #mainNav .userMenu ul li:last-child a {
+          border: none; }
+        #mainNav .userMenu ul li a {
+          text-decoration: none;
+          display: block;
+          font-size: 1.6em;
+          padding: 1rem 0;
+          border-bottom: 1px solid #707070; }
 
 /* Fix para el texto de promo */
 @media all and (min-width: 370px) {
@@ -373,7 +378,13 @@ footer {
   #mainNav .toggle {
     font-size: 2.4em; }
   #mainNav .menu {
-    top: 7rem; } }
+    top: 7rem; }
+  #mainNav .userMenu {
+    top: 7.2rem; }
+    #mainNav .userMenu:after, #mainNav .userMenu:before {
+      left: 6.8rem; }
+    #mainNav .userMenu ul li a {
+      font-size: 1.4em; } }
 
 @media all and (min-width: 575px) {
   .topBar {
@@ -385,7 +396,14 @@ footer {
     #mainNav .logo {
       margin-left: 2rem; }
     #mainNav .bloqueDer a {
-      margin-left: 2rem; } }
+      margin-left: 2rem; }
+    #mainNav .userMenu {
+      top: 7.2rem;
+      padding: 1rem 3rem; }
+      #mainNav .userMenu:after, #mainNav .userMenu:before {
+        left: 7rem; }
+      #mainNav .userMenu ul li a {
+        font-size: 1.5em; } }
 
 @media all and (min-width: 768px) {
   #mainNav .toggle {
@@ -418,45 +436,17 @@ footer {
         #mainNav .menu ul li a {
           padding: 0 0.5rem;
           display: inline-block;
-          margin-left: 1rem; }
-  #mainNav .usermenu {
-    position: absolute;
-    height: auto;
-    top: 6rem;
-    left: auto;
-    right: 0;
-    background: #fff;
-    width: 30%;
-    padding: 0 1.5rem;
-    z-index: 99;
-    border-top: 1px solid #E3E3E3; }
-    #mainNav .usermenu.mobile {
-      display: none; }
-    #mainNav .usermenu ul li {
-      display: block;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 1.6em;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #B1D398;
-      -webkit-transition: all 0.2s linear;
-      -o-transition: all 0.2s linear;
-      transition: all 0.2s linear;
-      cursor: pointer; }
-      #mainNav .usermenu ul li:hover {
-        background: #B1D398; }
-        #mainNav .usermenu ul li:hover a {
-          color: #fff; }
-      #mainNav .usermenu ul li a {
-        text-decoration: none;
-        padding: 20px 0 10px;
-        display: block;
-        text-transform: uppercase;
-        font-size: 1em; } }
+          margin-left: 1rem; } }
 
 @media all and (min-width: 991px) {
   #mainNav {
     padding: 1rem 5rem; }
+    #mainNav .userMenu {
+      top: 6.3rem; }
+      #mainNav .userMenu:after, #mainNav .userMenu:before {
+        left: 5.8rem; }
+      #mainNav .userMenu ul li a {
+        font-size: 1.6em; }
   .topBar {
     padding: 0 5rem; } }
 

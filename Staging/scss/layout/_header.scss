@@ -115,42 +115,50 @@
             }
         }
     }
-    .usermenu {
+    .userMenu {
         position: absolute;
-        height: 100vh;
-        top: 6.2rem;
-        left: 0;
-        right: 0;
+        top: 6.8rem;
+        right: 1rem;
+        border: 1px solid #acacac;
+        border-radius: 4px;
         background: $blanco;
-        width: 100%;
-        padding: 0 1.5rem;
+        padding: 1rem 2rem;
         z-index: 99;
-        border-top: 1px solid $gris-claro;
+        &:after {
+            content: "";
+            position: absolute;
+            top: -1.5rem;
+            left: 6.3rem;
+            border-style: solid;
+            border-width: 0 10px 15px 10px;
+            border-color: transparent transparent $blanco transparent;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: -1.6rem;
+            left: 6.3rem;
+            border-style: solid;
+            border-width: 0 10px 15px 10px;
+            border-color: transparent transparent #848382 transparent;
+        }
         &.mobile {
             display: none;
         }
         ul {
+            margin: 0;
             li {
-                display: block;
                 text-align: center;
-                text-transform: uppercase;
-                font-size: 1.6em;
-                padding-bottom: 10px;
-                border-bottom: 1px solid $verde-claro;
-                transition: all 0.2s linear;
-                cursor: pointer;
-                &:hover {
-                    background: $verde-claro;
-                    a {
-                        color: $blanco;
-                    }
+                &:last-child a {
+                    border: none;
                 }
                 a {
                     text-decoration: none;
-                    padding: 20px 0 10px;
                     display: block;
-                    text-transform: uppercase;
-                    font-size: 1em;
+                    font-size: 1.6em;
+                    padding: 1rem 0;
+                    border-bottom: 1px solid $gris-medio;
+
                 }
             }
         }
@@ -191,6 +199,19 @@
         .menu {
             top: 7rem;
         }
+        .userMenu {
+            top:7.2rem;
+            &:after, &:before {
+                left:6.8rem;
+            }
+            ul {
+                li {
+                    a {
+                        font-size:1.4em;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -211,6 +232,20 @@
         .bloqueDer {
             a {
                 margin-left: 2rem;
+            }
+        }
+        .userMenu {
+            top:7.2rem;
+            padding: 1rem 3rem;
+            &:after, &:before {
+                left:7rem;
+            }
+            ul {
+                li {
+                    a {
+                        font-size:1.5em;
+                    }
+                }
             }
         }
     }
@@ -256,52 +291,25 @@
                 }
             }
         }
-        .usermenu {
-            position: absolute;
-            height: auto;
-            top: 6rem;
-            left: auto;
-            right: 0;
-            background: $blanco;
-            width: 30%;
-            padding: 0 1.5rem;
-            z-index: 99;
-            border-top: 1px solid $gris-claro;
-            &.mobile {
-                display: none;
-            }
-            ul {
-                li {
-                    display: block;
-                    text-align: center;
-                    text-transform: uppercase;
-                    font-size: 1.6em;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid $verde-claro;
-                    transition: all 0.2s linear;
-                    cursor: pointer;
-                    &:hover {
-                        background: $verde-claro;
-                        a {
-                            color: $blanco;
-                        }
-                    }
-                    a {
-                        text-decoration: none;
-                        padding: 20px 0 10px;
-                        display: block;
-                        text-transform: uppercase;
-                        font-size: 1em;
-                    }
-                }
-            }
-        }
     }
 }
 
 @media all and (min-width:991px) {
     #mainNav {
         padding: 1rem 5rem;
+        .userMenu {
+            top:6.3rem;
+            &:after, &:before {
+                left:5.8rem;
+            }
+            ul {
+                li {
+                    a {
+                        font-size:1.6em;
+                    }
+                }
+            }
+        }
     }
     .topBar {
         padding: 0 5rem;
