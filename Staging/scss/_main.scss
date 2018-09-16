@@ -47,6 +47,7 @@ ul {
     text-transform: uppercase;
     font-weight: $light;
     text-align: center;
+    font-size:3em;
 }
 .alt-title{
     display: inline-block;
@@ -57,7 +58,6 @@ ul {
 }
 /* COMPONENTS */
 @import "components/_slider";
-@import "components/_iconos";
 @import "components/_forms";
 
 /* LAYOUT */
