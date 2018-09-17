@@ -12,6 +12,40 @@
       &:hover{
         color: $gris-oscuro;
       }
+    }
+    &-checkbox{
+      width: 25px;
+      margin: 20px 0;
+      position: relative;
+      label{
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 0;
+        left: 0;
+        background: $blanco;
+        &:after{
+          opacity: 0.5;
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 5px;
+          background: transparent;
+          top: 6px;
+          left: 7px;
+          border: 3px solid $gris-medio;
+          border-top: none;
+          border-right: none;
+          transform: rotate(-45deg);
+        }
+        &:hover::after{
+          opacity: 1;
+          }
+        p {
+          margin: 0 2em;
+        }
+      }
 
     }
     &-form{
