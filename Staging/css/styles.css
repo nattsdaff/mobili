@@ -108,6 +108,22 @@ ul {
   .deseados-slider .slick-next {
     top: 35%; } }
 
+@media all and (min-width: 575px) {
+  .slider img {
+    height: 350px; } }
+
+@media all and (min-width: 768px) {
+  .slider img {
+    height: 420px; } }
+
+@media all and (min-width: 991px) {
+  .slider img {
+    height: 480px; } }
+
+@media all and (min-width: 1200px) {
+  .slider img {
+    height: 520px; } }
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
