@@ -159,6 +159,9 @@ form {
       form .formBtn.verde:hover {
         background: #73A84D; }
 
+input[type=checkbox] {
+  visibility: hidden; }
+
 /* LAYOUT */
 footer {
   background: url(../img/footer-bg.jpg) no-repeat;
@@ -607,6 +610,37 @@ footer {
       color: #73A84D; }
       .login .container a:hover {
         color: #413F3D; }
+    .login .container-checkbox {
+      width: 25px;
+      margin: 20px 0;
+      position: relative; }
+      .login .container-checkbox label {
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 0;
+        left: 0;
+        background: #fff; }
+        .login .container-checkbox label:after {
+          opacity: 0.5;
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 5px;
+          background: transparent;
+          top: 6px;
+          left: 7px;
+          border: 3px solid #707070;
+          border-top: none;
+          border-right: none;
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+        .login .container-checkbox label:hover::after {
+          opacity: 1; }
+        .login .container-checkbox label p {
+          margin: 0 2em; }
     .login .container-form {
       padding: 2rem;
       background: #E3E3E3; }
