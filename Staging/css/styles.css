@@ -630,6 +630,8 @@ footer {
       width: 25px;
       margin: 20px 0;
       position: relative; }
+      .login .container-checkbox input[type=checkbox]:checked + label:after {
+        opacity: 0; }
       .login .container-checkbox label {
         cursor: pointer;
         position: absolute;

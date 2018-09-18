@@ -17,9 +17,6 @@
       width: 25px;
       margin: 20px 0;
       position: relative;
-      input[type=checkbox]:checked + label:after {
-        opacity: 0;
-      }
       label{
         cursor: pointer;
         position: absolute;
@@ -48,7 +45,6 @@
         p {
           margin: 0 2em;
         }
-
       }
 
     }

@@ -1,0 +1,70 @@
+/* HELPERS */
+@import "helpers/_variables";
+
+/* ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-size:10px;
+    font-family: $main-font;
+    color:$gris-oscuro;
+}
+h1 {
+    margin:0;
+}
+h2{
+    font-size: 2.5em;
+}
+h3 {
+    font-size:2em;
+}
+h4, h5, h6 {
+    font-size:1.8em;
+}
+p {
+    font-size:1.8em;
+    line-height: 1.6em;
+    font-weight: 300;
+    font-weight: $light;
+}
+a {
+    font-size:1.8em;
+    color:inherit;
+    font-weight: $light;
+    text-decoration: none;
+    transition:all 0.2s linear;
+    color: $gris-oscuro;
+    &:hover{
+      color: $verde-claro;
+    }
+}
+ul {
+    list-style-type: none;
+    padding-left:0;
+}
+.main-title {
+    text-transform: uppercase;
+    font-weight: $light;
+    text-align: center;
+    font-size:3em;
+}
+.alt-title{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight:$bold;
+    letter-spacing: $interletrado;
+    border-bottom: 2px solid $verde-claro;
+}
+/* COMPONENTS */
+@import "components/_slider";
+@import "components/_forms";
+
+/* LAYOUT */
+@import "layout/_footer";
+@import "layout/_header";
+
+/* PAGES */
+@import "pages/_home";
+@import "pages/_login";
+@import "pages/_preguntas-frecuentes";

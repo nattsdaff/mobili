@@ -1,0 +1,31 @@
+.preguntas-frecuentes {
+    text-align: center;
+    padding:50px 15px;
+    .alt-title {
+        max-width: 220px;
+        line-height: 1.3em;
+    }
+    p {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+    .pregunta {
+        font-weight: $bold;
+    }
+    .respuesta {
+        font-size: 1.5em;
+    }
+}
+
+/* Media query para que el título se expanda y ocupe un solo renglón */
+@media all and (min-width:440px){
+    .preguntas-frecuentes {
+        .alt-title {
+            max-width:none;
+            line-height: normal;
+        }
+        p {
+            text-align: left;
+        }
+    }
+}
