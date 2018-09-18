@@ -19,8 +19,7 @@
       position: relative;
       input[type=checkbox]:checked + label:after {
         opacity: 1;
-        border-color:red;
-          /*Cuando le haces click, tilde rojo para que se note la diferencia (cambialo por lo que quieras) */
+        border-color:$verde-oscuro;
       }
       label{
         cursor: pointer;
@@ -124,7 +123,7 @@
     .container{
       background: $blanco;
       padding: 0rem;
-      min-width:400px;
+      max-width:500px;
       a {
         font-size: 1em;
         color:$verde-oscuro;

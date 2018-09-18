@@ -180,8 +180,7 @@ input[type=checkbox] {
 
 /* LAYOUT */
 footer {
-  background: url(../img/footer-bg.jpg) no-repeat;
-  background-size: cover;
+  background: url(../img/bg_footer.jpg) repeat;
   color: #fff;
   padding: 3rem 1rem 1.5rem; }
   footer .altMenu {
@@ -632,8 +631,7 @@ footer {
       position: relative; }
       .login .container-checkbox input[type=checkbox]:checked + label:after {
         opacity: 1;
-        border-color: red;
-        /*Cuando le haces click, tilde rojo para que se note la diferencia (cambialo por lo que quieras) */ }
+        border-color: #73A84D; }
       .login .container-checkbox label {
         cursor: pointer;
         position: absolute;
@@ -740,7 +738,7 @@ footer {
     .login .container {
       background: #fff;
       padding: 0rem;
-      min-width: 400px; }
+      max-width: 500px; }
       .login .container a {
         font-size: 1em;
         color: #73A84D; }

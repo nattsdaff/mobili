@@ -180,8 +180,7 @@ input[type=checkbox] {
 
 /* LAYOUT */
 footer {
-  background: url(../img/footer-bg.jpg) no-repeat;
-  background-size: cover;
+  background: url(../img/bg_footer.jpg) repeat;
   color: #fff;
   padding: 3rem 1rem 1.5rem; }
   footer .altMenu {
@@ -630,6 +629,9 @@ footer {
       width: 25px;
       margin: 20px 0;
       position: relative; }
+      .login .container-checkbox input[type=checkbox]:checked + label:after {
+        opacity: 1;
+        border-color: #73A84D; }
       .login .container-checkbox label {
         cursor: pointer;
         position: absolute;
@@ -639,7 +641,8 @@ footer {
         left: 0;
         background: #fff; }
         .login .container-checkbox label:after {
-          opacity: 0.5;
+          /* El estado normal de la caja sin click */
+          opacity: 0;
           content: '';
           position: absolute;
           width: 9px;
@@ -652,9 +655,13 @@ footer {
           border-right: none;
           -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg); }
+          transform: rotate(-45deg);
+          -webkit-transition: all 0.15s linear;
+          -o-transition: all 0.15s linear;
+          transition: all 0.15s linear; }
         .login .container-checkbox label:hover::after {
-          opacity: 1; }
+          opacity: 0.3;
+          /* le puse un opacity más sutil y una transition arriba para que no sea tan duro el hover. */ }
         .login .container-checkbox label p {
           margin: 0 2em; }
     .login .container-form {
@@ -731,7 +738,7 @@ footer {
     .login .container {
       background: #fff;
       padding: 0rem;
-      min-width: 400px; }
+      max-width: 500px; }
       .login .container a {
         font-size: 1em;
         color: #73A84D; }

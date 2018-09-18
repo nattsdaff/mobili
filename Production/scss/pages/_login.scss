@@ -17,6 +17,10 @@
       width: 25px;
       margin: 20px 0;
       position: relative;
+      input[type=checkbox]:checked + label:after {
+        opacity: 1;
+        border-color:$verde-oscuro;
+      }
       label{
         cursor: pointer;
         position: absolute;
@@ -26,7 +30,8 @@
         left: 0;
         background: $blanco;
         &:after{
-          opacity: 0.5;
+            /* El estado normal de la caja sin click */
+          opacity: 0;
           content: '';
           position: absolute;
           width: 9px;
@@ -38,13 +43,16 @@
           border-top: none;
           border-right: none;
           transform: rotate(-45deg);
+          transition:all 0.15s linear;
         }
         &:hover::after{
-          opacity: 1;
+          opacity: 0.3;
+            /* le puse un opacity más sutil y una transition arriba para que no sea tan duro el hover. */
           }
         p {
           margin: 0 2em;
         }
+
       }
 
     }
@@ -115,7 +123,7 @@
     .container{
       background: $blanco;
       padding: 0rem;
-      min-width:400px;
+      max-width:500px;
       a {
         font-size: 1em;
         color:$verde-oscuro;
