@@ -27,6 +27,16 @@ $(document).ready(function () {
     });
 });
 
+/* SETTINGS PARA EL SLIDER PRINCIPAL DEL HOME */
+
+$(document).ready(function() {
+    $('.slider').slick({
+        arrows: false,
+        dots: true,
+        autoplay: true
+    });
+});
+
 
 /* SETTINGS PARA EL SLIDER DE PRODUCTOS DESEADOS */
 $(document).ready(function () {
