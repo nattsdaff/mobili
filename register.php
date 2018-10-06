@@ -17,16 +17,10 @@
       $dni = $_POST["dni"];
 
       $errores = validacionRegistro($_POST);
-      var_dump($errores);
       if (empty($errores)) {
         guardarUsuario($_POST);
       }
     }
-
-    var_dump($_POST);
-    echo "<br>";
-    var_dump($_FILES);
-
 
 ?>
 
@@ -71,7 +65,7 @@
             <?php echo (isset($errores["passwordConfirm"]))?'<p class="error">'.$errores["passwordConfirm"].'</p>':""; ?>
           </div>
           <!-- FECHA DE NACIMIENTO -->
-          <label for="fecha-de-nacimiento">Fecha de nacimiento *</label>
+          <label for="fecha-de-nacimiento" id="formLabel">Fecha de nacimiento *</label>
           <!-- DÍA -->
           <div class="fnac">
             <select class="formField" name="fnacdia" id="fnacdia">
@@ -108,7 +102,7 @@
           </div>
           <?php echo (isset($errores["edad"]))?'<p class="error">'.$errores["edad"].'</p>':""; ?>
           <!-- TELÉFONO -->
-          <label for="telefono">Teléfono</label>
+          <label for="telefono" id="formLabel">Teléfono</label>
           <!-- CÓDIGO DE ÁREA -->
           <div class="formGroup">
             <input type="text" name="telcod" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej: 011" required class="formField">
@@ -127,8 +121,9 @@
 
 
           <!-- IMAGEN -->
+          <label for="file" id="formLabel">Imagen:</label>
           <div class="formGroup">
-            <input type="file" name="avatar">
+            <input type="file" name="avatar" class="file" value="">
             <?php echo (isset($errores["avatar"]))?"<br><br><br>".'<p class="error">'.$errores["avatar"].'</p>':""; ?>
           </div>
 
