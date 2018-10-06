@@ -4,7 +4,7 @@
         <ul>
             <li><a href="#">Servicio al cliente</a></li>
             <li><a href="#">Nuestra empresa</a></li>
-            <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+            <li><a href="preguntas-frecuentes.php">Preguntas frecuentes</a></li>
             <li><a href="#">Envios</a></li>
             <li><a href="#">Cambios y devoluciones</a></li>
         </ul>

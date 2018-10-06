@@ -132,7 +132,25 @@ form {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
+  form .error {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.7em;
+    color: red;
+    margin-top: -20px; }
+  form .formGroup {
+    display: block; }
+  form .fnac {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    form .fnac #fnacdia {
+      margin-right: 20px; }
+    form .fnac #fnacmes {
+      margin-right: 20px; }
   form .formField {
+    width: 100%;
     padding: 1.7rem 1.7rem;
     margin-bottom: 2rem;
     font-size: 1.8em;
