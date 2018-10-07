@@ -1,3 +1,6 @@
+<?php
+  require("funciones.php");
+ ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
