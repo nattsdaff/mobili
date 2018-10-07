@@ -1,8 +1,6 @@
 <?php
     require ("part-head.php");
 
-    require("funciones.php");
-
     $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
     if ($_POST) {

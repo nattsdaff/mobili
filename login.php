@@ -1,6 +1,5 @@
 <?php
   require ("part-head.php");
-  require("funciones.php");
   if ($_POST) {
     logearUsuario($_POST);
   }
