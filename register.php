@@ -21,7 +21,6 @@
         guardarUsuario($_POST);
       }
     }
-
 ?>
 
 <body>
