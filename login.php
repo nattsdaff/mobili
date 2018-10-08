@@ -1,9 +1,12 @@
 <?php
-require("part-head.php");
+require 'funciones.php';
 if ($_POST) {
-$error = logearUsuario($_POST);
+  $error = logearUsuario($_POST);
 }
 ?>
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<?php require("part-head.php"); ?>
 <body>
     <?php require("part-header.php"); ?>
     <!--LOGIN-->

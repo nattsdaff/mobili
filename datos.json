@@ -1,3 +1,1 @@
-{
-  "usuarios": []
-}
+{"usuarios":[{"email":"n@n.com","nombre":"natalia","apellido":"daff","password":"$2y$10$h8ZSSM1QiqUbZ\/dwmaGeAu\/Xl60hyMNZbrLwZbQFrzXm0xAIiFLga","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"111","telefono":"11111111","dni":"11111111","avatar":"assets\/uploads\/usuarios\/0\/713801735bd6e2abb774d997a8a06c21.jpg"},{"email":"n@ns.com","nombre":"natalia","apellido":"daff","password":"$2y$10$NOm5ADpAkxjQiUoqKqHTT.Mufkiy5ns7sCNq5OQmSmc1XF02UmwqG","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"111","telefono":"11111111","dni":"11111111","avatar":"assets\/uploads\/usuarios\/1\/713801735bd6e2abb774d997a8a06c21.jpg"},{"email":"nn@dfsaw.com","nombre":"qwertgfds","apellido":"qwergsa","password":"$2y$10$GsSMbDLMIG5K\/0cLRxNpLuO.Y4kCnf3Oz\/MLXL\/Z1egZA49RWVy3a","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"123","telefono":"12345678","dni":"12345678","avatar":"assets\/uploads\/usuarios\/2\/713801735bd6e2abb774d997a8a06c21.jpg"}]}

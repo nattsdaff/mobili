@@ -58,8 +58,10 @@
     $guardados = json_decode($archivo, true);
     // ENCRIPTAR CONTRASEÑA
     $datos["password"] = password_hash($datos["password"],PASSWORD_DEFAULT);
+
     // BORRADO CONFIRMACIÓN DE CONTRASEÑA (SÓLO PARA VALIDACIÓN)
     unset($datos["passwordConfirm"]);
+
     $ultimoID = (count($guardados["usuarios"]));
     $target_dir = "assets/uploads/usuarios/$ultimoID/";
     // TRAIGO ID DEL ÚLTIMO USUARIO
@@ -77,14 +79,15 @@
     // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
     $datos["avatar"] = $target_file;
     //GUARDO EL LUGAR DONDE ESTA GUARDADO EL AVATAR
-    setcookie("cookie_avatar", $datos["usuarios"][$i]["avatar"], time() + (86400 * 30));
+    setcookie("cookie_avatar", $datos["avatar"], time() + (86400 * 30));
+    //var_dump($_COOKIE['cookie_avatar']);
     $usuario = $datos;
     // PUSHEAMOS LOS DATOS A LA POSICIÓN USUARIOS
     $guardados["usuarios"][]=$usuario;
     // REESCRIBIMOS LOS DATOS
     $usuarioJson = json_encode($guardados);
     file_put_contents("datos.json",$usuarioJson);
-    header("Location:login.php");
+    // header("Location:login.php");
   }
   function validarSiExiste($email){
     // ABRIMOS EL ARCHIVO

@@ -1,29 +1,30 @@
 <?php
-    require("part-head.php");
+require 'funciones.php';
+$meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
-    $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+if ($_POST) {
+  $email=$_POST["email"];
+  $nombre = $_POST["nombre"];
+  $apellido = $_POST["apellido"];
+  $dia = $_POST["fnacdia"];
+  $mes = $_POST["fnacmes"];
+  $anio = $_POST["fnacanio"];
+  $telcod = $_POST["telcod"];
+  $telefono = $_POST["telefono"];
+  $dni = $_POST["dni"];
 
-    if ($_POST) {
-      $email=$_POST["email"];
-      $nombre = $_POST["nombre"];
-    	$apellido = $_POST["apellido"];
-      $dia = $_POST["fnacdia"];
-      $mes = $_POST["fnacmes"];
-      $anio = $_POST["fnacanio"];
-      $telcod = $_POST["telcod"];
-      $telefono = $_POST["telefono"];
-      $dni = $_POST["dni"];
-
-      $errores = validacionRegistro($_POST);
-      if (empty($errores)) {
-        guardarUsuario($_POST);
-      }
-    }
+  $errores = validacionRegistro($_POST);
+  if (empty($errores)) {
+    guardarUsuario($_POST);
+    header('Location:login.php');
+  }
+}
 ?>
-
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<?php require("part-head.php"); ?>
 <body>
     <?php require ("part-header.php"); ?>
-
     <!--REGISTER-->
     <!--LOGIN-->
     <section class="login">
