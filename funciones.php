@@ -9,28 +9,20 @@
     }
     // NOMBRE
     if (strlen($datos["nombre"])<2) {
-      $errores["nombre"] = "El nombre debe ser mayor a 2 caracteres.";
+      $errores["nombre"] = "El nombre debe tener al menos dos caracteres.";
     } elseif (!preg_match("/^[a-zA-Z áéíóúÁÉÍÓÚñÑüÜ]*$/",$datos["nombre"])) {
       $errores["nombre"] = "Sólo se permiten letras y espacios en blanco.";
     }
     // APELLIDO
     if (strlen($datos["apellido"])<2) {
-      $errores["apellido"] = "El apellido debe ser mayor a 2 caracteres.";
+      $errores["apellido"] = "El apellido debe tener al menos dos caracteres.";
     } elseif (!preg_match("/^[a-zA-Z áéíóúÁÉÍÓÚñÑüÜ]*$/",$datos["apellido"])) {
       $errores["apellido"] = "Sólo se permiten letras y espacios en blanco.";
     }
     // CONTRASEÑA
-    if (strlen($datos["password"])<8) {
-      $errores["password"] = "La contraseña debe ser mayor a 8 caracteres.";
-    } elseif (strlen($datos["password"])>16) {
-      $errores["password"] = "La contraseña debe ser menor a 16 caracteres.";
-    } elseif (!preg_match('`[a-z]`',$datos["password"])){
-      $errores["password"] = "La clave debe tener al menos una letra minúscula";
-   } elseif (!preg_match('`[A-Z]`',$datos["password"])){
-      $errores["password"] = "La clave debe tener al menos una letra mayúscula";
-   } elseif (!preg_match('`[0-9]`',$datos["password"])){
-      $errores["password"] = "La clave debe tener al menos un caracter numérico";
-   }
+    if (strlen($datos["password"])<6) {
+      $errores["password"] = "Contraseña inválida.";
+    }
     // CONFIRMACIÓN DE CONTRASEÑA
     if ($datos["password"]!==$datos["passwordConfirm"]) {
       $errores["passwordConfirm"] = "Las contraseñas no coinciden.";
@@ -40,19 +32,15 @@
       $errores["edad"] = "Debe ser mayor de 18 años";
     }
     // CÓDIGO DE ÁREA (TEL)
-    if ($datos["telcod"]<11) {
-      $errores["telcod"] = "Código de área inválido.";
-    } elseif ($datos["telcod"]>3894) {
+    if ((!empty($datos["telcod"])) && ($datos["telcod"]<11 || $datos["telcod"]>3894)) {
       $errores["telcod"] = "Código de área inválido.";
     }
     // NÚMERO DE TELÉFONO
-    if ($datos["telefono"]<1) {
+    if ((!empty($datos["telefono"])) && $datos["telefono"]<1) {
       $errores["telefono"] = "Número de teléfono inválido.";
     }
     // DNI
-    if ($datos["dni"]<1) {
-      $errores["dni"] = "DNI inválido.";
-    } elseif ($datos["dni"]>100000000) {
+    if ((!empty($datos["dni"])) && ($datos["dni"]<1 || $datos["dni"]>100000000)) {
       $errores["dni"] = "DNI inválido.";
     }
     // IMAGEN
@@ -127,9 +115,11 @@
           $_SESSION["user"] = $datos["usuarios"][$i]["email"];
           // REDIRIGIMOS AL INDEX
           header("location:index.php");
+          break;
         }
       }
     }
+    return "Los datos ingresados no son correctos";
   }
 
 

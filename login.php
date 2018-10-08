@@ -1,7 +1,7 @@
 <?php
   require ("part-head.php");
   if ($_POST) {
-    logearUsuario($_POST);
+    $error = logearUsuario($_POST);
   }
 
  ?>
@@ -16,8 +16,11 @@
           <form action="#" method="post">
             <h2 class="alt-title">Ingresar</h2>
             <p class="login-info">¿Tenés cuenta? Ingresá ahora.</p>
-            <input type="text" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" placeholder="Dirección de e-mail" required class="formField">
+            <input type="text" name="email" value="" placeholder="Dirección de e-mail" required class="formField">
             <input type="password" name="password" value="" placeholder="Contraseña" required class="formField">
+            <?php if (!empty($error)) { ?>
+              <p class="error"><?php echo $error; ?></p>
+            <?php } ?>
             <input type="submit" value="Enviar" class="formBtn gris">
 
             <div class="container-checkbox">

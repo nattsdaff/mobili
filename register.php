@@ -40,12 +40,12 @@
           </div>
 
           <!-- NOMBRE -->
-          <div class="formGroup">
+          <div class="formGroup" id="nombre">
             <input type="text" name="nombre" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" placeholder="Nombre *" required class="formField">
             <?php echo (isset($errores["nombre"]))?'<p class="error">'.$errores["nombre"].'</p>':""; ?>
           </div>
           <!-- APELLIDO -->
-          <div class="formGroup">
+          <div class="formGroup" id="apellido">
             <input type="text" name="apellido" value="<?php echo (isset($_POST["apellido"]))?$_POST["apellido"]:""; ?>" placeholder="Apellido *" required class="formField">
             <?php if (isset($errores["apellido"])) {
 							echo '<p class="error">'.$errores["apellido"].'</p>';
@@ -53,8 +53,9 @@
           </div>
           <!-- CONTRASEÑA -->
           <div class="formGroup">
-            <input type="password" name="password" value="" placeholder="Contraseña *" required class="formField">
-            <?php echo (isset($errores["password"]))?'<p class="error">'.$errores["password"].'</p>':""; ?>
+            <input type="password" name="password" value="" placeholder="Contraseña *" required class="formField" id="inputPassword">
+            <p class="validacionPassword">Debe tener al menos 6 caracteres.</p>
+            <?php echo (isset($errores["password"]))?'<p class="error" id="invalida">'.$errores["password"].'</p>':""; ?>
           </div>
           <!-- CONFIRMACIÓN DE CONTRASEÑA -->
           <div class="formGroup">
@@ -102,17 +103,17 @@
           <label for="telefono" id="formLabel">Teléfono</label>
           <!-- CÓDIGO DE ÁREA -->
           <div class="formGroup">
-            <input type="text" name="telcod" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej: 011" required class="formField">
+            <input type="text" name="telcod" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej: 011" class="formField">
             <?php echo (isset($errores["telcod"]))?'<p class="error">'.$errores["telcod"].'</p>':""; ?>
           </div>
           <!-- NÚMERO DE TELÉFONO -->
           <div class="formGroup">
-            <input type="text" name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" placeholder="Ej: 48251784" required class="formField">
+            <input type="text" name="telefono" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" placeholder="Ej: 48251784" class="formField">
             <?php echo (isset($errores["telefono"]))?'<p class="error">'.$errores["telefono"].'</p>':""; ?>
           </div>
           <!-- DNI -->
           <div class="formGroup">
-            <input type="text" name="dni" value="<?php echo (isset($_POST["dni"]))?$_POST["dni"]:""; ?>" placeholder="DNI" required class="formField">
+            <input type="text" name="dni" value="<?php echo (isset($_POST["dni"]))?$_POST["dni"]:""; ?>" placeholder="DNI" class="formField">
             <?php echo (isset($errores["dni"]))?'<p class="error">'.$errores["dni"].'</p>':""; ?>
           </div>
 
@@ -121,7 +122,7 @@
           <label for="file" id="formLabel">Imagen:</label>
           <div class="formGroup">
             <input type="file" name="avatar" class="file" value="">
-            <?php echo (isset($errores["avatar"]))?"<br><br><br>".'<p class="error">'.$errores["avatar"].'</p>':""; ?>
+            <?php echo (isset($errores["avatar"]))?"<br><br><br>".'<p class="error" id="errorImagen">'.$errores["avatar"].'</p>':""; ?>
           </div>
 
           <input type="submit" value="Crear cuenta" class="formBtn verde">

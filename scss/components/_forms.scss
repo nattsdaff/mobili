@@ -1,9 +1,21 @@
 form {
+  #invalida {
+    margin-top: 0;
+  }
   .error {
     display: flex;
     font-size: 1.7em;
     color: red;
     margin-top: -20px;
+  }
+  #errorImagen {
+    margin-top: -50px;
+  }
+  .validacionPassword {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.6em;
   }
   #formLabel {
     display: flex;
@@ -73,6 +85,9 @@ form {
             background: $verde-oscuro;
           }
         }
+    }
+    #inputPassword {
+      margin-bottom: 0;
     }
 }
 input[type=checkbox] {
