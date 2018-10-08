@@ -4,16 +4,15 @@
 <body>
     <?php require("part-header.php"); ?>
 
-    <!--LOGIN-->
+    <!--EXITO-->
     <section class="exito">
       <div class="container">
         <h2 class="alt-title">Bienvenida/o</h2>
-        <i class="far fa-smile"></i>
-        <p class="exito-message">Te has registrado con éxito en mobili.com </p>
+        <p class="exito-message">Te has registrado con éxito en mobili.com </p><br>
         <a href="login.php" class="submitBtn gris">Ingresar</a>
       </div>
     </section>
-    <!--END OF LOGIN-->
+    <!--END OF EXITO-->
 
     <?php require ("part-footer.php"); ?>
     <?php require ("part-scripts.php"); ?>

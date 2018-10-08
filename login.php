@@ -6,9 +6,9 @@ if ($_POST) {
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-<?php require("part-head.php"); ?>
+<?php require 'part-head.php'; ?>
 <body>
-    <?php require("part-header.php"); ?>
+    <?php require 'part-header.php'; ?>
     <!--LOGIN-->
     <section class="login">
       <div class="container">
