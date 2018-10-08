@@ -1,5 +1,5 @@
 <?php
-    require ("part-head.php");
+    require("part-head.php");
 
     $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <?php require ("part-footer.php"); ?>
-    <?php require ("part-scripts.php"); ?>
+    <?php require("part-footer.php"); ?>
+    <?php require("part-scripts.php"); ?>
   </body>
 </html>

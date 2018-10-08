@@ -49,10 +49,8 @@
     } elseif (($_FILES["avatar"]["type"] !== "image/gif") && ($_FILES["avatar"]["type"] !== "image/jpeg") && ($_FILES["avatar"]["type"] !== "image/jpg") && ($_FILES["avatar"]["type"] !== "image/png")) {
       $errores["avatar"] = "La imagen debe ser .gif, .jpg, .jpeg o .png.";
     }
-
     return $errores;
   }
-
   function guardarUsuario($datos){
     // ABRIR ARCHIVO
     $archivo = file_get_contents("datos.json");
@@ -78,6 +76,8 @@
     move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
     // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
     $datos["avatar"] = $target_file;
+    //GUARDO EL LUGAR DONDE ESTA GUARDADO EL AVATAR
+    setcookie("cookie_avatar", $datos["usuarios"][$i]["avatar"], time() + (86400 * 30));
     $usuario = $datos;
     // PUSHEAMOS LOS DATOS A LA POSICIÓN USUARIOS
     $guardados["usuarios"][]=$usuario;
@@ -86,7 +86,6 @@
     file_put_contents("datos.json",$usuarioJson);
     header("Location:login.php");
   }
-
   function validarSiExiste($email){
     // ABRIMOS EL ARCHIVO
     $archivo = file_get_contents("datos.json");
@@ -100,7 +99,6 @@
       }
     }
   }
-
   function logearUsuario($datosLogin){
     $archivo = file_get_contents("datos.json");
     $datos = json_decode($archivo, true);
@@ -112,16 +110,15 @@
         if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
           // INICIAMOS LA SESIÓN
           session_start();
-          $_SESSION["user"] = $datos["usuarios"][$i]["email"];
+          $_SESSION["email"] = $datos["usuarios"][$i]["email"];
+          //GUARDO EL EMAIL EN UNA COOKIE
+          setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
+          var_dump($_COOKIE["cookie_email"]);
           // REDIRIGIMOS AL INDEX
-          header("location:index.php");
+          header("Location:perfil.php");
           break;
         }
       }
     }
     return "Los datos ingresados no son correctos";
   }
-
-
-
- ?>

@@ -1,14 +1,11 @@
 <?php
-  require ("part-head.php");
-  if ($_POST) {
-    $error = logearUsuario($_POST);
-  }
-
- ?>
-
+require("part-head.php");
+if ($_POST) {
+$error = logearUsuario($_POST);
+}
+?>
 <body>
-    <?php require ("part-header.php"); ?>
-
+    <?php require("part-header.php"); ?>
     <!--LOGIN-->
     <section class="login">
       <div class="container">
@@ -40,7 +37,7 @@
     </section>
     <!--END OF LOGIN-->
 
-    <?php require ("part-footer.php"); ?>
-    <?php require ("part-scripts.php"); ?>
+    <?php require("part-footer.php"); ?>
+    <?php require("part-scripts.php"); ?>
   </body>
 </html>

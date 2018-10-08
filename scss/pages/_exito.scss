@@ -1,0 +1,17 @@
+.exito{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .container{
+    padding: 2rem 2rem 4rem;
+    background: $gris-claro;
+    flex-grow: 1;
+    .fa-smile{
+      display: block;
+      font-size: 16em;
+    }
+  }
+  .error {
+    margin-bottom: 0;
+  }
+}
