@@ -80,10 +80,8 @@ function guardarUsuario($datos){
   $guardados = json_decode($archivo, true);
   // ENCRIPTAR CONTRASEÑA
   $datos["password"] = password_hash($datos["password"],PASSWORD_DEFAULT);
-
   // BORRADO CONFIRMACIÓN DE CONTRASEÑA (SÓLO PARA VALIDACIÓN)
   unset($datos["passwordConfirm"]);
-
   $ultimoID = (count($guardados["usuarios"]));
   $target_dir = "assets/uploads/usuarios/$ultimoID/";
   // TRAIGO ID DEL ÚLTIMO USUARIO
@@ -126,6 +124,7 @@ function logearUsuario($datosLogin){
         // INICIAMOS LA SESIÓN Y GUARDO SU EMAIL EN LA MISMA
         session_start();
         $_SESSION["email"] = $datos["usuarios"][$i]["email"];
+        $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
         //GUARDO EL EMAIL EN UNA COOKIE
         setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
         // REDIRIGIMOS AL INDEX

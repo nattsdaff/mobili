@@ -13,14 +13,15 @@
     padding: 4rem 2rem 4rem;
     background: $blanco;
     flex-grow: 1;
+    .fa-smile{
+      display: block;
+      font-size: 16em;
+      padding: 4rem;
+    }
     &-cuenta{
       text-align: left;
       display: flex;
       flex-direction: column;
-    }
-    .fa-smile{
-      display: block;
-      font-size: 16em;
     }
     &-avatar{
       border-radius: 5px 40px 5px;
