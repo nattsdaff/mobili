@@ -1,5 +1,10 @@
 <?php
 require 'funciones.php';
+// ONLY FOR TESTING SI LA SESSION ESTA CERRADA LUEGO DEL LOGOUT.
+// ---- SIEMPR COMENTADO EN PRODUCCION ---- PORQUE SI NO, TIRA ERROR DE HEADERS
+    // $has_session = session_status() == PHP_SESSION_ACTIVE;
+    // var_dump($has_session);
+// END TEST
 if ($_POST) {
   $error = logearUsuario($_POST);
 }
@@ -16,7 +21,11 @@ if ($_POST) {
           <form action="#" method="post">
             <h2 class="alt-title">Ingresar</h2>
             <p class="login-info">¿Tenés cuenta? Ingresá ahora.</p>
-            <input type="text" name="email" value="" placeholder="Dirección de e-mail" required class="formField">
+            <input type="text" name="email" value="" placeholder=
+            <?php
+              echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : "Dirección e-mail";
+              ?>
+              required class="formField">
             <input type="password" name="password" value="" placeholder="Contraseña" required class="formField">
             <?php if (!empty($error)) { ?>
               <p class="error"><?php echo $error; ?></p>
@@ -27,7 +36,6 @@ if ($_POST) {
               <input type="checkbox" name="recordar" value="true" id="checkbox" class="formCheckbox">
               <label for="checkbox"><p>Recordarme</p></label>
             </div>
-
           </form>
         </div>
         <div class="container-forgot">

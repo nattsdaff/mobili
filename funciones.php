@@ -125,6 +125,14 @@ function logearUsuario($datosLogin){
         session_start();
         $_SESSION["email"] = $datos["usuarios"][$i]["email"];
         $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
+        // GUARDO EL EMAIL EN UNA COOKIE SI RECORDAR ESTA CHEQUEADO
+        if(!empty($datosLogin["recordar"])){
+          setcookie("cookie_recordar", true, time() + (86400 * 30));
+          //GUARDO EL EMAIL EN UNA COOKIE
+          setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
+        }else{
+          setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
+        }
         //GUARDO EL EMAIL EN UNA COOKIE
         setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
         // REDIRIGIMOS AL INDEX

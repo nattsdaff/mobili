@@ -189,13 +189,13 @@ form {
     form .formField.contacto {
       border: 1px solid #707070; }
   form ::-webkit-input-placeholder {
-    color: #E3E3E3; }
+    color: #413F3D; }
   form :-ms-input-placeholder {
-    color: #E3E3E3; }
+    color: #413F3D; }
   form ::-ms-input-placeholder {
-    color: #E3E3E3; }
+    color: #413F3D; }
   form ::placeholder {
-    color: #E3E3E3; }
+    color: #413F3D; }
   form .formBtn {
     font-size: 2em;
     font-weight: 400;
@@ -851,9 +851,6 @@ footer {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
-    .exito .container .fa-smile {
-      display: block;
-      font-size: 16em; }
   .exito .error {
     margin-bottom: 0; }
 
@@ -877,6 +874,10 @@ footer {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
+    .micuenta .container .fa-smile {
+      display: block;
+      font-size: 16em;
+      padding: 4rem; }
     .micuenta .container-cuenta {
       text-align: left;
       display: -webkit-box;
@@ -886,9 +887,6 @@ footer {
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; }
-    .micuenta .container .fa-smile {
-      display: block;
-      font-size: 16em; }
     .micuenta .container-avatar {
       border-radius: 5px 40px 5px; }
   .micuenta .error {

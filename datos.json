@@ -2,15 +2,15 @@
   "usuarios": [
     {
       "email": "nattsdaff@gmail.com",
-      "nombre": "natalia",
-      "apellido": "daffunchio",
-      "password": "$2y$10$TIX1oQGr4FMPvDQXEOBua.vboMngZpIo3Qn1Rrnpo1Bq0lS4hCIwe",
+      "nombre": "Natalia",
+      "apellido": "Daff",
+      "password": "$2y$10$2P5rubh4bKo3q4rv92.FJeyMpwrxxNSSxQd7zsk0Yr9Lrz/wb/koK",
       "fnacdia": "1",
       "fnacmes": "1",
       "fnacanio": "1903",
       "telcod": "011",
-      "telefono": "32904189",
-      "dni": "23865179",
+      "telefono": "11111111",
+      "dni": "11111111",
       "avatar": "assets/uploads/usuarios/0/713801735bd6e2abb774d997a8a06c21.jpg"
     }
   ]
