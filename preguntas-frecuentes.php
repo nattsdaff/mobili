@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require "funciones.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <?php require("part-head.php"); ?>

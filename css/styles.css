@@ -442,6 +442,8 @@ footer {
       border-color: transparent transparent #848382 transparent; }
     #mainNav .userMenu.mobile {
       display: none; }
+    #mainNav .userMenu p {
+      font-size: 1.6em; }
     #mainNav .userMenu ul {
       margin: 0; }
       #mainNav .userMenu ul li {

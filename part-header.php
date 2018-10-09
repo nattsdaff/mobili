@@ -28,15 +28,25 @@
         <!--cierra .bloqueIzq-->
         <div class="bloqueDer">
             <a href="#"><i class="fas fa-search"></i></a>
+            <?php if($_SESSION || isset($_COOKIE["cookie_recordar"])){ ?>
+            <a class="toggleUserMenu" href="javascript:void(0)"><i class="far fa-user"></i></a>
+            <div class="userMenu mobile">
+                <p>Hola <?php echo (isset($_COOKIE["cookie_nombre"]))?$_COOKIE["cookie_nombre"]:$_SESSION["nombre"]; ?></p>
+                <ul>
+                    <li><a href="mi-cuenta.php">Mi cuenta</a></li>
+                    <li><a href="logout.php">Cerrar sesión</a></li>
+                </ul>
+            </div>
+             <?php } else { ?>
             <a class="toggleUserMenu" href="javascript:void(0)"><i class="fas fa-user"></i></a>
-            <!-- <a href="login.php"><i class="fas fa-user"></i></a> -->
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
             <div class="userMenu mobile">
                 <ul>
                     <li><a href="login.php">Ingresar</a></li>
                     <li><a href="register.php">Registrarse</a></li>
                 </ul>
             </div>
+            <?php } ?>
+            <a href="#"><i class="fas fa-shopping-bag"></i></a>
         </div>
         <!--cierra. bloqueDer-->
     </nav>

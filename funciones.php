@@ -99,7 +99,7 @@ function guardarUsuario($datos){
   // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
   $datos["avatar"] = $target_file;
   //GUARDO EL LUGAR DONDE ESTA GUARDADO EL AVATAR
-  setcookie("cookie_avatar", $datos["avatar"], time() + (86400 * 30));
+  /*setcookie("cookie_avatar", $datos["avatar"], time() + (86400 * 30));*/
   //var_dump($_COOKIE['cookie_avatar']);
   $usuario = $datos;
   // PUSHEAMOS LOS DATOS A LA POSICIÓN USUARIOS
@@ -125,18 +125,21 @@ function logearUsuario($datosLogin){
         session_start();
         $_SESSION["email"] = $datos["usuarios"][$i]["email"];
         $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
+        $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
         // GUARDO EL EMAIL EN UNA COOKIE SI RECORDAR ESTA CHEQUEADO
         if(!empty($datosLogin["recordar"])){
           setcookie("cookie_recordar", true, time() + (86400 * 30));
           //GUARDO EL EMAIL EN UNA COOKIE
           setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
-        }else{
+          setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
+          setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
+        }/*else{
           setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
         }
         //GUARDO EL EMAIL EN UNA COOKIE
         setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
-        // REDIRIGIMOS AL INDEX
-        header("Location:micuenta.php");
+        // REDIRIGIMOS AL INDEX*/
+        header("Location:mi-cuenta.php");
         break;
       }
     }
