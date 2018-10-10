@@ -122,7 +122,9 @@ function logearUsuario($datosLogin){
       // VALIDAMOS LA CONTRASEÑA
       if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
         // INICIAMOS LA SESIÓN Y GUARDO SU EMAIL EN LA MISMA
-        session_start();
+        if (session_status() == PHP_SESSION_NONE) {
+          session_start();
+        }
         $_SESSION["email"] = $datos["usuarios"][$i]["email"];
         $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
         $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
@@ -133,11 +135,7 @@ function logearUsuario($datosLogin){
           setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
           setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
           setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
-        }/*else{
-          setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
         }
-        //GUARDO EL EMAIL EN UNA COOKIE
-        setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
         // REDIRIGIMOS AL INDEX*/
         header("Location:mi-cuenta.php");
         break;

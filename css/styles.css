@@ -131,99 +131,143 @@ ul {
   .slider img {
     height: 520px; } }
 
-form {
+form .error {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  font-size: 1.7em;
+  color: red;
+  margin-top: -20px; }
+
+form #errorImagen {
+  margin-top: -50px; }
+
+form .validacionPassword {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6em; }
+
+form .form-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.4em;
+  padding: 0.8em 0 0.4em;
+  text-transform: uppercase; }
+
+form .fecha-nacimiento {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  form #invalida {
-    margin-top: 0; }
-  form .error {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  form .fecha-nacimiento .formField {
+    padding: 1.7rem 1rem;
+    margin-bottom: 2rem; }
+  form .fecha-nacimiento .fnacdia {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 1.7em;
-    color: red;
-    margin-top: -20px; }
-  form #errorImagen {
-    margin-top: -50px; }
-  form .validacionPassword {
+    margin-right: 10px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+  form .fecha-nacimiento .fnacmes {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 1.6em; }
-  form #formLabel {
+    margin-right: 10px;
+    -webkit-box-flex: 3;
+    -ms-flex-positive: 3;
+    flex-grow: 3; }
+  form .fecha-nacimiento .fnacanio {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 2.2em;
-    padding-bottom: 8px; }
-  form .file {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding-bottom: 15px;
-    width: 100%; }
-  form .formGroup {
-    display: block; }
-  form .fnac {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    form .fnac #fnacdia {
-      margin-right: 20px; }
-    form .fnac #fnacmes {
-      margin-right: 20px; }
-  form .formField {
-    width: 100%;
-    padding: 1.7rem 1.7rem;
-    margin-bottom: 2rem;
-    font-size: 1.8em;
-    font-weight: 300;
-    border: 0px solid #707070; }
-    form .formField.contacto {
-      border: 1px solid #707070; }
-  form ::-webkit-input-placeholder {
-    color: #413F3D; }
-  form :-ms-input-placeholder {
-    color: #413F3D; }
-  form ::-ms-input-placeholder {
-    color: #413F3D; }
-  form ::placeholder {
-    color: #413F3D; }
-  form .formBtn {
-    font-size: 2em;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: none;
-    background: #B1D398;
-    padding: 1.5rem 0;
-    cursor: pointer;
-    color: #413F3D;
-    -webkit-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
-    form .formBtn:hover {
-      background: #413F3D;
-      color: #B1D398; }
-    form .formBtn.gris {
-      background: #707070;
-      color: #fff; }
-      form .formBtn.gris:hover {
-        background: #413F3D; }
-    form .formBtn.verde {
-      background: #73A84D;
-      color: #fff; }
-      form .formBtn.verde:hover {
-        background: #73A84D; }
-  form #inputPassword {
-    margin-bottom: 0; }
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+
+form .telefono {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  form .telefono .tel-area {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-right: 10px; }
+  form .telefono .tel-nro {
+    -webkit-box-flex: 8;
+    -ms-flex-positive: 8;
+    flex-grow: 8; }
+
+form .file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 15px;
+  width: 100%; }
+
+form .formGroup {
+  display: block; }
+
+form .formField {
+  width: 100%;
+  padding: 1.7rem 1.7rem;
+  margin-bottom: 2rem;
+  font-size: 1.8em;
+  font-weight: 300;
+  border: 0px solid #707070; }
+  form .formField.contacto {
+    border: 1px solid #707070; }
+
+form ::-webkit-input-placeholder {
+  color: #E3E3E3; }
+
+form :-ms-input-placeholder {
+  color: #E3E3E3; }
+
+form ::-ms-input-placeholder {
+  color: #E3E3E3; }
+
+form ::placeholder {
+  color: #E3E3E3; }
+
+form .formBtn {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  background: #B1D398;
+  padding: 1.5rem;
+  cursor: pointer;
+  color: #413F3D;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  form .formBtn:hover {
+    background: #413F3D;
+    color: #B1D398; }
+  form .formBtn.gris {
+    background: #707070;
+    color: #fff; }
+    form .formBtn.gris:hover {
+      background: #413F3D; }
+  form .formBtn.verde {
+    background: #73A84D;
+    color: #fff; }
+    form .formBtn.verde:hover {
+      background: #73A84D; }
 
 input[type=checkbox] {
   visibility: hidden; }

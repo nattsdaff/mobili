@@ -1,7 +1,4 @@
 form {
-  #invalida {
-    margin-top: 0;
-  }
   .error {
     display: flex;
     font-size: 1.7em;
@@ -11,84 +8,108 @@ form {
   #errorImagen {
     margin-top: -50px;
   }
+  ///////////////////////////////// PARA BORRAR
   .validacionPassword {
     display: flex;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 1.6em;
   }
-  #formLabel {
+  ///////////////////////////////// PARA BORRAR
+  .form-label {
     display: flex;
-    font-size: 2.2em;
-    padding-bottom: 8px;
+    font-size: 1.4em;
+    padding: 0.8em 0 0.4em;
+    text-transform: uppercase;
   }
+  .fecha-nacimiento{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .formField {
+      padding: 1.7rem 1rem;
+      margin-bottom: 2rem;
+    }
+    .fnacdia {
+      display: flex;
+      margin-right: 10px;
+      flex-grow: 1;
+      }
+    .fnacmes {
+      display: flex;
+      margin-right: 10px;
+      flex-grow: 3;
+      }
+    .fnacanio {
+      display: flex;
+      flex-grow: 1;
+      }
+    }
+  .telefono{
+    display: flex;
+    .tel-area {
+      flex-grow: 1;
+      margin-right: 10px;
+      }
+    .tel-nro {
+      flex-grow: 8;
+      }
+    }
   .file {
     display: flex;
     padding-bottom: 15px;
     width: 100%;
   }
-    display: flex;
-    flex-direction: column;
-    .formGroup {
-      display: block;
-    }
-    .fnac {
-      display: flex;
-      #fnacdia {
-        margin-right: 20px;
+  .formGroup {
+    display: block;
+  }
+  .formField {
+      width: 100%;
+      padding:1.7rem 1.7rem;
+      margin-bottom:2rem;
+      font-size:1.8em;
+      font-weight: $light;
+      border: 0px solid $gris-medio;
+      &.contacto {
+        border: 1px solid $gris-medio;
       }
-      #fnacmes {
-        margin-right: 20px;
+    }
+  ::placeholder{
+    color: $gris-claro;
+  }
+  .formBtn {
+    font-size:2em;
+    font-weight:$normal;
+    letter-spacing: $interletrado;
+    text-transform: uppercase;
+    border:none;
+    background:$verde-claro;
+    padding:1.5rem;
+    cursor:pointer;
+    color:$gris-oscuro;
+    transition: all 0.2s linear;
+    &:hover {
+        background:$gris-oscuro;
+        color:$verde-claro;
+    }
+    &.gris{
+      background:$gris-medio;
+      color: $blanco;
+      &:hover{
+        background: $gris-oscuro;
       }
     }
-
-    .formField {
-        width: 100%;
-        padding:1.7rem 1.7rem;
-        margin-bottom:2rem;
-        font-size:1.8em;
-        font-weight: $light;
-        border: 0px solid $gris-medio;
-        &.contacto {
-          border: 1px solid $gris-medio;
-        }
-    }
-    ::placeholder{
-      color: $gris-oscuro;
-    }
-    .formBtn {
-        font-size:2em;
-        font-weight:$normal;
-        letter-spacing: $interletrado;
-        text-transform: uppercase;
-        border:none;
-        background:$verde-claro;
-        padding:1.5rem 0;
-        cursor:pointer;
-        color:$gris-oscuro;
-        transition: all 0.2s linear;
-        &:hover {
-            background:$gris-oscuro;
-            color:$verde-claro;
-        }
-        &.gris{
-          background:$gris-medio;
-          color: $blanco;
-          &:hover{
-            background: $gris-oscuro;
-          }
-        }
-        &.verde{
-          background:$verde-oscuro;
-          color: $blanco;
-          &:hover{
-            background: $verde-oscuro;
-          }
-        }
-    }
-    #inputPassword {
-      margin-bottom: 0;
-    }
+    &.verde{
+      background:$verde-oscuro;
+      color: $blanco;
+      &:hover{
+        background: $verde-oscuro;
+      }
+     }
+   }
+    // #inputPassword {
+    //   margin-bottom: 0;
+    // }
 }
 input[type=checkbox] {
     visibility: hidden;
