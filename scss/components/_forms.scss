@@ -78,7 +78,6 @@
     }
 
   }
-
   .form-error {
     display: flex;
     justify-content: stretch;
@@ -86,9 +85,10 @@
     p {
       display:flex;
       flex-grow: 1;
-      font-size: 1.6em;
+      font-size: 1.5em;
       color: red;
       margin-top: 0px;
+      text-align: left;
     }
     &:after{
       font-family: "Font Awesome 5 Free";
@@ -157,7 +157,8 @@ input[type=checkbox] {
         select{
           background:$blanco;
           margin-right: 1.8rem;
-          }
+          flex-grow: 1;
+        }
         }
       }  
     &-item{

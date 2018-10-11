@@ -244,9 +244,10 @@ ul {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    font-size: 1.6em;
+    font-size: 1.5em;
     color: red;
-    margin-top: 0px; }
+    margin-top: 0px;
+    text-align: left; }
   .form .form-error:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -330,7 +331,10 @@ ul {
       justify-content: space-between; }
       .form-group-row select {
         background: #fff;
-        margin-right: 1.8rem; }
+        margin-right: 1.8rem;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1; }
   .form-item {
     display: -webkit-box;
     display: -ms-flexbox;

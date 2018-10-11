@@ -38,9 +38,10 @@ if ($_POST) {
             <div class="form-item">
               <label for="inputPassword" class="form-label">Contraseña *</label>
               <input type="password" id="inputPassword" name="password" class="form-field" value="" required>
+              <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
+
             </div>
 
-            <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
 
           <!-- RECORDAR EMAIL -->
             <div class="form-checkbox">
