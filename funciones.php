@@ -140,7 +140,8 @@ function logearUsuario($datosLogin){
         header("Location:mi-cuenta.php");
         break;
       }
+    }else{ 
+      return "Usuario inexistente o contraseña inválida";
     }
   }
-  return "Los datos ingresados no son correctos";
 }

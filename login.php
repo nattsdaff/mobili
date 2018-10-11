@@ -25,19 +25,22 @@ if ($_POST) {
           <h2 class="alt-title">Ingresar</h2>
           <p class="login-info">¿Tenés cuenta? Ingresá ahora.</p>
           <form action="#" method="post">
+
             <!-- EMAIL -->
             <div class="form-item">
               <label for="email" class="form-label">Email *</label>
-              <input type="text" id="email" class="form-field" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" required placeholder= <?php echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : ""; ?>
+              <input type="text" id="email" class="form-field" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" required placeholder= <?php
+                echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : "";
+                ?>
               >
-              <?php echo (isset($errores["email"]))?'<div class="form-error"><p>'.$errores["email"].'</p></div>':""; ?>
             </div>
             <!-- CONTRASEÑA -->
             <div class="form-item">
               <label for="inputPassword" class="form-label">Contraseña *</label>
               <input type="password" id="inputPassword" name="password" class="form-field" value="" required>
-              <?php echo (isset($errores["password"]))?'<div class="form-error"><p>'.$errores["password"].'</p></div>':""; ?>
             </div>
+
+            <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
 
           <!-- RECORDAR EMAIL -->
             <div class="form-checkbox">
