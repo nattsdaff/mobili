@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
+  header("Location: index.php");
+}
 require('funciones.php');
 // ONLY FOR TESTING SI LA SESSION ESTA CERRADA LUEGO DEL LOGOUT.
 // ---- SIEMPR COMENTADO EN PRODUCCION ---- PORQUE SI NO, TIRA ERROR DE HEADERS
@@ -42,7 +45,7 @@ if ($_POST) {
               <label for="checkbox"><p>Recordarme</p></label>
             </div>
 
-            <div><input type="submit" value="Enviar" class="formBtn gris"></div>
+            <div><input type="submit" value="Enviar" class="submit-btn gris"></div>
           </form>
         </div>
 
