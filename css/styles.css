@@ -131,7 +131,71 @@ ul {
   .slider img {
     height: 520px; } }
 
-form .form-error {
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .form-group.nacimiento {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .form-group.nacimiento .dia {
+      margin-right: 1.8rem; }
+    .form-group.nacimiento .mes {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-right: 1.8rem;
+      -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+      flex-grow: 3; }
+    .form-group.nacimiento .anio {
+      margin-right: 0; }
+
+.form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 2rem; }
+
+.form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.7rem 1rem;
+  font-size: 1.8em;
+  font-weight: 300;
+  border: 0px solid #707070; }
+  .form-field.contacto {
+    border: 1px solid #707070; }
+
+.form-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.4em;
+  padding: 1em 0 0.4em;
+  text-transform: uppercase; }
+
+.form .form-error {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,7 +203,7 @@ form .form-error {
   -ms-flex-pack: stretch;
   justify-content: stretch;
   border-top: 1px solid red; }
-  form .form-error p {
+  .form .form-error p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -149,7 +213,7 @@ form .form-error {
     font-size: 1.6em;
     color: red;
     margin-top: 0px; }
-  form .form-error:after {
+  .form .form-error:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f071";
@@ -157,26 +221,7 @@ form .form-error {
     font-size: 1.3em;
     margin-top: 0.9rem; }
 
-form #errorImagen {
-  margin-top: -50px; }
-
-form .validacionPassword {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.6em; }
-
-form .form-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.4em;
-  padding: 1em 0 0.4em;
-  text-transform: uppercase; }
-
-form .form-nombre {
+.form .form-nombre {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,7 +233,7 @@ form .form-nombre {
   -ms-flex-pack: center;
   justify-content: center; }
 
-form .form-nacimiento {
+.form .form-nacimiento {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,9 +244,7 @@ form .form-nacimiento {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  form .form-nacimiento .formField {
-    padding: 1.7rem 1rem; }
-  form .form-nacimiento .fnacdia {
+  .form .form-nacimiento .fnacdia {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -209,7 +252,7 @@ form .form-nacimiento {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
-  form .form-nacimiento .fnacmes {
+  .form .form-nacimiento .fnacmes {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -217,7 +260,7 @@ form .form-nacimiento {
     -webkit-box-flex: 3;
     -ms-flex-positive: 3;
     flex-grow: 3; }
-  form .form-nacimiento .fnacanio {
+  .form .form-nacimiento .fnacanio {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -225,53 +268,40 @@ form .form-nacimiento {
     -ms-flex-positive: 1;
     flex-grow: 1; }
 
-form .form-telefono {
+.form .form-telefono {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  form .form-telefono .tel-area {
+  .form .form-telefono .tel-area {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
     margin-right: 10px; }
-  form .form-telefono .tel-nro {
+  .form .form-telefono .tel-nro {
     -webkit-box-flex: 8;
     -ms-flex-positive: 8;
     flex-grow: 8; }
 
-form .file {
+.form .file {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 2rem;
   font-size: 1.4em; }
 
-form .formGroup {
-  display: block;
-  margin-bottom: 2rem; }
-
-form .formField {
-  width: 100%;
-  padding: 1.7rem 1.7rem;
-  font-size: 1.8em;
-  font-weight: 300;
-  border: 0px solid #707070; }
-  form .formField.contacto {
-    border: 1px solid #707070; }
-
-form ::-webkit-input-placeholder {
+.form ::-webkit-input-placeholder {
   color: #F4F4F4; }
 
-form :-ms-input-placeholder {
+.form :-ms-input-placeholder {
   color: #F4F4F4; }
 
-form ::-ms-input-placeholder {
+.form ::-ms-input-placeholder {
   color: #F4F4F4; }
 
-form ::placeholder {
+.form ::placeholder {
   color: #F4F4F4; }
 
-form .formBtn {
+.form .formBtn {
   width: 100%;
   font-size: 2em;
   font-weight: 400;
@@ -285,27 +315,21 @@ form .formBtn {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear; }
-  form .formBtn:hover {
+  .form .formBtn:hover {
     background: #413F3D;
     color: #B1D398; }
-  form .formBtn.gris {
+  .form .formBtn.gris {
     background: #707070;
     color: #fff; }
-    form .formBtn.gris:hover {
+    .form .formBtn.gris:hover {
       background: #413F3D; }
-  form .formBtn.verde {
+  .form .formBtn.verde {
     background: #73A84D;
     color: #fff; }
-    form .formBtn.verde:hover {
+    .form .formBtn.verde:hover {
       background: #73A84D; }
 
-form input {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0; }
-
-form input[type=checkbox] {
+.form input[type=checkbox] {
   visibility: hidden; }
 
 .submitBtn {
