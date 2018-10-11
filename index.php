@@ -4,9 +4,9 @@
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-<?php require("part-head.php"); ?>
+<?php require("inc/head.php"); ?>
 <body>
-    <?php require("part-header.php"); ?>
+    <?php require("inc/header.php"); ?>
 
     <!--MAIN SLIDER-->
     <section class="slider">
@@ -110,18 +110,9 @@
       </a>
     </section>
     <!--/TUS AMBIENTES-->
-    <section class="newsletter">
-        <div class="container">
-            <h3 class="alt-title">Suscribite al newsletter</h3>
-            <p class="newsletter-info">Recibí nuestras ofertas y novedades directamente en tu e-mail.</p>
-            <form action="#" method="post">
-                <input type="email" name="email" placeholder="Ingrese su e-mail" required class="formField">
-                <input type="submit" value="Enviar" class="formBtn">
-            </form>
-        </div>
-    </section>
-    <?php require ("part-footer.php"); ?>
-    <?php require ("part-scripts.php"); ?>
+    <?php require ('inc/newsletter.php'); ?>
+    <?php require ("inc/footer.php"); ?>
+    <?php require ("inc/scripts.php"); ?>
 
 </body>
 </html>

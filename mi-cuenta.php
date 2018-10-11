@@ -4,9 +4,9 @@ require 'funciones.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-<?php require("part-head.php"); ?>
+<?php require("inc/head.php"); ?>
   <body>
-    <?php require 'part-header.php'; ?>
+    <?php require("inc/header.php") ?>
     <section class="micuenta">
       <div class="container">
         <h2 class="alt-title">MI CUENTA</h2>
@@ -20,11 +20,11 @@ require 'funciones.php';
     <?php } ?>
         <div class="container-cuenta">
         </div>
-        <a href="modificar-usuario.php" class="submitBtn gris">Modificar mis datos</a><br>
-        <a href="logout.php" class="submitBtn verde-claro">Salir</a><br>
+        <a href="modificar-usuario.php" class="submit-btn gris">Modificar mis datos</a><br>
+        <a href="logout.php" class="submit-btn verde-claro">Salir</a><br>
       </div>
     </section>
-    <?php require("part-footer.php"); ?>
-    <?php require("part-scripts.php"); ?>
+    <?php require("inc/footer.php"); ?>
+    <?php require("inc/scripts.php") ?>
   </body>
 </html>

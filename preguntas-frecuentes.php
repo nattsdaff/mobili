@@ -5,9 +5,9 @@
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-<?php require("part-head.php"); ?>
+<?php require("inc/head.php"); ?>
 <body>
-    <?php require ("part-header.php"); ?>
+    <?php require ("inc/header.php"); ?>
 
     <section class="preguntas-frecuentes">
         <div class="container">
@@ -36,13 +36,13 @@
             <p class="newsletter-info">Recibí nuestras ofertas y novedades directamente en tu e-mail.</p>
             <form action="#" method="post">
                 <input type="email" name="email" placeholder="Ingrese su e-mail" required class="formField">
-                <input type="submit" value="Enviar" class="formBtn">
+                <input type="submit" value="Enviar" class="submit-btn">
             </form>
         </div>
     </section>
 
-    <?php require ("part-footer.php"); ?>
-    <?php require ("part-scripts.php"); ?>
+    <?php require ("inc/footer.php"); ?>
+    <?php require ("inc/scripts.php"); ?>
 </body>
 
 </html>

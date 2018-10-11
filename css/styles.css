@@ -142,7 +142,7 @@ ul {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
-  .form-group.nacimiento {
+  .form-group-row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -153,18 +153,9 @@ ul {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
-    .form-group.nacimiento .dia {
+    .form-group-row select {
+      background: #fff;
       margin-right: 1.8rem; }
-    .form-group.nacimiento .mes {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      margin-right: 1.8rem;
-      -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-      flex-grow: 3; }
-    .form-group.nacimiento .anio {
-      margin-right: 0; }
 
 .form-item {
   display: -webkit-box;
@@ -174,12 +165,18 @@ ul {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
 
 .form-field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   padding: 1.7rem 1rem;
   font-size: 1.8em;
   font-weight: 300;
@@ -194,6 +191,46 @@ ul {
   font-size: 1.4em;
   padding: 1em 0 0.4em;
   text-transform: uppercase; }
+
+.form-checkbox {
+  width: 25px;
+  margin: 20px 0;
+  position: relative; }
+  .form-checkbox input[type=checkbox]:checked + label:after {
+    opacity: 1;
+    border-color: #73A84D; }
+  .form-checkbox label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #fff; }
+    .form-checkbox label:after {
+      /* El estado normal de la caja sin click */
+      opacity: 0;
+      content: '';
+      position: absolute;
+      width: 9px;
+      height: 5px;
+      background: transparent;
+      top: 6px;
+      left: 7px;
+      border: 3px solid #707070;
+      border-top: none;
+      border-right: none;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transition: all 0.15s linear;
+      -o-transition: all 0.15s linear;
+      transition: all 0.15s linear; }
+    .form-checkbox label:hover::after {
+      opacity: 0.3;
+      /* le puse un opacity más sutil y una transition arriba para que no sea tan duro el hover. */ }
+    .form-checkbox label p {
+      margin: 0 2em; }
 
 .form .form-error {
   display: -webkit-box;
@@ -221,67 +258,6 @@ ul {
     font-size: 1.3em;
     margin-top: 0.9rem; }
 
-.form .form-nombre {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.form .form-nacimiento {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-  .form .form-nacimiento .fnacdia {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: 10px;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1; }
-  .form .form-nacimiento .fnacmes {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-right: 10px;
-    -webkit-box-flex: 3;
-    -ms-flex-positive: 3;
-    flex-grow: 3; }
-  .form .form-nacimiento .fnacanio {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1; }
-
-.form .form-telefono {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .form .form-telefono .tel-area {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    margin-right: 10px; }
-  .form .form-telefono .tel-nro {
-    -webkit-box-flex: 8;
-    -ms-flex-positive: 8;
-    flex-grow: 8; }
-
 .form .file {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -290,49 +266,18 @@ ul {
   font-size: 1.4em; }
 
 .form ::-webkit-input-placeholder {
-  color: #F4F4F4; }
+  color: #EDEDED; }
 
 .form :-ms-input-placeholder {
-  color: #F4F4F4; }
+  color: #EDEDED; }
 
 .form ::-ms-input-placeholder {
-  color: #F4F4F4; }
+  color: #EDEDED; }
 
 .form ::placeholder {
-  color: #F4F4F4; }
+  color: #EDEDED; }
 
-.form .formBtn {
-  width: 100%;
-  font-size: 2em;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: none;
-  background: #B1D398;
-  padding: 1.5rem;
-  cursor: pointer;
-  color: #413F3D;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear; }
-  .form .formBtn:hover {
-    background: #413F3D;
-    color: #B1D398; }
-  .form .formBtn.gris {
-    background: #707070;
-    color: #fff; }
-    .form .formBtn.gris:hover {
-      background: #413F3D; }
-  .form .formBtn.verde {
-    background: #73A84D;
-    color: #fff; }
-    .form .formBtn.verde:hover {
-      background: #73A84D; }
-
-.form input[type=checkbox] {
-  visibility: hidden; }
-
-.submitBtn {
+.submit-btn {
   font-size: 2em;
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -347,22 +292,24 @@ ul {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   display: block; }
-  .submitBtn:hover {
+  .submit-btn:hover {
     background: #413F3D;
     color: #B1D398; }
-  .submitBtn.gris {
+  .submit-btn.gris {
     background: #707070;
     color: #fff; }
-    .submitBtn.gris:hover {
+    .submit-btn.gris:hover {
       background: #413F3D; }
-  .submitBtn.verde {
+  .submit-btn.verde {
     background: #73A84D;
     color: #fff; }
-    .submitBtn.verde:hover {
+    .submit-btn.verde:hover {
       background: #73A84D; }
+  .submit-btn input[type=checkbox] {
+    visibility: hidden; }
 
-@media all and (min-width: 991px) {
-  form .form-nombre {
+@media all and (min-width: 768px) {
+  .form-group {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -373,46 +320,33 @@ ul {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    form .form-nombre .formGroup {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1; }
-      form .form-nombre .formGroup:first-child {
-        margin-right: 2rem; }
-  form .form-contrasena {
+    .form-group-row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .form-group-row select {
+        background: #fff;
+        margin-right: 1.8rem; }
+  .form-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    form .form-contrasena .formGroup {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1; }
-      form .form-contrasena .formGroup:first-child {
-        margin-right: 2rem; }
-  form .form-login {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    form .form-login .formGroup {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1; }
-      form .form-login .formGroup:first-child {
-        margin-right: 2rem; } }
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; } }
 
 /* LAYOUT */
 footer {
@@ -549,7 +483,7 @@ footer {
     width: 100%;
     padding: 0 1.5rem;
     z-index: 99;
-    border-top: 1px solid #F4F4F4; }
+    border-top: 1px solid #EDEDED; }
     #mainNav .menu.mobile {
       display: none; }
     #mainNav .menu ul li {
@@ -708,9 +642,11 @@ footer {
 
 /* PAGES */
 .newsletter {
-  background: #F4F4F4;
-  text-align: center;
-  padding: 3rem 2rem 4rem; }
+  background: #EDEDED;
+  text-align: center; }
+  .newsletter .container {
+    background: #EDEDED;
+    padding: 2rem; }
   .newsletter-info {
     margin-top: 0;
     font-weight: 100; }
@@ -843,7 +779,7 @@ footer {
     .features-title {
       margin-top: 2rem; } }
 
-.register {
+.register, .login {
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -852,115 +788,39 @@ footer {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column; }
-  .register .container {
+  .register .container, .login .container {
     background: #fff;
     padding: 0rem;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
-    .register .container a {
+    .register .container a, .login .container a {
       font-size: 1em;
       color: #73A84D; }
-      .register .container a:hover {
+      .register .container a:hover, .login .container a:hover {
         color: #413F3D; }
-    .register .container-checkbox {
-      width: 25px;
-      margin: 20px 0;
-      position: relative; }
-      .register .container-checkbox input[type=checkbox]:checked + label:after {
-        opacity: 1;
-        border-color: #73A84D; }
-      .register .container-checkbox label {
-        cursor: pointer;
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        top: 0;
-        left: 0;
-        background: #fff; }
-        .register .container-checkbox label:after {
-          /* El estado normal de la caja sin click */
-          opacity: 0;
-          content: '';
-          position: absolute;
-          width: 9px;
-          height: 5px;
-          background: transparent;
-          top: 6px;
-          left: 7px;
-          border: 3px solid #707070;
-          border-top: none;
-          border-right: none;
-          -webkit-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-          -webkit-transition: all 0.15s linear;
-          -o-transition: all 0.15s linear;
-          transition: all 0.15s linear; }
-        .register .container-checkbox label:hover::after {
-          opacity: 0.3;
-          /* le puse un opacity más sutil y una transition arriba para que no sea tan duro el hover. */ }
-        .register .container-checkbox label p {
-          margin: 0 2em; }
-    .register .container-form {
+    .register .container-form, .login .container-form {
       padding: 2rem;
-      background: #F4F4F4; }
-    .register .container-forgot {
+      background: #EDEDED; }
+    .register .container-forgot, .login .container-forgot {
       background: #fff; }
-    .register .container.aside {
+    .register .container.aside, .login .container.aside {
       background: #fff;
       font-size: 1em;
       -webkit-box-flex: 1;
       -ms-flex-positive: 1;
       flex-grow: 1;
       padding: 2em; }
-      .register .container.aside p {
+      .register .container.aside p, .login .container.aside p {
         margin-top: 1rem;
         margin-top: 0.5rem;
         margin-bottom: 0.5rem; }
-  .register .error {
+  .register .error, .login .error {
     margin-bottom: 0; }
 
 @media only screen and (min-width: 768px) {
-  .register {
+  .register, .login {
     text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 6rem 8rem; }
-    .register .container {
-      background: #fff;
-      padding: 0rem;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1; }
-      .register .container a {
-        font-size: 1em;
-        color: #73A84D; }
-      .register .container-form {
-        padding: 2rem;
-        background: #F4F4F4; }
-      .register .container-forgot {
-        background: #fff; }
-      .register .container.aside {
-        background: #fff;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        padding: 2em; }
-        .register .container.aside p {
-          margin-top: 1rem;
-          margin-top: 0.5rem;
-          margin-bottom: 0.5rem; } }
-
-@media only screen and (min-width: 992px) {
-  .register {
-    text-align: center;
-    padding: 3rem 14rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -970,7 +830,8 @@ footer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    .register .container {
+    .register .container, .login .container {
+      max-width: 60%;
       background: #fff;
       padding: 0rem;
       -webkit-box-flex: 1;
@@ -979,178 +840,24 @@ footer {
       width: 100%;
       -ms-flex-flow: wrap;
       flex-flow: wrap; }
-      .register .container.aside {
+      .register .container.aside, .login .container.aside {
         background: #fff;
         font-size: 1.3em;
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1; }
-        .register .container.aside p {
+        .register .container.aside p, .login .container.aside p {
           font-size: 1.4em; }
-      .register .container a {
+      .register .container a, .login .container a {
         font-size: 1em;
         color: #73A84D; }
-      .register .container-form {
+      .register .container-form, .login .container-form {
         padding: 2rem;
-        background: #F4F4F4; }
-      .register .container-forgot {
+        background: #EDEDED;
+        margin: 4rem 0; }
+      .register .container-forgot, .login .container-forgot {
         background: #fff; }
-        .register .container-forgot a {
-          font-size: 0.9em; } }
-
-.login {
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  .login .container {
-    background: #fff;
-    padding: 0rem;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1; }
-    .login .container a {
-      font-size: 1em;
-      color: #73A84D; }
-      .login .container a:hover {
-        color: #413F3D; }
-    .login .container-checkbox {
-      width: 25px;
-      margin: 20px 0;
-      position: relative; }
-      .login .container-checkbox input[type=checkbox]:checked + label:after {
-        opacity: 1;
-        border-color: #73A84D; }
-      .login .container-checkbox label {
-        cursor: pointer;
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        top: 0;
-        left: 0;
-        background: #fff; }
-        .login .container-checkbox label:after {
-          /* El estado normal de la caja sin click */
-          opacity: 0;
-          content: '';
-          position: absolute;
-          width: 9px;
-          height: 5px;
-          background: transparent;
-          top: 6px;
-          left: 7px;
-          border: 3px solid #707070;
-          border-top: none;
-          border-right: none;
-          -webkit-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-          -webkit-transition: all 0.15s linear;
-          -o-transition: all 0.15s linear;
-          transition: all 0.15s linear; }
-        .login .container-checkbox label:hover::after {
-          opacity: 0.3;
-          /* le puse un opacity más sutil y una transition arriba para que no sea tan duro el hover. */ }
-        .login .container-checkbox label p {
-          margin: 0 2em; }
-    .login .container-form {
-      padding: 2rem;
-      background: #F4F4F4; }
-    .login .container-forgot {
-      background: #fff; }
-    .login .container.aside {
-      background: #fff;
-      font-size: 1em;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      padding: 2em; }
-      .login .container.aside p {
-        margin-top: 1rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem; }
-  .login .error {
-    margin-bottom: 0; }
-
-@media only screen and (min-width: 768px) {
-  .login {
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 6rem 8rem; }
-    .login .container {
-      background: #fff;
-      padding: 0rem;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1; }
-      .login .container a {
-        font-size: 1em;
-        color: #73A84D; }
-      .login .container-form {
-        padding: 2rem;
-        background: #F4F4F4; }
-      .login .container-forgot {
-        background: #fff; }
-      .login .container.aside {
-        background: #fff;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        padding: 2em; }
-        .login .container.aside p {
-          margin-top: 1rem;
-          margin-top: 0.5rem;
-          margin-bottom: 0.5rem; } }
-
-@media only screen and (min-width: 992px) {
-  .login {
-    text-align: center;
-    padding: 3rem 14rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .login .container {
-      background: #fff;
-      padding: 0rem;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      width: 100%;
-      -ms-flex-flow: wrap;
-      flex-flow: wrap; }
-      .login .container.aside {
-        background: #fff;
-        font-size: 1.3em;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1; }
-        .login .container.aside p {
-          font-size: 1.4em; }
-      .login .container a {
-        font-size: 1em;
-        color: #73A84D; }
-      .login .container-form {
-        padding: 2rem;
-        background: #F4F4F4; }
-      .login .container-forgot {
-        background: #fff; }
-        .login .container-forgot a {
+        .register .container-forgot a, .login .container-forgot a {
           font-size: 0.9em; } }
 
 .exito {
@@ -1164,7 +871,7 @@ footer {
   flex-direction: column; }
   .exito .container {
     padding: 4rem 2rem;
-    background: #F4F4F4;
+    background: #EDEDED;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }

@@ -1,17 +1,1 @@
-{
-    "usuarios": [
-        {
-            "email": "nattsdaff@gmail.com",
-            "nombre": "natalia",
-            "apellido": "daff",
-            "password": "$2y$10$1YfqbvPYokvB.x1nSoAGNeQLeW55LsOZM9P3ynoTwnr3pCT0DuSC2",
-            "fnacdia": "1",
-            "fnacmes": "1",
-            "fnacanio": "1903",
-            "telcod": "0",
-            "telefono": "0",
-            "dni": "0",
-            "avatar": "assets/uploads/usuarios/0/713801735bd6e2abb774d997a8a06c21.jpg"
-        }
-    ]
-}
+{"usuarios":[{"email":"nattsdaff@gmail.com","nombre":"natalia","apellido":"daff","password":"$2y$10$wroG8sA9q2psT9SIafi4XOCsD9m.1sjmmrS1.yoIZbiBReXN8PZIa","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":"","avatar":"assets\/uploads\/usuarios\/0\/713801735bd6e2abb774d997a8a06c21.jpg"}]}

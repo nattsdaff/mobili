@@ -1,3 +1,4 @@
+<!--FOOTER-->
 <footer>
     <div class="altMenu">
         <img src="img/logo-white.png" alt="Mobili Logo">
@@ -13,3 +14,4 @@
         <p>2018&copy; Todos los derechos reservados.</p>
     </div>
 </footer>
+<!--END OF FOOTER-->
