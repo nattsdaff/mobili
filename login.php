@@ -19,20 +19,27 @@ if ($_POST) {
     <section class="login">
       <div class="container">
         <div class="container-form">
+          <h2 class="alt-title">Ingresar</h2>
+          <p class="login-info">¿Tenés cuenta? Ingresá ahora.</p>
           <form action="#" method="post">
-            <h2 class="alt-title">Ingresar</h2>
-            <p class="login-info">¿Tenés cuenta? Ingresá ahora.</p>
-            <input type="text" name="email" value="" placeholder=
-            <?php
-              echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : "Dirección e-mail";
-              ?>
-              required class="formField">
-            <input type="password" name="password" value="" placeholder="Contraseña" required class="formField">
-            <?php if (!empty($error)) { ?>
-              <p class="error"><?php echo $error; ?></p>
-            <?php } ?>
-            <input type="submit" value="Enviar" class="formBtn gris">
 
+            <div class="form-login">
+              <!-- EMAIL -->
+              <div class="formGroup">
+                <label for="email" class="form-label">Email *</label>
+                <input type="text" id="email" class="formField" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" required placeholder= <?php echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : ""; ?>
+                >
+                <?php echo (isset($errores["email"]))?'<div class="form-error"><p>'.$errores["email"].'</p></div>':""; ?>
+              </div>
+              <!-- CONTRASEÑA -->
+              <div class="formGroup">
+                <label for="inputPassword" class="form-label">Contraseña *</label>
+                <input type="password" id="inputPassword" name="password" class="formField" value="" required placeholder="Al menos 6 caracteres">
+                <?php echo (isset($errores["password"]))?'<div class="form-error"><p>'.$errores["password"].'</p></div>':""; ?>
+              </div>
+            </div>
+
+          <!-- RECORDAR EMAIL -->
             <div class="container-checkbox">
               <input type="checkbox" name="recordar" value="true" id="checkbox" class="formCheckbox">
               <label for="checkbox"><p>Recordarme</p></label>

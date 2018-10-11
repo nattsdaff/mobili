@@ -1,4 +1,4 @@
-.login{
+.register{
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -81,7 +81,7 @@
 }
 
 @media only screen and (min-width:768px){
-  .login{
+  .register{
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -115,7 +115,7 @@
   }
 }
 @media only screen and (min-width:992px){
-  .login{
+  .register{
     text-align: center;
     padding: 3rem 14rem;
     display: flex;

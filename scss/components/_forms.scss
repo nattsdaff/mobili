@@ -1,9 +1,23 @@
 form {
-  .error {
+  .form-error {
     display: flex;
-    font-size: 1.7em;
-    color: red;
-    margin-top: -20px;
+    justify-content: stretch;
+    border-top: 1px solid red;
+    p {
+      display:flex;
+      flex-grow: 1;
+      font-size: 1.6em;
+      color: red;
+      margin-top: 0px;
+    }
+    &:after{
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f071";
+      color: red;
+      font-size: 1.3em;
+      margin-top: 0.9rem;
+    }
   }
   #errorImagen {
     margin-top: -50px;
@@ -19,16 +33,25 @@ form {
   .form-label {
     display: flex;
     font-size: 1.4em;
-    padding: 0.8em 0 0.4em;
+    padding: 1em 0 0.4em;
     text-transform: uppercase;
   }
-  .fecha-nacimiento{
+  .form-nombre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .formGroup {
+      // padding: 1.7rem 1rem;
+      // margin-bottom: 2rem;
+      }
+    }
+  .form-nacimiento{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     .formField {
       padding: 1.7rem 1rem;
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
     }
     .fnacdia {
       display: flex;
@@ -45,7 +68,7 @@ form {
       flex-grow: 1;
       }
     }
-  .telefono{
+  .form-telefono{
     display: flex;
     .tel-area {
       flex-grow: 1;
@@ -57,16 +80,17 @@ form {
     }
   .file {
     display: flex;
-    padding-bottom: 15px;
-    width: 100%;
+    margin-bottom: 2rem; 
+    font-size: 1.4em;
   }
   .formGroup {
     display: block;
+      margin-bottom: 2rem;
   }
   .formField {
       width: 100%;
       padding:1.7rem 1.7rem;
-      margin-bottom:2rem;
+      // margin-bottom:2rem;
       font-size:1.8em;
       font-weight: $light;
       border: 0px solid $gris-medio;
@@ -78,6 +102,7 @@ form {
     color: $gris-claro;
   }
   .formBtn {
+    width: 100%;
     font-size:2em;
     font-weight:$normal;
     letter-spacing: $interletrado;
@@ -107,19 +132,23 @@ form {
       }
      }
    }
-    // #inputPassword {
-    //   margin-bottom: 0;
-    // }
-}
-input[type=checkbox] {
-    visibility: hidden;
-}
+    input{
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+    input[type=checkbox] {
+        visibility: hidden;
+    }
+  }
 .submitBtn{
   font-size:2em;
   font-weight:$normal;
   letter-spacing: $interletrado;
   text-transform: uppercase;
   border:none;
+  width: 100%;
   background:$verde-claro;
   padding:1.5rem;
   cursor:pointer;
@@ -142,6 +171,44 @@ input[type=checkbox] {
     color: $blanco;
     &:hover{
       background: $verde-oscuro;
+    }
+  }
+}
+
+@media all and (min-width:991px){
+  form {
+    .form-nombre{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .formGroup {
+        flex-grow: 1;
+        &:first-child{
+          margin-right: 2rem;
+         }
+        }
+      }
+    .form-contrasena{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .formGroup {
+        flex-grow: 1;
+        &:first-child{
+          margin-right: 2rem;
+          }
+        }
+      }
+    .form-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .formGroup {
+      flex-grow: 1;
+      &:first-child{
+        margin-right: 2rem;
+       }
+      }
     }
   }
 }
