@@ -32,7 +32,7 @@ if ($_POST) {
             <!-- CONTRASEÑA -->
             <div class="form-item">
               <label for="inputPassword" class="form-label">Contraseña *</label>
-              <input type="password" id="inputPassword" name="password" class="form-field" value="" required placeholder="Al menos 6 caracteres">
+              <input type="password" id="inputPassword" name="password" class="form-field" value="" required>
               <?php echo (isset($errores["password"]))?'<div class="form-error"><p>'.$errores["password"].'</p></div>':""; ?>
             </div>
 
@@ -42,7 +42,7 @@ if ($_POST) {
               <label for="checkbox"><p>Recordarme</p></label>
             </div>
 
-            <div><input type="submit" value="Enviar" class="submit-btn verde"></div>
+            <div><input type="submit" value="Enviar" class="formBtn gris"></div>
           </form>
         </div>
 
