@@ -150,6 +150,10 @@ input[type=checkbox] {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      .form-item:first-child{
+        margin-right:2rem;
+      }
+
       &-row{
         display: flex;
         flex-direction: row;
@@ -158,14 +162,16 @@ input[type=checkbox] {
           background:$blanco;
           margin-right: 1.8rem;
           flex-grow: 1;
-        }
+          &:last-child{
+            margin-right: 0rem;
+          }  
+          }
         }
       }  
     &-item{
       display: flex;
       flex-direction: column;
       margin-bottom: 2rem;
-      margin-right: 2rem;
       flex-grow: 1;
     }
   }  

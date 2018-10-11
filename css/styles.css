@@ -318,6 +318,8 @@ ul {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
+    .form-group .form-item:first-child {
+      margin-right: 2rem; }
     .form-group-row {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -335,6 +337,8 @@ ul {
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1; }
+        .form-group-row select:last-child {
+          margin-right: 0rem; }
   .form-item {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -344,7 +348,6 @@ ul {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-bottom: 2rem;
-    margin-right: 2rem;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; } }
