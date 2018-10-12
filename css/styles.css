@@ -138,10 +138,7 @@ ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  flex-direction: column; }
   .form-group-row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -149,13 +146,24 @@ ul {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-    .form-group-row select {
-      background: #fff;
-      margin-right: 1.8rem; }
+    flex-direction: row; }
+    .form-group-row .codigo {
+      margin-right: 2rem;
+      -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0; }
+    .form-group-row .numero {
+      -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+      flex-grow: 4; }
+  .form-group select {
+    background: #fff;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-right: 2rem; }
+    .form-group select:last-child {
+      margin-right: 0; }
 
 .form-item {
   display: -webkit-box;
@@ -164,30 +172,56 @@ ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1; }
+  flex-direction: column; }
+  .form-item .form-error {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
+    border-top: 1px solid red;
+    margin-top: -2rem; }
+    .form-item .form-error p {
+      font-size: 1.5em;
+      color: red;
+      margin-top: 0px;
+      text-align: left;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+    .form-item .form-error:after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f071";
+      color: red;
+      font-size: 1.3em;
+      margin-top: 0.9rem; }
+  .form-item .file {
+    margin-bottom: 2rem;
+    font-size: 1.4em; }
+  .form-item ::-webkit-input-placeholder {
+    color: #F2F2F2; }
+  .form-item :-ms-input-placeholder {
+    color: #F2F2F2; }
+  .form-item ::-ms-input-placeholder {
+    color: #F2F2F2; }
+  .form-item ::placeholder {
+    color: #F2F2F2; }
+
+.form-label {
+  font-size: 1.4em;
+  padding: 1em 0 0.4em;
+  text-transform: uppercase;
+  text-align: left; }
 
 .form-field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding: 1.7rem 1rem;
   font-size: 1.8em;
   font-weight: 300;
-  border: 0px solid #707070; }
-  .form-field.contacto {
-    border: 1px solid #707070; }
-
-.form-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.4em;
-  padding: 1em 0 0.4em;
-  text-transform: uppercase; }
+  border: 0px solid #707070;
+  margin-bottom: 2rem;
+  width: 100%; }
 
 .form-checkbox {
   width: 25px;
@@ -229,52 +263,6 @@ ul {
     .form-checkbox label p {
       margin: 0 2em; }
 
-.form .form-error {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: stretch;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
-  border-top: 1px solid red; }
-  .form .form-error p {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    font-size: 1.5em;
-    color: red;
-    margin-top: 0px;
-    text-align: left; }
-  .form .form-error:after {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f071";
-    color: red;
-    font-size: 1.3em;
-    margin-top: 0.9rem; }
-
-.form .file {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 2rem;
-  font-size: 1.4em; }
-
-.form ::-webkit-input-placeholder {
-  color: #F2F2F2; }
-
-.form :-ms-input-placeholder {
-  color: #F2F2F2; }
-
-.form ::-ms-input-placeholder {
-  color: #F2F2F2; }
-
-.form ::placeholder {
-  color: #F2F2F2; }
-
 .submit-btn {
   font-size: 2em;
   font-weight: 400;
@@ -305,52 +293,6 @@ ul {
       background: #73A84D; }
   .submit-btn input[type=checkbox] {
     visibility: hidden; }
-
-@media all and (min-width: 768px) {
-  .form-group {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    .form-group .form-item:first-child {
-      margin-right: 2rem; }
-    .form-group-row {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      .form-group-row select {
-        background: #fff;
-        margin-right: 1.8rem;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-        flex-grow: 1; }
-        .form-group-row select:last-child {
-          margin-right: 0rem; }
-  .form-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1; } }
 
 /* LAYOUT */
 footer {
@@ -804,7 +746,7 @@ footer {
       .register .container a:hover, .login .container a:hover {
         color: #413F3D; }
     .register .container-form, .login .container-form {
-      padding: 2rem;
+      padding: 4rem 2rem;
       background: #F2F2F2; }
     .register .container-forgot, .login .container-forgot {
       background: #fff; }
@@ -835,7 +777,7 @@ footer {
     -ms-flex-align: center;
     align-items: center; }
     .register .container, .login .container {
-      max-width: 60%;
+      max-width: 80%;
       background: #fff;
       padding: 0rem;
       -webkit-box-flex: 1;
@@ -863,6 +805,10 @@ footer {
         background: #fff; }
         .register .container-forgot a, .login .container-forgot a {
           font-size: 0.9em; } }
+
+@media all and (min-width: 991px) {
+  .register .container, .login .container {
+    max-width: 70%; } }
 
 .exito {
   text-align: center;

@@ -2,73 +2,38 @@
   &-group{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     &-row{
       display: flex;
       flex-direction: row;
-      .codigo{
-        margin-right: 2rem;
-        flex-grow: 0;
-        }
-      .numero{
-        flex-grow: 4;
+      justify-content: space-between;
+      select{
+        background:$blanco;
+        margin-right: 1.8rem;
         }
       }
-    select{
-      background:$blanco;
-      flex-grow: 1;
-      margin-right: 2rem;
-      &:last-child{
-        margin-right: 0;
-        }
-      }
-    }
+    }  
   &-item{
     display: flex;
     flex-direction: column;
-    // flex-grow: 1;
-    .form-error {
-      display: flex;
-      justify-content: stretch;
-      border-top: 1px solid red;
-      margin-top: -2rem;
-      p {
-        font-size: 1.5em;
-        color: red;
-        margin-top: 0px;
-        text-align: left;
-        flex: 1;
-      }
-      &:after{
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: "\f071";
-        color: red;
-        font-size: 1.3em;
-        margin-top: 0.9rem;
-      }
-    } 
-    .file {
-      margin-bottom: 2rem; 
-      font-size: 1.4em;
-    }
-    ::placeholder{
-      color: $gris-claro;
-    }
-
-  }
-  &-label {
-    font-size: 1.4em;
-    padding: 1em 0 0.4em;
-    text-transform: uppercase;
-    text-align: left;
+    margin-bottom: 2rem;
+    flex-grow: 1;
   }
   &-field{
+    display: flex;
     padding:1.7rem 1rem;
     font-size:1.8em;
     font-weight: $light;
     border: 0px solid $gris-medio;
-    margin-bottom: 2rem;
-    width: 100%;
+  &.contacto {
+      border: 1px solid $gris-medio;
+    }
+  }
+  &-label {
+    display: flex;
+    font-size: 1.4em;
+    padding: 1em 0 0.4em;
+    text-transform: uppercase;
   }
   &-checkbox{
     width: 25px;
@@ -113,7 +78,35 @@
     }
 
   }
-
+  .form-error {
+    display: flex;
+    justify-content: stretch;
+    border-top: 1px solid red;
+    p {
+      display:flex;
+      flex-grow: 1;
+      font-size: 1.5em;
+      color: red;
+      margin-top: 0px;
+      text-align: left;
+    }
+    &:after{
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f071";
+      color: red;
+      font-size: 1.3em;
+      margin-top: 0.9rem;
+    }
+  }
+  .file {
+    display: flex;
+    margin-bottom: 2rem; 
+    font-size: 1.4em;
+  }
+  ::placeholder{
+    color: $gris-claro;
+  }
 }
 
 .submit-btn{
@@ -151,6 +144,35 @@ input[type=checkbox] {
   visibility: hidden;
   }
 }
-@media all and (min-width:991px){
+@media all and (min-width:768px){
+  .form {
+    &-group{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .form-item:first-child{
+        margin-right:2rem;
+      }
 
+      &-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        select{
+          background:$blanco;
+          margin-right: 1.8rem;
+          flex-grow: 1;
+          &:last-child{
+            margin-right: 0rem;
+          }  
+          }
+        }
+      }  
+    &-item{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+  }  
 }

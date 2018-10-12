@@ -77,52 +77,53 @@ if ($_POST) {
             </div>
 
             <!-- FECHA DE NACIMIENTO -->
-            <label for="fnacdia" class="form-label">Fecha de nacimiento *</label>
-            <!-- DÍA -->
-            <div class="form-group-row">
-              <select class="form-field" name="fnacdia">
-                <?php for ($i=1; $i <= 31; $i++) {
-                  if (isset($dia)&&$dia==$i) {
-                    echo "<option selected value=$i>$i</option>";
-                  }else {
-                    echo "<option value=$i>$i</option>";
-                  }
-                } ?>
-              </select>
-              <!-- MES -->
-              <select class="form-field" name="fnacmes">
-                <?php for ($i=0; $i < count($meses); $i++) {
-                  if (isset($mes)&&$mes==($i+1)) {
-                      echo "<option selected value=".($i+1).">$meses[$i]</option>";
-                  }else {
-                      echo "<option value=".($i+1).">$meses[$i]</option>";
-                  }
-                } ?>
-              </select>
-              <!-- AÑO -->
-              <select class="form-field" name="fnacanio">
-                <?php for ($i=1903; $i < 2019; $i++) {
-                  if (isset($anio)&&$anio==$i) {
-                    echo "<option selected value=$i>$i</option>";
-                  }else {
-                    echo "<option value=$i>$i</option>";
-                  }
-                } ?>
-              </select>
+            <div class="form-group">
+              <label for="fnacdia" class="form-label">Fecha de nacimiento *</label>
+              <div class="form-group-row">
+                <select class="form-field" name="fnacdia">
+                  <?php for ($i=1; $i <= 31; $i++) {
+                    if (isset($dia)&&$dia==$i) {
+                      echo "<option selected value=$i>$i</option>";
+                    }else {
+                      echo "<option value=$i>$i</option>";
+                    }
+                  } ?>
+                </select>
+                <select class="form-field" name="fnacmes">
+                  <?php for ($i=0; $i < count($meses); $i++) {
+                    if (isset($mes)&&$mes==($i+1)) {
+                        echo "<option selected value=".($i+1).">$meses[$i]</option>";
+                    }else {
+                        echo "<option value=".($i+1).">$meses[$i]</option>";
+                    }
+                  } ?>
+                </select>
+                <select class="form-field" name="fnacanio">
+                  <?php for ($i=1903; $i < 2019; $i++) {
+                    if (isset($anio)&&$anio==$i) {
+                      echo "<option selected value=$i>$i</option>";
+                    }else {
+                      echo "<option value=$i>$i</option>";
+                    }
+                  } ?>
+                </select>
+              </div>
+              <?php echo (isset($errores["edad"]))?'<div class="form-error"><p>'.$errores["edad"].'</p></div>':""; ?>
             </div>
-            <?php echo (isset($errores["edad"]))?'<div class="form-error"><p>'.$errores["edad"].'</p></div>':""; ?>
 
             <!-- TELÉFONO -->
             <div class="form-group">
-              <div class="form-item codigo">
-                <label for="telcod" class="form-label">Cód. Area</label>
-                <input type="text" id="telcod" name="telcod" class="form-field" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej. 011">
-                <?php echo (isset($errores["telcod"]))?'<div class="form-error"><p>'.$errores["telcod"].'</p></div>':""; ?>
-              </div>
-              <div class="form-item numero">
-                <label for="telefono" class="form-label">Teléfono</label>
-                <input type="text" id="telefono" name="telefono" class="form-field" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" >
-                <?php echo (isset($errores["telefono"]))?'<div class="form-error"><p>'.$errores["telefono"].'</p></div>':""; ?>
+              <div class="form-group-row telefono">
+                <div class="form-item codigo">
+                  <label for="telcod" class="form-label">Cód. Area</label>
+                  <input type="text" id="telcod" name="telcod" class="form-field" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej. 011">
+                  <?php echo (isset($errores["telcod"]))?'<div class="form-error"><p>'.$errores["telcod"].'</p></div>':""; ?>
+                </div>
+                <div class="form-item numero">
+                  <label for="telefono" class="form-label">Teléfono</label>
+                  <input type="text" id="telefono" name="telefono" class="form-field" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" >
+                  <?php echo (isset($errores["telefono"]))?'<div class="form-error"><p>'.$errores["telefono"].'</p></div>':""; ?>
+                </div>
               </div>
             </div>
 
