@@ -1,21 +1,11 @@
 .form {
   &-group{
     display: flex;
-    flex-direction: column;
-    &-row{
-      display: flex;
-      flex-direction: row;
-      .codigo{
-        margin-right: 2rem;
-        flex-grow: 0;
-        }
-      .numero{
-        flex-grow: 4;
-        }
-      }
+    &.wrap{
+      flex-direction: column;
+    }
     select{
       background:$blanco;
-      flex-grow: 1;
       margin-right: 2rem;
       &:last-child{
         margin-right: 0;
@@ -25,7 +15,6 @@
   &-item{
     display: flex;
     flex-direction: column;
-    // flex-grow: 1;
     .form-error {
       display: flex;
       justify-content: stretch;
@@ -69,6 +58,9 @@
     border: 0px solid $gris-medio;
     margin-bottom: 2rem;
     width: 100%;
+    &.grow{
+      flex-grow: 3;
+    }
   }
   &-checkbox{
     width: 25px;
@@ -121,6 +113,7 @@
   font-weight:$normal;
   letter-spacing: $interletrado;
   text-transform: uppercase;
+  text-align: center;
   border:none;
   width: 100%;
   background:$verde-claro;
@@ -151,6 +144,39 @@ input[type=checkbox] {
   visibility: hidden;
   }
 }
+@media all and (min-width:768px){
+  .submit-btn{
+    width: 300px;
+    margin: 0 auto;
+  }
+}
 @media all and (min-width:991px){
-
+  .form {
+    &-group{
+      display: flex;
+      &.wrap{
+        flex-direction: row;
+        .form-item:first-child{
+          margin-right:2rem;
+        }
+        &.column{
+          flex-direction: column;
+        }
+        &.telefono{
+          display: flex;
+          flex-direction: row;
+          .codigo{
+            margin-right: 2rem;
+            flex-grow: 0;
+            }
+          .numero{
+            flex-grow: 4;
+            }
+          }   
+      }
+    }
+    &-item{
+      flex-grow: 1;
+      }
+    }
 }

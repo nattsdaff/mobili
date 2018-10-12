@@ -47,7 +47,7 @@ if ($_POST) {
             </div>
 
             <!-- NOMBRE -->
-            <div class="form-group">
+            <div class="form-group wrap">
               <div class="form-item" id="nombre">
                 <label for="nombre" class="form-label">Nombre *</label>
                 <input type="text" id="nombre" name="nombre" class="form-field" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" required>
@@ -62,7 +62,7 @@ if ($_POST) {
             </div> 
 
             <!-- CONTRASEÑA -->
-            <div class="form-group">
+            <div class="form-group wrap">
               <div class="form-item">
                 <label for="inputPassword" class="form-label">Contraseña *</label>
                 <input type="password" id="inputPassword" name="password" class="form-field" value="" required placeholder="Al menos 6 caracteres">
@@ -77,9 +77,9 @@ if ($_POST) {
             </div>
 
             <!-- FECHA DE NACIMIENTO -->
-            <div class="form-group">
+            <div class="form-group wrap column">
               <label for="fnacdia" class="form-label">Fecha de nacimiento *</label>
-              <div class="form-group-row">
+              <div class="form-group">
                 <select class="form-field" name="fnacdia">
                   <?php for ($i=1; $i <= 31; $i++) {
                     if (isset($dia)&&$dia==$i) {
@@ -89,7 +89,7 @@ if ($_POST) {
                     }
                   } ?>
                 </select>
-                <select class="form-field" name="fnacmes">
+                <select class="form-field grow" name="fnacmes">
                   <?php for ($i=0; $i < count($meses); $i++) {
                     if (isset($mes)&&$mes==($i+1)) {
                         echo "<option selected value=".($i+1).">$meses[$i]</option>";
@@ -112,20 +112,19 @@ if ($_POST) {
             </div>
 
             <!-- TELÉFONO -->
-            <div class="form-group">
-              <div class="form-group-row telefono">
-                <div class="form-item codigo">
-                  <label for="telcod" class="form-label">Cód. Area</label>
-                  <input type="text" id="telcod" name="telcod" class="form-field" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej. 011">
-                  <?php echo (isset($errores["telcod"]))?'<div class="form-error"><p>'.$errores["telcod"].'</p></div>':""; ?>
-                </div>
-                <div class="form-item numero">
-                  <label for="telefono" class="form-label">Teléfono</label>
-                  <input type="text" id="telefono" name="telefono" class="form-field" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" >
-                  <?php echo (isset($errores["telefono"]))?'<div class="form-error"><p>'.$errores["telefono"].'</p></div>':""; ?>
-                </div>
+            <div class="form-group wrap telefono">
+              <div class="form-item codigo">
+                <label for="telcod" class="form-label">Cód. Area</label>
+                <input type="text" id="telcod" name="telcod" class="form-field" value="<?php echo (isset($_POST["telcod"]))?$_POST["telcod"]:""; ?>" placeholder="Ej. 011">
+                <?php echo (isset($errores["telcod"]))?'<div class="form-error"><p>'.$errores["telcod"].'</p></div>':""; ?>
+              </div>
+              <div class="form-item numero">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" class="form-field" value="<?php echo (isset($_POST["telefono"]))?$_POST["telefono"]:""; ?>" >
+                <?php echo (isset($errores["telefono"]))?'<div class="form-error"><p>'.$errores["telefono"].'</p></div>':""; ?>
               </div>
             </div>
+
 
             <!-- DNI -->
             <div class="form-item">

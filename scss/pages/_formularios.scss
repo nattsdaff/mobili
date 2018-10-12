@@ -1,10 +1,8 @@
 .register, .login{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
   .container{
     background: $blanco;
     padding: 0rem;
+    text-align: center;
     flex-grow: 1;
     a {
       font-size: 1em;
@@ -39,57 +37,19 @@
 
 @media only screen and (min-width:768px){
   .register, .login{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     .container{
-      max-width: 80%;
-      background: $blanco;
-      padding: 0rem;
-      flex-grow: 1;
-      width:100%;
-      flex-flow: wrap;
-      &.aside{
-        background: $blanco;
-        font-size:1.3em;
-        flex-grow: 1;
-        // width:50%;
-        p{
-          font-size:1.4em;
-        }
-      }
-      a {
-        font-size: 1em;
-        color:$verde-oscuro;
-      }
-      &-form{
-        padding: 2rem;
-        background: $gris-claro;
-        margin: 4rem 0;
-      }
-      &-forgot{
-        background: $blanco;
-        a{
-          font-size:0.9em;
-        }
-      }
+      flex-direction: column;
+      width: 70%;
+      margin: 4rem auto;
     }
   }
 }
-@media all and (min-width:991px){
+@media only screen and (min-width:992px){
   .register, .login{
-    // text-align: center;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     .container{
-      max-width: 70%;
-      // background: $blanco;
-      // padding: 0rem;
-      // flex-grow: 1;
-      // width:100%;
-      // flex-flow: wrap;
+      flex-direction: column;
+      width: 50%;
+      margin: 4rem auto;
     }
   }
 }
