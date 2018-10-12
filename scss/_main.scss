@@ -57,9 +57,70 @@ ul {
     border-bottom: 2px solid $verde-claro;
 }
 .container{
-    padding: 4rem 2rem 4rem;
+    width: 100%;
     background: $blanco;
+    margin-right: auto;
+    margin-left: auto;
+    flex-grow: 1;
 }
+@media all and (min-width:768px){
+    .container {
+        max-width: 720px; 
+    }   
+}
+@media (min-width: 992px){
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+}
+.btn{
+    font-size:1.8em;
+    font-weight:$normal;
+    letter-spacing: $interletrado;
+    text-transform: uppercase;
+    text-align: center;
+    border:none;
+    width: 20rem;
+    background:$verde-claro;
+    padding:1.2rem;
+    cursor:pointer;
+    color:$gris-oscuro;
+    transition: all 0.2s linear;
+    display: block;
+    &:hover {
+        background:$gris-oscuro;
+        color:$verde-claro;
+    }
+    &.gris{
+      background:$gris-medio;
+      color: $blanco;
+      &:hover{
+        background: $gris-oscuro;
+      }
+    }
+    &.gris-claro{
+        background:$gris-claro;
+        color: $gris-oscuro;
+        &:hover{
+            color: $gris-claro;
+            background: $gris-medio;
+        }
+      }
+    &.verde{
+        background:$verde-claro;
+        color: $gris-oscuro;
+    &:hover{
+        background: $verde-oscuro;
+        color: $blanco;
+        }
+    }
+  }
+
 /* COMPONENTS */
 @import "components/_slider";
 @import "components/_forms";
