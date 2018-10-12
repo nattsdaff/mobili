@@ -56,6 +56,10 @@ ul {
     letter-spacing: $interletrado;
     border-bottom: 2px solid $verde-claro;
 }
+.container{
+    padding: 4rem 2rem 4rem;
+    background: $blanco;
+}
 /* COMPONENTS */
 @import "components/_slider";
 @import "components/_forms";
@@ -66,5 +70,7 @@ ul {
 
 /* PAGES */
 @import "pages/_home";
-@import "pages/_login";
+@import "pages/_formularios";
+@import "pages/_exito";
+@import "pages/_micuenta";
 @import "pages/_preguntas-frecuentes";

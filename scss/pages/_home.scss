@@ -1,7 +1,10 @@
 .newsletter {
     background: $gris-claro;
     text-align: center;
-    padding: 3rem 2rem 4rem;
+    .container{
+        background: $gris-claro;
+        padding: 2rem;
+    }
     &-info {
         margin-top: 0;
         font-weight: 100;

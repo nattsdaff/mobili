@@ -1,50 +1,182 @@
-form {
+.form {
+  &-group{
+    display: flex;
+    &.wrap{
+      flex-direction: column;
+    }
+    select{
+      background:$blanco;
+      margin-right: 2rem;
+      &:last-child{
+        margin-right: 0;
+        }
+      }
+    }
+  &-item{
     display: flex;
     flex-direction: column;
-    .formField {
-        padding:1.7rem 1.7rem;
-        margin-bottom:2rem;
-        font-size:1.8em;
-        font-weight: $light;
-        border: 0px solid $gris-medio;
-        &.contacto {
-          border: 1px solid $gris-medio;
-        }
+    .form-error {
+      display: flex;
+      justify-content: stretch;
+      border-top: 1px solid red;
+      margin-top: -2rem;
+      p {
+        font-size: 1.5em;
+        color: red;
+        margin-top: 0px;
+        text-align: left;
+        flex: 1;
+      }
+      &:after{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f071";
+        color: red;
+        font-size: 1.3em;
+        margin-top: 0.9rem;
+      }
+    } 
+    .file {
+      margin-bottom: 2rem; 
+      font-size: 1.4em;
     }
     ::placeholder{
       color: $gris-claro;
     }
-    .formBtn {
-        font-size:2em;
-        font-weight:$normal;
-        letter-spacing: $interletrado;
-        text-transform: uppercase;
-        border:none;
-        background:$verde-claro;
-        padding:1.5rem 0;
-        cursor:pointer;
-        color:$gris-oscuro;
-        transition: all 0.2s linear;
-        &:hover {
-            background:$gris-oscuro;
-            color:$verde-claro;
-        }
-        &.gris{
-          background:$gris-medio;
-          color: $blanco;
-          &:hover{
-            background: $gris-oscuro;
-          }
-        }
-        &.verde{
-          background:$verde-oscuro;
-          color: $blanco;
-          &:hover{
-            background: $verde-oscuro;
-          }
-        }
+
+  }
+  &-label {
+    font-size: 1.4em;
+    padding: 1em 0 0.4em;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  &-field{
+    padding:1.7rem 1rem;
+    font-size:1.8em;
+    font-weight: $light;
+    border: 0px solid $gris-medio;
+    margin-bottom: 2rem;
+    width: 100%;
+    &.grow{
+      flex-grow: 3;
     }
+  }
+  &-checkbox{
+    width: 25px;
+    margin: 20px 0;
+    position: relative;
+    input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      border-color:$verde-oscuro;
+    }
+    label{
+      cursor: pointer;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      left: 0;
+      background: $blanco;
+      &:after{
+          /* El estado normal de la caja sin click */
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 6px;
+        left: 7px;
+        border: 3px solid $gris-medio;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+        transition:all 0.15s linear;
+      }
+      &:hover::after{
+        opacity: 0.3;
+          /* le puse un opacity más sutil y una transition arriba para que no sea tan duro el hover. */
+        }
+      p {
+        margin: 0 2em;
+      }
+
+    }
+
+  }
+
 }
+
+.submit-btn{
+  font-size:2em;
+  font-weight:$normal;
+  letter-spacing: $interletrado;
+  text-transform: uppercase;
+  text-align: center;
+  border:none;
+  width: 100%;
+  background:$verde-claro;
+  padding:1.5rem;
+  cursor:pointer;
+  color:$gris-oscuro;
+  transition: all 0.2s linear;
+  display: block;
+  &:hover {
+      background:$gris-oscuro;
+      color:$verde-claro;
+  }
+  &.gris{
+    background:$gris-medio;
+    color: $blanco;
+    &:hover{
+      background: $gris-oscuro;
+    }
+  }
+  &.verde{
+    background:$verde-oscuro;
+    color: $blanco;
+    &:hover{
+      background: $verde-oscuro;
+    }
+  }
 input[type=checkbox] {
-    visibility: hidden;
+  visibility: hidden;
+  }
+}
+@media all and (min-width:768px){
+  .submit-btn{
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width:991px){
+  .form {
+    &-group{
+      display: flex;
+      &.wrap{
+        flex-direction: row;
+        .form-item:first-child{
+          margin-right:2rem;
+        }
+        &.column{
+          flex-direction: column;
+        }
+        &.telefono{
+          display: flex;
+          flex-direction: row;
+          .codigo{
+            margin-right: 2rem;
+            flex-grow: 0;
+            }
+          .numero{
+            flex-grow: 4;
+            }
+          }   
+      }
+    }
+    &-item{
+      flex-grow: 1;
+      }
+    }
 }

@@ -1,0 +1,55 @@
+.register, .login{
+  .container{
+    background: $blanco;
+    padding: 0rem;
+    text-align: center;
+    flex-grow: 1;
+    a {
+      font-size: 1em;
+      color:$verde-oscuro;
+      &:hover{
+        color: $gris-oscuro;
+      }
+    }
+    &-form{
+      padding: 4rem 2rem;
+      background: $gris-claro;
+    }
+    &-forgot{
+      background: $blanco;
+    }
+    &.aside{
+      background: $blanco;
+      font-size:1em;
+      flex-grow: 1;
+      padding: 2em;
+      p {
+        margin-top: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .error {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width:768px){
+  .register, .login{
+    .container{
+      flex-direction: column;
+      width: 70%;
+      margin: 4rem auto;
+    }
+  }
+}
+@media only screen and (min-width:992px){
+  .register, .login{
+    .container{
+      flex-direction: column;
+      width: 50%;
+      margin: 4rem auto;
+    }
+  }
+}
