@@ -1,15 +1,15 @@
-.newsletter {
-    background: $gris-claro;
-    text-align: center;
-    .container{
-        background: $gris-claro;
-        padding: 2rem;
-    }
-    &-info {
-        margin-top: 0;
-        font-weight: 100;
-    }
-}
+// .newsletter {
+    // background: $gris-claro;
+//     text-align: center;
+//     .container{
+//         background: $gris-claro;
+//         padding: 2rem;
+//     }
+//     &-info {
+//         margin-top: 0;
+//         font-weight: 100;
+//     }
+// }
 
 .deseados {
     padding: 1rem 3rem;
@@ -112,12 +112,12 @@
             }
         }
     }
-    .newsletter {
-        .container {
-            max-width:565px;
-            margin:0 auto;
-        }
-    }
+    // .newsletter {
+    //     .container {
+    //         max-width:565px;
+    //         margin:0 auto;
+    //     }
+    // }
 }
 
 @media all and (min-width:768px){

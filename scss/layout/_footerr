@@ -1,0 +1,56 @@
+footer {
+    background: url(../img/bg_footer.jpg) repeat;
+    color: $blanco;
+    padding:3rem 1rem 1.5rem;
+    .altMenu {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        img {
+            max-width: 130px;
+        }
+        ul {
+            margin:0;
+            li {
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 1.2em;
+                    font-weight: 300;
+                    padding:0.8rem;
+                    display: inline-block;
+                    transition: all 0.2s linear;
+                    color:$blanco;
+                    &:hover {
+                        color:$verde-claro;
+                    }
+                }
+            }
+        }
+    }
+    .copy {
+        text-align: center;
+        margin-top:7rem;
+        p {
+            margin: 0;
+            font-weight: 300;
+            font-size: 1.2em;
+        }
+    }
+    .container{
+        background: transparent;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media all and (min-width:575px){
+    footer {
+        font-size:1.2em;
+        .altMenu {
+            img {
+                max-width: 170px;
+            }
+        }
+    }
+}

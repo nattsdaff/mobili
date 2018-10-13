@@ -64,21 +64,6 @@ ul {
     flex-grow: 1;
     text-align: center;
 }
-@media all and (min-width:768px){
-    .container {
-        max-width: 720px; 
-    }   
-}
-@media (min-width: 992px){
-    .container {
-        max-width: 960px;
-    }
-}
-@media (min-width: 1200px){
-    .container {
-        max-width: 1140px;
-    }
-}
 .btn{
     font-size:1.8em;
     font-weight:$normal;
@@ -123,6 +108,21 @@ ul {
         }
     }
   }
+@media all and (min-width:768px){
+    .container {
+        max-width: 720px; 
+    }   
+}
+@media (min-width: 992px){
+    .container {
+        max-width: 960px;
+    }
+}
+// @media (min-width: 1200px){
+//     .container {
+//         max-width: 1140px;
+//     }
+// }
 
 /* COMPONENTS */
 @import "components/_slider";

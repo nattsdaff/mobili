@@ -69,18 +69,6 @@ ul {
   flex-grow: 1;
   text-align: center; }
 
-@media all and (min-width: 768px) {
-  .container {
-    max-width: 720px; } }
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px; } }
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px; } }
-
 .btn {
   font-size: 1.8em;
   font-weight: 400;
@@ -119,6 +107,14 @@ ul {
     .btn.verde:hover {
       background: #73A84D;
       color: #fff; }
+
+@media all and (min-width: 768px) {
+  .container {
+    max-width: 720px; } }
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px; } }
 
 /* COMPONENTS */
 .slider img {
@@ -383,23 +379,28 @@ footer {
   background: url(../img/bg_footer.jpg) repeat;
   color: #fff;
   padding: 3rem 1rem 1.5rem; }
-  footer .altMenu {
+  footer .alt-menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-around; }
-    footer .altMenu img {
-      max-width: 130px; }
-    footer .altMenu ul {
-      margin: 0; }
-      footer .altMenu ul li a {
+    footer .alt-menu img {
+      max-width: 180px;
+      margin-left: -1rem; }
+    footer .alt-menu ul {
+      text-align: left; }
+      footer .alt-menu ul li a {
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 300;
         padding: 0.8rem;
         display: inline-block;
@@ -407,21 +408,53 @@ footer {
         -o-transition: all 0.2s linear;
         transition: all 0.2s linear;
         color: #fff; }
-        footer .altMenu ul li a:hover {
+        footer .alt-menu ul li a:hover {
           color: #B1D398; }
-  footer .copy {
-    text-align: center;
-    margin-top: 7rem; }
-    footer .copy p {
-      margin: 0;
-      font-weight: 300;
-      font-size: 1.2em; }
-
-@media all and (min-width: 575px) {
-  footer {
+  footer .copy p {
+    text-align: left;
+    margin: 1rem;
     font-size: 1.2em; }
-    footer .altMenu img {
-      max-width: 170px; } }
+  footer .container {
+    background: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    footer .container-newsletter {
+      color: #413F3D;
+      background-color: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      width: 100%;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem; }
+      footer .container-newsletter .alt-title {
+        font-size: 1.6em; }
+      footer .container-newsletter p {
+        font-size: 1.2em; }
+      footer .container-newsletter .form-field {
+        font-size: 1.2em; }
+      footer .container-newsletter .submit-btn {
+        font-size: 1.2em;
+        width: 100%; }
+
+@media all and (min-width: 768px) {
+  footer .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  footer .alt-menu {
+    margin-left: 2rem; } }
 
 .topBar {
   display: -webkit-box;
@@ -671,16 +704,6 @@ footer {
     padding: 0 5rem; } }
 
 /* PAGES */
-.newsletter {
-  background: #F2F2F2;
-  text-align: center; }
-  .newsletter .container {
-    background: #F2F2F2;
-    padding: 2rem; }
-  .newsletter-info {
-    margin-top: 0;
-    font-weight: 100; }
-
 .deseados {
   padding: 1rem 3rem; }
   .deseados .main-title {
@@ -782,10 +805,7 @@ footer {
     width: calc(100%/2);
     height: 100%; }
     .ambientes a .overlay h4 {
-      font-size: 3.5rem; }
-  .newsletter .container {
-    max-width: 565px;
-    margin: 0 auto; } }
+      font-size: 3.5rem; } }
 
 @media all and (min-width: 768px) {
   .ambientes a {
@@ -843,6 +863,10 @@ footer {
     flex-direction: column;
     width: 600px;
     margin: 4rem auto 4rem; } }
+
+.exito {
+  height: 40vh;
+  margin: 13rem 0; }
 
 .container-micuenta {
   display: -webkit-box;
