@@ -66,7 +66,8 @@ ul {
   margin-left: auto;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
-  flex-grow: 1; }
+  flex-grow: 1;
+  text-align: center; }
 
 @media all and (min-width: 768px) {
   .container {
@@ -95,7 +96,8 @@ ul {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
-  display: block; }
+  display: block;
+  margin: 2rem auto; }
   .btn:hover {
     background: #413F3D;
     color: #B1D398; }
@@ -103,7 +105,8 @@ ul {
     background: #707070;
     color: #fff; }
     .btn.gris:hover {
-      background: #413F3D; }
+      background: #413F3D;
+      color: #fff; }
   .btn.gris-claro {
     background: #F2F2F2;
     color: #413F3D; }
@@ -841,24 +844,6 @@ footer {
     width: 600px;
     margin: 4rem auto 4rem; } }
 
-.exito {
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  .exito .container {
-    padding: 4rem 2rem;
-    background: #F2F2F2;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1; }
-  .exito .error {
-    margin-bottom: 0; }
-
 .container-micuenta {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -908,6 +893,8 @@ footer {
       flex-direction: column;
       margin-left: 2rem;
       text-align: left; }
+      .container-micuenta .info .btn {
+        margin: 0; }
     .container-micuenta h1 {
       font-size: 3.5em; }
     .container-micuenta h2 {

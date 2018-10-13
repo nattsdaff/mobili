@@ -19,7 +19,7 @@ require 'funciones.php';
                     <h1>Hola, <?php echo (isset($_COOKIE["cookie_nombre"]))?$_COOKIE
                 ["cookie_nombre"]:$_SESSION["nombre"]; ?> </h1>
                     <p>Próximamente vas a poder editar toda tu información, ver el detalle de tus compras y mucho más.</p><br>
-                    <a href="modificar-usuario.php" class="btn verde">Editar</a><br>
+                    <a href="#" class="btn verde">Editar</a><br>
                     <a href="logout.php" class="btn gris-claro">Salir</a><br>
                 </div>
                 <!-- AVATAR       -->
