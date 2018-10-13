@@ -17,7 +17,7 @@ if ($_POST) {
   $errores = validacionRegistro($_POST);
   if (empty($errores)) {
     guardarUsuario($_POST);
-    header('Location:login.php');
+    header('Location:exito.php');
   }
 }
 ?>
@@ -39,7 +39,7 @@ if ($_POST) {
 
               <!-- EMAIL -->
               <div class="form-item">
-                <label for="email" class="form-label">Email *</label>
+                <label for="email" class="form-label">Email <span style="color:red;">*</span></label>
                 <input type="text" id="email" class="form-field" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" required>
                 <?php echo (isset($errores["email"]))?'<div class="form-error"><p>'.$errores["email"].'</p></div>':""; ?>
               </div>
@@ -47,13 +47,13 @@ if ($_POST) {
               <!-- NOMBRE -->
               <div class="form-group wrap">
                 <div class="form-item" id="nombre">
-                  <label for="nombre" class="form-label">Nombre *</label>
+                  <label for="nombre" class="form-label">Nombre <span style="color:red;">*</span></label>
                   <input type="text" id="nombre" name="nombre" class="form-field" value="<?php echo (isset($_POST["nombre"]))?$_POST["nombre"]:""; ?>" required>
                   <?php echo (isset($errores["nombre"]))?'<div class="form-error"><p>'.$errores["nombre"].'</p></div>':""; ?>
                 </div>
                 <!-- APELLIDO -->
                 <div class="form-item" id="apellido">
-                  <label for="apellido" class="form-label">Apellido *</label>
+                  <label for="apellido" class="form-label">Apellido <span style="color:red;">*</span></label>
                   <input type="text" id="apellido" class="form-field" name="apellido" value="<?php echo (isset($_POST["apellido"]))?$_POST["apellido"]:""; ?>" required>
                   <?php echo (isset($errores["apellido"]))?'<div class="form-error"><p>'.$errores["apellido"].'</p></div>':""; ?>
                 </div>
@@ -62,13 +62,13 @@ if ($_POST) {
               <!-- CONTRASEÑA -->
               <div class="form-group wrap">
                 <div class="form-item">
-                  <label for="inputPassword" class="form-label">Contraseña *</label>
+                  <label for="inputPassword" class="form-label">Contraseña <span style="color:red;">*</span></label>
                   <input type="password" id="inputPassword" name="password" class="form-field" value="" required placeholder="Al menos 6 caracteres">
                   <?php echo (isset($errores["password"]))?'<div class="form-error"><p>'.$errores["password"].'</p></div>':""; ?>
                 </div>
                 <!-- CONFIRMACIÓN DE CONTRASEÑA -->
                 <div class="form-item">
-                  <label for="passwordConfirm" class="form-label">Confirmar contraseña *</label>
+                  <label for="passwordConfirm" class="form-label">Confirmar contraseña <span style="color:red;">*</span></label>
                   <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-field" value="" required>
                   <?php echo (isset($errores["passwordConfirm"]))?'<div class="form-error"><p>'.$errores["passwordConfirm"].'</p></div>':""; ?>
                 </div>
@@ -76,7 +76,7 @@ if ($_POST) {
 
               <!-- FECHA DE NACIMIENTO -->
               <div class="form-group wrap column">
-                <label for="fnacdia" class="form-label">Fecha de nacimiento *</label>
+                <label for="fnacdia" class="form-label">Fecha de nacimiento <span style="color:red;">*</span></label>
                 <div class="form-group">
                   <select class="form-field" name="fnacdia">
                     <?php for ($i=1; $i <= 31; $i++) {
@@ -134,7 +134,7 @@ if ($_POST) {
 
               <!-- IMAGEN -->
               <div class="form-item">
-                <label for="avatar" class="form-label">Foto de perfil *</label>
+                <label for="avatar" class="form-label">Foto de perfil <span style="color:red;">*</span></label>
                 <input type="file" id="avatar" name="avatar" class="file" value="">
                 <?php echo (isset($errores["avatar"]))?'<div class="form-error"><p>'.$errores["avatar"].'</p></div>':""; ?>
               </div>
