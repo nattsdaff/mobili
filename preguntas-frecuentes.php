@@ -30,7 +30,6 @@
             <p class="respuesta">Sí, es fundamental tener un registro en nuestra tienda, esto permitirá que usted haga los próximos pedidos de forma más rápida y facilitará sus compras. Usted podrá registrarse para recibir correos electrónicos de ofertas, con descuentos exclusivos, en los mejores productos del sitio. Quedará informado sobre las pre-ventas, promociones, y sobre las novedades del sitio.</p>
         </div>
     </section>
-    <?php require ('inc/newsletter.php'); ?>
     <?php require ("inc/footer.php"); ?>
     <?php require ("inc/scripts.php"); ?>
 </body>

@@ -110,7 +110,6 @@
       </a>
     </section>
     <!--/TUS AMBIENTES-->
-    <?php require ('inc/newsletter.php'); ?>
     <?php require ("inc/footer.php"); ?>
     <?php require ("inc/scripts.php"); ?>
 

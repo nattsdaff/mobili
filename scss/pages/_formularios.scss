@@ -1,6 +1,7 @@
   .container{
     a {
       color:$verde-oscuro;
+      font-size: 1em;
       &:hover{
         color: $gris-oscuro;
       }
@@ -31,7 +32,7 @@
 @media only screen and (min-width:768px){
     .container-form{
       flex-direction: column;
-      width: 600px;
+      width: 700px;
       margin: 4rem auto 4rem;
     }
   }
