@@ -869,6 +869,9 @@ footer {
   height: 40vh;
   margin: 13rem 0; }
 
+.container-exito a {
+  font-size: 1.8em; }
+
 .container-micuenta {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -879,7 +882,8 @@ footer {
   flex-direction: column;
   padding: 4rem 2rem; }
   .container-micuenta a {
-    display: block; }
+    display: block;
+    font-size: 1.8em; }
   .container-micuenta .avatar {
     text-align: center; }
     .container-micuenta .avatar img {

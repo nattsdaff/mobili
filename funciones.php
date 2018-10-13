@@ -107,7 +107,7 @@ function guardarUsuario($datos){
   // REESCRIBIMOS LOS DATOS
   $usuarioJson = json_encode($guardados);
   file_put_contents("datos.json",$usuarioJson);
-  // header("Location:login.php");
+  // header("Location:exito.php");
 }
 /*
 /* LOGEAR USUARIOS

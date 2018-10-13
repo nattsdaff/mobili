@@ -28,7 +28,7 @@ if ($_POST) {
 
             <!-- EMAIL -->
             <div class="form-item">
-              <label for="email" class="form-label">Email *</label>
+              <label for="email" class="form-label">Email <span style="color:red;">*</span></label>
               <input type="text" id="email" class="form-field" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" required placeholder= <?php
                 echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : "";
                 ?>
@@ -36,7 +36,7 @@ if ($_POST) {
             </div>
             <!-- CONTRASEÑA -->
             <div class="form-item">
-              <label for="inputPassword" class="form-label">Contraseña *</label>
+              <label for="inputPassword" class="form-label">Contraseña <span style="color:red;">*</span></label>
               <input type="password" id="inputPassword" name="password" class="form-field" value="" required>
               <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
 

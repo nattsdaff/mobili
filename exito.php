@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <?php require("inc/head.php"); ?>
@@ -10,9 +8,11 @@ session_start();
     <!--EXITO-->
     <section class="exito">
       <div class="container">
-        <h2 class="alt-title">Bienvenida/o</h2>
-        <p class="exito-message">Te has registrado con éxito en mobili.com </p>
-        <a href="login.php" class="btn gris">Ingresar</a><br>
+        <div class="container-exito">
+          <h2 class="alt-title">Bienvenida/o</h2>
+          <p class="exito-message">Te has registrado con éxito en mobili.com </p>
+          <a href="login.php" class="btn gris">Ingresar</a><br>
+</div>
       </div>
     </section>
     <!--END OF EXITO-->
