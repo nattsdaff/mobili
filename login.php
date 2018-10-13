@@ -53,13 +53,13 @@ if ($_POST) {
           </form>
         </div>
 
-        <div class="container-forgot">
-          <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-        </div>
 
       </div>
-      <div class="container aside">
-        <p>¿No tenés una cuenta en mobili?</p><p><a href="register.php">Crear una</a></p><br><br>
+      <div class="container">
+        <div class="aside">
+          <p><a href="#">¿Olvidaste tu contraseña?</a></p><br><br>
+          <p>¿No tenés una cuenta en mobili?    <a href="register.php">Crear una</a></p><br><br>
+        </div>
       </div>
     </section>
     <!--END OF LOGIN-->

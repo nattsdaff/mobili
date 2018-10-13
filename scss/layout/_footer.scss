@@ -2,20 +2,22 @@ footer {
     background: url(../img/bg_footer.jpg) repeat;
     color: $blanco;
     padding:3rem 1rem 1.5rem;
-    .altMenu {
+    .alt-menu {
         display: flex;
         align-items: flex-start;
+        flex-direction: column;
         justify-content: space-around;
         img {
-            max-width: 130px;
+            max-width: 180px;
+            margin-left: -1rem;
         }
         ul {
-            margin:0;
+            text-align: left;
             li {
                 a {
                     text-decoration: none;
                     text-transform: uppercase;
-                    font-size: 1.2em;
+                    font-size: 1.4em;
                     font-weight: 300;
                     padding:0.8rem;
                     display: inline-block;
@@ -28,24 +30,51 @@ footer {
             }
         }
     }
-    .copy {
-        text-align: center;
-        margin-top:7rem;
-        p {
-            margin: 0;
-            font-weight: 300;
-            font-size: 1.2em;
+    .copy p {
+        text-align: left;
+        margin: 1rem;
+        font-size: 1.2em;
+    }
+    .container{
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        &-newsletter {
+            color: $gris-oscuro;
+            background-color: rgba(255,255,255,0.5);
+            text-align: center;
+            width: 100%;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            margin-bottom:2rem;
+
+            .alt-title{
+                font-size: 1.6em;
+            }
+            p{
+                font-size: 1.8em;
+            }
+            .form-field {
+                font-size: 1.8em;
+            }
+            .submit-btn {
+                font-size: 1.8em;
+                width: 100%;
+            }
         }
+        
     }
 }
 
-@media all and (min-width:575px){
-    footer {
-        font-size:1.2em;
-        .altMenu {
-            img {
-                max-width: 170px;
+@media all and (min-width:768px){
+    footer{    
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            }   
+        .alt-menu{
+            margin-left: 2rem;
             }
         }
     }
-}

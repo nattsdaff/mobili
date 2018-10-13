@@ -1,12 +1,18 @@
-.container{
-  &-avatar {
+.container-micuenta{
+  display:flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+  a{
+    display: block;
+  }
+  .avatar {
     text-align: center;
     img{
       margin: 0 auto;
       width: 300px;
       }
     }
-  &-info{
+  .info{
     text-align: center;
   }
   h1{
@@ -22,30 +28,28 @@
     padding: 4rem;
   }  
 }
-@media all and (min-width:768px){
-  .container{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-    &-avatar img{
+@media all and (min-width:576px){
+  .container-micuenta{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    .avatar img{
       width: 300px;
     }
-    &-info{
+    .info{
       flex-direction: column;
       margin-left: 2rem;
       text-align: left;
-      display: flex;
-    }
+      .btn{
+        margin: 0;
+      }
+      }
     h1{
       font-size: 3.5em;
     }
     h2{
       font-size: 2em;
       font-weight: $normal;
-    }
-  
-    &-welcome{
-
     }
     .fa-smile{
       display: block;
