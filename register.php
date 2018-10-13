@@ -1,8 +1,5 @@
 <?php
 session_start();
-if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
-  header("Location: index.php");
-}
 require('funciones.php');
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
@@ -137,7 +134,7 @@ if ($_POST) {
 
               <!-- IMAGEN -->
               <div class="form-item">
-                <label for="avatar" class="form-label">Foto de perfil</label>
+                <label for="avatar" class="form-label">Foto de perfil *</label>
                 <input type="file" id="avatar" name="avatar" class="file" value="">
                 <?php echo (isset($errores["avatar"]))?'<div class="form-error"><p>'.$errores["avatar"].'</p></div>':""; ?>
               </div>

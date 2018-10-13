@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <?php require("inc/head.php"); ?>
