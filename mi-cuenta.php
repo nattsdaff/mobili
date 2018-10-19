@@ -1,9 +1,8 @@
 <?php
-session_start();
+require 'funciones.php';
 if (!isset($_COOKIE["cookie_recordar"]) && empty($_SESSION))  {
     header("Location: index.php");
 }
-require 'funciones.php';
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

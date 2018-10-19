@@ -1,51 +1,26 @@
 # m o b i l i
+Marketplace de muebles de diseño 
 
-## V1 
-Marketplace de muebles de diseño donde las tiendas pueden publicar sus productos
-2 perfiles de usuario
+## CONFIGURACION
+Para guardar los usuarios es necesario contar con un archivo .json con la siguiente estructura:
+{"usuarios":[]}
 
--> admin
-  
--> client
-
-## V2
-
-Apertura a tiendas oficiales
-
-3 perfiles de usuario
-
--> admin
-  
--> client
-
--> client
-  
-  
 ## Estructura de archivos
 
-### Assets
-Graphics, images & stuff
+### Json
+Images, uploads, etc
 
+### /assets
+Images, uploads, etc
 
-### Design
-Editables
+### /css
+css styles
 
+### /js
+js files
 
-### Staging
-Testing enviroment
+### /inc
+php includes
 
--> css
-
--> img
-
--> js
-
-### Production
-
-Versión final 
-
--> css
-
--> img
-
--> js
+### /scss
+sass files

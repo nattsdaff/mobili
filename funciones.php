@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
 /* REGISTRO -> VALIDAR CAMPOS DEL FORM REGISTER.PHP
 */

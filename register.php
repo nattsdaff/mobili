@@ -1,6 +1,8 @@
 <?php
-session_start();
 require('funciones.php');
+if (session_status()) {
+  header("Location: mi-cuenta.php");
+}
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 if ($_POST) {

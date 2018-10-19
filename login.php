@@ -1,9 +1,8 @@
 <?php
-session_start();
+require('funciones.php');
 if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
   header("Location: index.php");
 }
-require('funciones.php');
 // ONLY FOR TESTING SI LA SESSION ESTA CERRADA LUEGO DEL LOGOUT.
 // ---- SIEMPR COMENTADO EN PRODUCCION ---- PORQUE SI NO, TIRA ERROR DE HEADERS
     // $has_session = session_status() == PHP_SESSION_ACTIVE;
