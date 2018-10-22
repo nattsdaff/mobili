@@ -13,7 +13,7 @@
         <div class="bloqueIzq">
             <a class="toggle" href="javascript:void(0)"><i class="fas fa-bars"></i></a>
             <div class="logo">
-                <h1><a href="index.php"><img src="img/logo.png" alt="Mobili Logo" title="Mobili - Tienda de Muebles"></a></h1>
+                <h1><a href="index.php"><img src="assets/img/logo.png" alt="Mobili Logo" title="Mobili - Tienda de Muebles"></a></h1>
             </div>
             <div class="menu mobile">
                 <ul>

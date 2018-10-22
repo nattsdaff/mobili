@@ -19,7 +19,7 @@
         <!--END OF NEWSLETTER-->
 
         <div class="alt-menu">
-            <img src="img/logo-white.png" alt="Mobili Logo">
+            <img src="assets/img/logo-white.png" alt="Mobili Logo">
             <ul>
                 <li><a href="#">Servicio al cliente</a></li>
                 <li><a href="#">Nuestra empresa</a></li>

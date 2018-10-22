@@ -376,7 +376,7 @@ ul {
 
 /* LAYOUT */
 footer {
-  background: url(../img/bg_footer.jpg) repeat;
+  background: url(../assets/img/bg_footer.jpg) repeat;
   color: #fff;
   padding: 3rem 1rem 1.5rem; }
   footer .alt-menu {

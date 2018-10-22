@@ -8,7 +8,7 @@ Para guardar los usuarios es necesario contar con un archivo .json con la siguie
 ## Estructura de archivos
 
 ### Json
-Images, uploads, etc
+ver configuracion
 
 ### /assets
 Images, uploads, etc

@@ -1,9 +1,13 @@
 <?php
+require "Classes/User.php";
+require "Classes/Validate.php";
+require "Classes/DB.php";
 require('funciones.php');
-if (session_status()) {
-  header("Location: mi-cuenta.php");
-}
+
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+// Creo un objeto db
+$db = new JSONDB();
 
 if ($_POST) {
   $email=$_POST["email"];
@@ -15,10 +19,15 @@ if ($_POST) {
   $telcod = $_POST["telcod"];
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
+  $avatar = $_POST["avatar"];
 
-  $errores = validacionRegistro($_POST);
+  //Creo un usuario
+  $user = new User($email, $nombre, $apellido, $password, $dia, $mes, $anio, $telcod, $telefono, $dni, $avatar);
+
+  $errores = Validate::validacionRegistro($db, $email, $_POST);
+  
   if (empty($errores)) {
-    guardarUsuario($_POST);
+    $db->guardarUsuario($user);
     header('Location:exito.php');
   }
 }
