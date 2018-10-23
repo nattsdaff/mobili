@@ -112,36 +112,67 @@ function guardarUsuario($datos){
 /*
 /* LOGEAR USUARIOS
 */
+// function logearUsuario($datosLogin){
+//   $archivo = file_get_contents("datos.json");
+//   $datos = json_decode($archivo, true);
+//   // RECORREMOS TODOS LOS USUARIOS
+//   for ($i=0; $i < count($datos["usuarios"]); $i++) {
+//     // VALIDAMOS EL MAIL
+//     if ($datos["usuarios"][$i]["email"]==$datosLogin["email"]) {
+//       // VALIDAMOS LA CONTRASEÑA
+//       if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
+//         // INICIAMOS LA SESIÓN Y GUARDO SU EMAIL EN LA MISMA
+//         if (session_status() == PHP_SESSION_NONE) {
+//           session_start();
+//         }
+//         $_SESSION["email"] = $datos["usuarios"][$i]["email"];
+//         $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
+//         $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
+//         // GUARDO EL EMAIL EN UNA COOKIE SI RECORDAR ESTA CHEQUEADO
+//         if(!empty($datosLogin["recordar"])){
+//           setcookie("cookie_recordar", true, time() + (86400 * 30));
+//           //GUARDO EL EMAIL EN UNA COOKIE
+//           setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
+//           setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
+//           setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
+//         }
+//         // REDIRIGIMOS AL INDEX*/
+//         header("Location:mi-cuenta.php");
+//         break;
+//       }
+//     }else{ 
+//       return "Usuario inexistente o contraseña inválida";
+//     }
+//   }
+// }
 function logearUsuario($datosLogin){
-  $archivo = file_get_contents("datos.json");
-  $datos = json_decode($archivo, true);
-  // RECORREMOS TODOS LOS USUARIOS
-  for ($i=0; $i < count($datos["usuarios"]); $i++) {
-    // VALIDAMOS EL MAIL
-    if ($datos["usuarios"][$i]["email"]==$datosLogin["email"]) {
-      // VALIDAMOS LA CONTRASEÑA
-      if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
-        // INICIAMOS LA SESIÓN Y GUARDO SU EMAIL EN LA MISMA
-        if (session_status() == PHP_SESSION_NONE) {
-          session_start();
-        }
-        $_SESSION["email"] = $datos["usuarios"][$i]["email"];
-        $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
-        $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
-        // GUARDO EL EMAIL EN UNA COOKIE SI RECORDAR ESTA CHEQUEADO
-        if(!empty($datosLogin["recordar"])){
-          setcookie("cookie_recordar", true, time() + (86400 * 30));
-          //GUARDO EL EMAIL EN UNA COOKIE
-          setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
-          setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
-          setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
-        }
-        // REDIRIGIMOS AL INDEX*/
-        header("Location:mi-cuenta.php");
-        break;
+$archivo = file_get_contents("datos.json");
+$datos = json_decode($archivo, true);
+// RECORREMOS TODOS LOS USUARIOS
+for ($i=0; $i<count($datos["usuarios"]); $i++) {
+  // VALIDAMOS EL MAIL
+  if ($datos["usuarios"][$i]["email"]==$datosLogin["email"]) {
+    // VALIDAMOS LA CONTRASEÑA
+    if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
+      // INICIAMOS LA SESIÓN Y GUARDO SU EMAIL EN LA MISMA
+      if (session_status() == PHP_SESSION_NONE) {
+        session_start();
       }
-    }else{ 
-      return "Usuario inexistente o contraseña inválida";
+      $_SESSION["email"] = $datos["usuarios"][$i]["email"];
+      $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
+      $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
+      // GUARDO EL EMAIL EN UNA COOKIE SI RECORDAR ESTA CHEQUEADO
+      if(!empty($datosLogin["recordar"])){
+        setcookie("cookie_recordar", true, time() + (86400 * 30));
+        //GUARDO EL EMAIL EN UNA COOKIE
+        setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
+        setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
+        setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
+      }
+      // REDIRIGIMOS AL INDEX*/
+      header("Location:mi-cuenta.php");
     }
   }
+}
+return "Usuario inexistente o contraseña inválida";
 }
