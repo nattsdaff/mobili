@@ -109,7 +109,7 @@ function guardarUsuario($datos){
   $usuarioJson = json_encode($guardados);
   file_put_contents("datos.json",$usuarioJson);
   // header("Location:exito.php");
-    setcookie("cookie_newUser", 1, time()+(86400));
+    setcookie("cookie_newUser", 1, time()+(17));
 }
 /*
 /* LOGEAR USUARIOS
