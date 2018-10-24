@@ -1,9 +1,8 @@
 <?php
-session_start();
+require('funciones.php');
 if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
   header("Location: index.php");
 }
-require('funciones.php');
 // ONLY FOR TESTING SI LA SESSION ESTA CERRADA LUEGO DEL LOGOUT.
 // ---- SIEMPR COMENTADO EN PRODUCCION ---- PORQUE SI NO, TIRA ERROR DE HEADERS
     // $has_session = session_status() == PHP_SESSION_ACTIVE;
@@ -29,15 +28,12 @@ if ($_POST) {
             <!-- EMAIL -->
             <div class="form-item">
               <label for="email" class="form-label">Email <span style="color:red;">*</span></label>
-              <input type="text" id="email" class="form-field" name="email" value="<?php echo (isset($_POST["email"]))?$_POST["email"]:""; ?>" required placeholder= <?php
-                echo (isset($_COOKIE["cookie_recordar"]))?$_COOKIE["cookie_email"] : "";
-                ?>
-              >
+              <input type="email" id="email" class="form-field" name="correo" required>
             </div>
             <!-- CONTRASEÑA -->
             <div class="form-item">
               <label for="inputPassword" class="form-label">Contraseña <span style="color:red;">*</span></label>
-              <input type="password" id="inputPassword" name="password" class="form-field" value="" required>
+              <input type="password" id="inputPassword" name="password" class="form-field" required>
               <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
 
             </div>
