@@ -1,6 +1,8 @@
 <?php
-session_start();
 require('funciones.php');
+if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
+  header("Location: index.php");
+}
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 if ($_POST) {
