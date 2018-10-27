@@ -1,29 +1,37 @@
 <?php
 require('funciones.php');
+require('Classes/User.php');
+require('Classes/DB.php');
+require('Classes/Validar.php');
+
+//CREO UN OBJETO DB
+$db = new DB();
+
 if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
   header("Location: index.php");
 }
+
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 if ($_POST) {
   $email=$_POST["email"];
   $nombre = $_POST["nombre"];
   $apellido = $_POST["apellido"];
-  $dia = $_POST["fnacdia"];
-  $mes = $_POST["fnacmes"];
-  $anio = $_POST["fnacanio"];
+  $password = $_POST["password"];
+  $fnacdia = $_POST["fnacdia"];
+  $fnacmes = $_POST["fnacmes"];
+  $fnacanio = $_POST["fnacanio"];
   $telcod = $_POST["telcod"];
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
 
   $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni);
 
-  var_dump($user);
-  // $errores = validacionRegistro($_POST);
+  $errores = Validar::validacionRegistro($db, $user, $_POST);
 
   if (empty($errores)) {
-    // guardarUsuario($_POST);
-    // header('Location:exito.php');
+    $db->guardarUsuarioJson($user);
+    header('Location:exito.php');
   }
 }
 ?>
@@ -139,11 +147,11 @@ if ($_POST) {
 
 
               <!-- IMAGEN -->
-              <div class="form-item">
+              <!-- <div class="form-item">
                 <label for="avatar" class="form-label">Foto de perfil <span style="color:red;">*</span></label>
                 <input type="file" id="avatar" name="avatar" class="file" value="">
                 <?php echo (isset($errores["avatar"]))?'<div class="form-error"><p>'.$errores["avatar"].'</p></div>':""; ?>
-              </div>
+              </div> -->
 
               <input type="submit" value="Crear cuenta" class="submit-btn verde">
             </form>
