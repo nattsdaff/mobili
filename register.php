@@ -16,10 +16,14 @@ if ($_POST) {
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
 
-  $errores = validacionRegistro($_POST);
+  $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni);
+
+  var_dump($user);
+  // $errores = validacionRegistro($_POST);
+
   if (empty($errores)) {
-    guardarUsuario($_POST);
-    header('Location:exito.php');
+    // guardarUsuario($_POST);
+    // header('Location:exito.php');
   }
 }
 ?>

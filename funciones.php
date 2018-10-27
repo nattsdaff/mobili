@@ -48,11 +48,11 @@ function validacionRegistro($datos){
     $errores["dni"] = "DNI inválido.";
   }
   // IMAGEN
-  if ($_FILES["avatar"]["size"] > 500000) {
-    $errores["avatar"] = "El archivo es demasiado grande";
-  } elseif (($_FILES["avatar"]["type"] !== "image/gif") && ($_FILES["avatar"]["type"] !== "image/jpeg") && ($_FILES["avatar"]["type"] !== "image/jpg") && ($_FILES["avatar"]["type"] !== "image/png")) {
-    $errores["avatar"] = "La imagen debe ser .gif, .jpg, .jpeg o .png.";
-  }
+  // if ($_FILES["avatar"]["size"] > 500000) {
+  //   $errores["avatar"] = "El archivo es demasiado grande";
+  // } elseif (($_FILES["avatar"]["type"] !== "image/gif") && ($_FILES["avatar"]["type"] !== "image/jpeg") && ($_FILES["avatar"]["type"] !== "image/jpg") && ($_FILES["avatar"]["type"] !== "image/png")) {
+  //   $errores["avatar"] = "La imagen debe ser .gif, .jpg, .jpeg o .png.";
+  // }
   return $errores;
 }
 /*
@@ -95,10 +95,10 @@ function guardarUsuario($datos){
     mkdir($target_dir, 0777, true);
   }
   // NOMBRE DE LA IMAGEN
-  $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
-  move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
-  // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
-  $datos["avatar"] = $target_file;
+  // $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
+  // move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
+  // // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
+  // $datos["avatar"] = $target_file;
   //GUARDO EL LUGAR DONDE ESTA GUARDADO EL AVATAR
   /*setcookie("cookie_avatar", $datos["avatar"], time() + (86400 * 30));*/
   //var_dump($_COOKIE['cookie_avatar']);
