@@ -48,11 +48,11 @@ function validacionRegistro($datos){
     $errores["dni"] = "DNI inválido.";
   }
   // IMAGEN
-  if ($_FILES["avatar"]["size"] > 500000) {
-    $errores["avatar"] = "El archivo es demasiado grande";
-  } elseif (($_FILES["avatar"]["type"] !== "image/gif") && ($_FILES["avatar"]["type"] !== "image/jpeg") && ($_FILES["avatar"]["type"] !== "image/jpg") && ($_FILES["avatar"]["type"] !== "image/png")) {
-    $errores["avatar"] = "La imagen debe ser .gif, .jpg, .jpeg o .png.";
-  }
+  // if ($_FILES["avatar"]["size"] > 500000) {
+  //   $errores["avatar"] = "El archivo es demasiado grande";
+  // } elseif (($_FILES["avatar"]["type"] !== "image/gif") && ($_FILES["avatar"]["type"] !== "image/jpeg") && ($_FILES["avatar"]["type"] !== "image/jpg") && ($_FILES["avatar"]["type"] !== "image/png")) {
+  //   $errores["avatar"] = "La imagen debe ser .gif, .jpg, .jpeg o .png.";
+  // }
   return $errores;
 }
 /*
@@ -83,25 +83,28 @@ function guardarUsuario($datos){
   $datos["password"] = password_hash($datos["password"],PASSWORD_DEFAULT);
   // BORRADO CONFIRMACIÓN DE CONTRASEÑA (SÓLO PARA VALIDACIÓN)
   unset($datos["passwordConfirm"]);
-  $ultimoID = (count($guardados["usuarios"]));
-  $target_dir = "assets/uploads/usuarios/$ultimoID/";
-  // TRAIGO ID DEL ÚLTIMO USUARIO
-  $ultimoID = count($guardados["usuarios"]);
-  // RUTA DONDE GUARDAMOS LA Imagen
-  $target_dir = "assets/uploads/usuarios/$ultimoID/";
-  // VEMOS SI EXISTE LA CARPETA CON EL ID DEL USUARIO
-  if (!is_dir($target_dir)){
-    // SI NO EXISTE LA CREAMOS
-    mkdir($target_dir, 0777, true);
-  }
-  // NOMBRE DE LA IMAGEN
-  $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
-  move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
-  // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
-  $datos["avatar"] = $target_file;
+
+  // **** AVATAR ****
+  // $ultimoID = (count($guardados["usuarios"]));
+  // $target_dir = "assets/uploads/usuarios/$ultimoID/";
+  // // TRAIGO ID DEL ÚLTIMO USUARIO
+  // $ultimoID = count($guardados["usuarios"]);
+  // // RUTA DONDE GUARDAMOS LA Imagen
+  // $target_dir = "assets/uploads/usuarios/$ultimoID/";
+  // // VEMOS SI EXISTE LA CARPETA CON EL ID DEL USUARIO
+  // if (!is_dir($target_dir)){
+  //   // SI NO EXISTE LA CREAMOS
+  //   mkdir($target_dir, 0777, true);
+  // }
+  // $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
+  // move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
+  // // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
+  // $datos["avatar"] = $target_file;
   //GUARDO EL LUGAR DONDE ESTA GUARDADO EL AVATAR
   /*setcookie("cookie_avatar", $datos["avatar"], time() + (86400 * 30));*/
   //var_dump($_COOKIE['cookie_avatar']);
+  // **** end AVATAR ****
+
   $usuario = $datos;
   // PUSHEAMOS LOS DATOS A LA POSICIÓN USUARIOS
   $guardados["usuarios"][]=$usuario;
