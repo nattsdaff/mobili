@@ -14,12 +14,15 @@ class DB
         // CONVERTIR EL ARCHIVO EN ARRAY  
         $usuariosGuardados = json_decode($archivoJson,true);
         // ENCRIPTAR CONTRASEÑA
-        $hash = password_hash($user->getPassword(),PASSWORD_DEFAULT);
-
-        $usuariosGuardados["usuarios"][]=$_POST;
+        $user->setPassword(password_hash($user->getPassword(),PASSWORD_DEFAULT));
+        $datos = User::convert($user);
+        
+        $usuariosGuardados["usuarios"][]=$datos;
         
         $usuarioJson = json_encode($usuariosGuardados);
-
+        
         file_put_contents("datos.json",$usuarioJson);
+        
+        setcookie("cookie_newUser", 1, time()+(17));
     }
 }

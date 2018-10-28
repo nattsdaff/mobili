@@ -5,7 +5,6 @@ class Validar
     public static function validarSiExiste($db, $email)
     {
         $datos = json_decode($db, true);
-
         $disponible = true;
 
         for ($i=0; $i < count($datos["usuarios"]); $i++) {
@@ -16,6 +15,7 @@ class Validar
             }
         }
     }
+    
     // public static function validarSiExiste($db, $email)
     // {
     //     $dbusuarios = json_decode($db->datos, true);
@@ -69,4 +69,35 @@ class Validar
         // }
         return $errores;
     }
+    public static function logearUsuario($db, $datosLogin){
+        $archivo = $db->conectorJson();
+        $datos = json_decode($archivo, true);
+        for ($i=0; $i<count($datos["usuarios"]); $i++) {
+            if ($datos["usuarios"][$i]["email"]==$datosLogin["correo"]) {
+                if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    
+                    if($_COOKIE["cookie_newUser"]==1){
+                        setcookie('cookie_newUser', null, -1);
+                    }
+                    
+                    $_SESSION["email"] = $datos["usuarios"][$i]["email"];
+                    $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
+                    $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
+                    
+                    if(!empty($datosLogin["recordar"])){
+                        setcookie("cookie_recordar", true, time() + (86400 * 30));
+                        setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
+                        setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
+                        setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
+                    }
+
+                    header("Location:mi-cuenta.php");
+                }
+            }
+        }
+        return "Datos inválidos.";
+    }    
 }

@@ -135,4 +135,7 @@ public function setDni($dni)
   $this->dni = $dni;
 }
 
+    public static function convert($user){
+        return get_object_vars($user);
+    }
 }

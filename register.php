@@ -1,8 +1,5 @@
 <?php
 require('funciones.php');
-require('Classes/User.php');
-require('Classes/DB.php');
-require('Classes/Validar.php');
 
 //CREO UN OBJETO DB
 $db = new DB();
@@ -25,13 +22,11 @@ if ($_POST) {
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
 
-  $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni);
-
+  $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni); 
   $errores = Validar::validacionRegistro($db, $user, $_POST);
-
   if (empty($errores)) {
     $db->guardarUsuarioJson($user);
-    header('Location:exito.php');
+      header("Location:exito.php");
   }
 }
 ?>

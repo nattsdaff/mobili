@@ -9,7 +9,8 @@ if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
     // var_dump($has_session);
 // END TEST
 if ($_POST) {
-  $error = logearUsuario($_POST);
+    $db = new DB();
+    $error = Validar::logearUsuario($db, $_POST);
 }
 ?>
 <!DOCTYPE html>
