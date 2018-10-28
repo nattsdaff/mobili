@@ -1,5 +1,8 @@
 <?php 
-session_start();
+    session_start();
+    if (!isset($_COOKIE["cookie_newUser"])){
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

@@ -1,30 +1,26 @@
 <?php
-
-class JSONDB
+class DB
 {
-    public static function connector()
+    public static function conectorJson()
     {
        return file_get_contents("datos.json");
     }
-
-    public function guardarUsuario($usuario)
+    public function guardarUsuarioJson($user)
     {
-        $archivo= file_get_contents("datos.json");
-        $guardados=json_decode($archivo,true);
-
-        $hash = password_hash($usuario->getPassword(),PASSWORD_DEFAULT);
-
-        $ultimoID=(count($guardados["usuarios"]));
-
-        $target_dir = "assets/uploads/usuarios/$ultimoID/";
-        if (!is_dir($target_dir)) {
-
-            mkdir($target_dir, 0777, true);
-            $guardados["usuarios"][] = $usuario;
-
-        }
-
-        $usuarioJson = json_encode($guardados);
+        // ABRIR ARCHIVO
+        $archivoJson = file_get_contents("datos.json");
+        // CONVERTIR EL ARCHIVO EN ARRAY  
+        $usuariosGuardados = json_decode($archivoJson,true);
+        // ENCRIPTAR CONTRASEÑA
+        $user->setPassword(password_hash($user->getPassword(),PASSWORD_DEFAULT));
+        $datos = User::convert($user);
+        
+        $usuariosGuardados["usuarios"][]=$datos;
+        
+        $usuarioJson = json_encode($usuariosGuardados);
+        
         file_put_contents("datos.json",$usuarioJson);
+        
+        setcookie("cookie_newUser", 1, time()+(17));
     }
 }

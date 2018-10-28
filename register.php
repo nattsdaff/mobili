@@ -1,34 +1,27 @@
 <?php
-require "Classes/User.php";
-require "Classes/Validate.php";
-require "Classes/DB.php";
 require('funciones.php');
-
+//CREO UN OBJETO DB
+$db = new DB();
+if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
+  header("Location: index.php");
+}
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-
-// Creo un objeto db
-$db = new JSONDB();
-
 if ($_POST) {
   $email=$_POST["email"];
   $nombre = $_POST["nombre"];
   $apellido = $_POST["apellido"];
-  $dia = $_POST["fnacdia"];
-  $mes = $_POST["fnacmes"];
-  $anio = $_POST["fnacanio"];
+  $password = $_POST["password"];
+  $fnacdia = $_POST["fnacdia"];
+  $fnacmes = $_POST["fnacmes"];
+  $fnacanio = $_POST["fnacanio"];
   $telcod = $_POST["telcod"];
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
-  $avatar = $_POST["avatar"];
-
-  //Creo un usuario
-  $user = new User($email, $nombre, $apellido, $password, $dia, $mes, $anio, $telcod, $telefono, $dni, $avatar);
-
-  $errores = Validate::validacionRegistro($db, $email, $_POST);
-  
+  $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni); 
+  $errores = Validar::validacionRegistro($db, $user, $_POST);
   if (empty($errores)) {
-    $db->guardarUsuario($user);
-    header('Location:exito.php');
+    $db->guardarUsuarioJson($user);
+      header("Location:exito.php");
   }
 }
 ?>
@@ -144,11 +137,11 @@ if ($_POST) {
 
 
               <!-- IMAGEN -->
-              <div class="form-item">
+              <!-- <div class="form-item">
                 <label for="avatar" class="form-label">Foto de perfil <span style="color:red;">*</span></label>
                 <input type="file" id="avatar" name="avatar" class="file" value="">
                 <?php echo (isset($errores["avatar"]))?'<div class="form-error"><p>'.$errores["avatar"].'</p></div>':""; ?>
-              </div>
+              </div> -->
 
               <input type="submit" value="Crear cuenta" class="submit-btn verde">
             </form>

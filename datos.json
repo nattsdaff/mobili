@@ -1,4 +1,1 @@
-{
-  "usuarios": [
-  ]
-}
+{"usuarios":[{"email":"damian.bertazza@gmail.com","nombre":"Damian","apellido":"Bertazza","password":"$2y$10$P\/kN9NyTG47KwUqqakKfLO0ucSLaKZQ7tQbZhCBoIf4dCClisV0Bi","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":""},{"email":"test@test.com","nombre":"asdasd","apellido":"asdasd","password":"$2y$10$9DYiiJNmgZ7RBYaAz\/8.tOIlXSSzHODeiRhY9nx9pxY70niPOQb6u","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":""},{"email":"asd@asd.com","nombre":"Damian","apellido":"Bertazza","password":"$2y$10$Vsgb8Ri9dgJxzspl\/rpycuEG.Ec1xRSpY76kkmHtSfoyzh4cWxn2i","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":""},{"email":"pepe@gmail.com","nombre":"Damian","apellido":"Bertazza","password":"$2y$10$zFGJHTy1uxvggtsBe4hD6uXa9c.\/3A708X4REtOZvt.sqGL5AqxsO","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":""}]}
