@@ -1,11 +1,12 @@
 <?php
 require('funciones.php');
-//CREO UN OBJETO DB
-$db = new DB();
+
 if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
   header("Location: index.php");
 }
+
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
 if ($_POST) {
   $email=$_POST["email"];
   $nombre = $_POST["nombre"];
@@ -17,12 +18,16 @@ if ($_POST) {
   $telcod = $_POST["telcod"];
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
+
   $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni); 
-  $errores = Validar::validacionRegistro($db, $user, $_POST);
-  if (empty($errores)) {
-    $db->guardarUsuarioJson($user);
-      header("Location:exito.php");
-  }
+  $errores = Validar::validacionRegistro($user, $_POST);
+  
+    if (empty($errores)) {
+        $guardado = Mysql::guardarUsuario($user, $db);
+        if($guardado) { 
+            header("Location:exito.php"); 
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
