@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    require("funciones.php");
     if (!isset($_COOKIE["cookie_newUser"])){
         header("Location: index.php");
     }

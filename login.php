@@ -9,8 +9,10 @@ if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
     // var_dump($has_session);
 // END TEST
 if ($_POST) {
-    $db = new DB();
-    $error = Validar::logearUsuario($db, $_POST);
+    $errorLogin = Validar::logearUsuario($_POST, $db);
+    if(!$errorLogin) {
+        header("Location: mi-cuenta.php");
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -35,7 +37,7 @@ if ($_POST) {
             <div class="form-item">
               <label for="inputPassword" class="form-label">Contraseña <span style="color:red;">*</span></label>
               <input type="password" id="inputPassword" name="password" class="form-field" required>
-              <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
+              <?php echo (isset($errorLogin)) ? '<div class="form-error"><p>'.$errorLogin.'</p></div>':""; ?>
 
             </div>
 
