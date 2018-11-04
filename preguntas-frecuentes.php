@@ -1,9 +1,5 @@
 <?php
     require("funciones.php");
-    $test = DB::guardarUsuario($db);
-    echo "<pre>";
-    var_dump($test);
-    echo "</pre>";
 ?>
 
 <!DOCTYPE html>
