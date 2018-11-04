@@ -1,4 +1,5 @@
 <?php
+
 class Json extends DB
 {
     /*public static function conectorJson()

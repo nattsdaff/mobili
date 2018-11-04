@@ -1,6 +1,7 @@
 <?php
 
 /* Base de datos Mysql */
+
 $dsn = 'mysql:host=127.0.0.1;dbname=mobili;port=3306;charset=UTF8';
 $db_user = 'root';
 $db_pass = 'root';
