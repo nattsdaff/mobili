@@ -23,10 +23,15 @@ if ($_POST) {
   $errores = Validar::validacionRegistro($user, $_POST);
   
     if (empty($errores)) {
+<<<<<<< HEAD
         $guardado = Mysql::guardarUsuario($user, $db);
         if($guardado) { 
             header("Location:exito.php"); 
         }
+=======
+        $guardado = DB::guardarUsuario($user, $db);
+        if($guardado) { header("Location:exito.php"); }
+>>>>>>> 280c5662dcd810b6207fbf5d71207c779eb53dda
     }
 }
 ?>

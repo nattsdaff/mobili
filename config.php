@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
 /* Base de datos Mysql */
+=======
+>>>>>>> 280c5662dcd810b6207fbf5d71207c779eb53dda
 $dsn = 'mysql:host=127.0.0.1;dbname=mobili;port=3306;charset=UTF8';
 $db_user = 'root';
 $db_pass = 'root';
@@ -13,7 +16,10 @@ catch (PDOException $Exception) {
     echo $Exception->getMessage();
 }
 
+<<<<<<< HEAD
 /* "Base de datos" para Json */
 $jdb = file_get_contents("datos.json");
 
+=======
+>>>>>>> 280c5662dcd810b6207fbf5d71207c779eb53dda
 session_start();
