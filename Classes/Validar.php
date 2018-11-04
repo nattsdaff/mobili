@@ -36,7 +36,7 @@ class Validar
         
         return $password1 == $password2;
     }
-    public static function validacionRegistro($db, $user, $data)
+    public static function validacionRegistro($user, $data)
     {
         
         $errores=[];
@@ -49,11 +49,11 @@ class Validar
         }
 
         //si es true significa que ya existe el usuario y que no esta disponible
-        if (self::validarSiExiste($db::conectorJson(), $user->getEmail())) {
+        /*if (self::validarSiExiste($db::conectorJson(), $user->getEmail())) {
             //Con self::<nombredemetodo> accedemos a metodos estaticos dentro de la misma
             $errores["email"] ="ya existe este usuario o mail";
 
-        }
+        }*/
 
         if (strlen($user->getPassword())<6) {
             $errores["contrasena"]="Contraseña demasiado cortasss";
