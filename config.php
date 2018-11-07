@@ -13,7 +13,8 @@
 //     echo $Exception->getMessage();
 // }
 
+var_dump($db);
 /* "Base de datos" para Json */
-// $jdb = file_get_contents("datos.json");
+$jdb = file_get_contents("datos.json");
 
-// session_start();
+session_start();

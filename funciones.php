@@ -1,6 +1,5 @@
 <?php
-session_start();
-// require('config.php');
+require('config.php');
 require('Classes/DB.php');
 require('Classes/Mysql.php');
 require('Classes/Json.php');
@@ -9,31 +8,29 @@ require('Classes/Validar.php');
 
 function initDB($puertoMySQL, $usuarioMySQL, $passwordMySQL)
 {
-    $nombreDBMySQL = 'mobili3';
+    $nombreDBMySQL = 'mobili1';
     // ABRO CONEXION CON MYSQL
     try{
-        $db = new PDO("mysql:host=localhost;", $usuarioMySQL, $passwordMySQL);
-        // Set the PDO error mode to exception
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } 
-    catch(PDOException $e){
+        /* Conectar a MySQL */
+        $pdo = new PDO("mysql:host=localhost;", $usuarioMySQL, $passwordMySQL);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }
 
     // INTENTO CREAR BASE DE DATOS
     try{
         $sql = "CREATE DATABASE IF NOT EXISTS $nombreDBMySQL";
-        $db->exec($sql);
+        $pdo->exec($sql);
         echo "Database created successfully";
-    } 
-    catch(PDOException $e){
+    }catch(PDOException $e){
         die("ERROR: Could not able to execute $sql. " . $e->getMessage());
     }
 
     // INTENTO CREAR TABLA USUARIOS
     try{
         $sql = "USE $nombreDBMySQL";
-        $db->exec($sql);
+        $pdo->exec($sql);
         $sql = "CREATE TABLE usuarios (
             id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
             nombre VARCHAR(50) NOT NULL,
@@ -45,21 +42,19 @@ function initDB($puertoMySQL, $usuarioMySQL, $passwordMySQL)
             dni INT(10) UNSIGNED UNIQUE DEFAULT NULL,
             avatar VARCHAR(100) DEFAULT NULL
         )";
-        $db->exec($sql);
+        $pdo->exec($sql);
         echo "Table created successfully.";
-    }
-    catch(PDOException $e){
+    }catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }
-    return $db;
-    // CERRAR CONEXION
-    // unset($db);
+    return $pdo;
+    //CERRAR CONEXION
+    // unset($pdo);
 }
 
 function migrarJsonAMySQL($db, $usuarioMySQL, $passwordMySQL)
 {
-    $jdb = file_get_contents("datos.json");
-    $usuariosGuardados = json_decode($jdb, true);
+    $usuariosGuardados = json_decode($db, true);
     
     for ($i=0; $i < count($usuariosGuardados['usuarios']); $i++) {
 
