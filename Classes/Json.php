@@ -21,5 +21,6 @@ class Json extends DB
         file_put_contents("datos.json",$usuarioJson);
         
         setcookie("cookie_newUser", 1, time()+(17));
+        
     }
 }
