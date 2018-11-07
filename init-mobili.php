@@ -1,14 +1,9 @@
 <?php
 require 'funciones.php';
-// if (!isset($_COOKIE["cookie_recordar"]) && empty($_SESSION))  {
-//     header("Location: index.php");
-// }
 // if ($_GET) {
-
 //     isset($_POST["puertoMySQL"])?$puertoMySQL=$_POST["puertoMySQL"]:"";
 //     migrarJsonAMySQL($db, $usuarioMySQL, $passwordMySQL);
 //     header('Location:index.php');
-
 // }
 if ($_POST) {
 
@@ -30,11 +25,10 @@ if ($_POST) {
     }
 
     if (empty($errores)) {
-        crearDB($puertoMySQL, $usuarioMySQL, $passwordMySQL);
-        header('Location:index.php');
+        initDB($puertoMySQL, $usuarioMySQL, $passwordMySQL);
+        // header('Location:index.php');
     }
 }
-  
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">

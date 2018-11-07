@@ -22,14 +22,12 @@ if ($_POST) {
   $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni); 
   $errores = Validar::validacionRegistro($user, $_POST);
   
-    if (empty($errores)) {
-      var_dump($db);
-      var_dump($user);
-        $guardado = Mysql::guardarUsuario($user, $db);
-        if($guardado) { 
-            header("Location:exito.php"); 
-        }
+  if (empty($errores)) {
+    $guardado = Mysql::guardarUsuario($user, $db);
+    if($guardado) { 
+        header("Location:exito.php"); 
     }
+  }
 }
 ?>
 <!DOCTYPE html>
