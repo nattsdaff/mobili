@@ -69,6 +69,9 @@ class Validar
     
     public static function logearUsuario($datosLogin, $db)
     {
+        $guardados = getMySQLConfig(); //funciones.php line 10
+        $db = newPDO(); //funciones.php line 16
+        
         $resultado = Mysql::buscarUsuario($datosLogin, $db);
         $error="Datos inválidos";
         if ( $resultado && password_verify($datosLogin["password"], $resultado["password"]) ) {

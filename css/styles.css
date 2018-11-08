@@ -76,7 +76,6 @@ ul {
   text-transform: uppercase;
   text-align: center;
   border: none;
-  width: 20rem;
   background: #B1D398;
   padding: 1.2rem;
   cursor: pointer;
@@ -955,3 +954,51 @@ footer {
     line-height: normal; }
   .preguntas-frecuentes p {
     text-align: left; } }
+
+section.init {
+  height: 90vh;
+  margin: 5rem 0; }
+
+.container a {
+  color: #73A84D;
+  font-size: 1em; }
+  .container a:hover {
+    color: #413F3D; }
+
+.container-init {
+  text-align: center;
+  padding: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.container .aside {
+  background: #fff;
+  font-size: 1em;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 0 2em 2em;
+  text-align: center; }
+  .container .aside p {
+    margin-top: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+
+.container .error {
+  margin-bottom: 0; }
+
+@media only screen and (min-width: 768px) {
+  .container-init {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 700px;
+    margin: 4rem auto 4rem; } }

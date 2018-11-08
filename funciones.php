@@ -1,18 +1,65 @@
 <?php
-require('config.php');
+// require('config.php');
+session_start();
 require('Classes/DB.php');
 require('Classes/Mysql.php');
 require('Classes/Json.php');
 require('Classes/User.php');
 require('Classes/Validar.php');
 
-function initDB($puertoMySQL, $usuarioMySQL, $passwordMySQL)
+function getMySQLConfig(){
+    $json_config = file_get_contents("config.json");
+    $guardados = json_decode($json_config, true);
+    return $guardados;
+    }
+
+function newPDO(){
+        $sql_config = getMySQLConfig();
+        $dsn = $sql_config['host'].'dbname='.$sql_config['nombre'].';'.'port='.$sql_config['puerto'].';'.'charset=UTF8';
+        $db_user = $sql_config['usuario'];
+        $db_pass = $sql_config['password'];
+        $error = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+    try {
+        $db = new PDO($dsn, $db_user, $db_pass, $error);
+        return $db;
+    }catch (PDOException $Exception) {
+        echo $Exception->getMessage();
+        }
+    }
+
+function saveMySQLConfig($db_host,$db_port,$db_name,$db_user,$db_pass){
+    $json_config = file_get_contents("config.json");
+    $guardados = json_decode($json_config, true);
+    $datos = array (
+        'host' => $db_host,
+        'puerto' => $db_port,
+        'nombre' => $db_name,
+        'usuario' => $db_user,
+        'password' => $db_pass,
+        'charset' => 'UTF8',
+        'error' => '[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]'
+        );  
+    //SI EXISTEN DATOS, LOS BORRO DEL JSON Y GUARDO LOS NUEVOS.
+    if(!$guardados){
+        $guardados = $datos;
+        $config = json_encode($guardados);
+        file_put_contents("config.json",$config);
+    }else{
+        unset($guardados[0]);
+        $guardados = $datos;
+        $config = json_encode($guardados);
+        file_put_contents("config.json",$config);
+        }
+    }
+  
+function initDB($db_port, $db_user, $db_pass)
 {
-    $nombreDBMySQL = 'mobili1';
+    $db_host = 'mysql:host=localhost;';
+    $db_name = 'mobili';
     // ABRO CONEXION CON MYSQL
     try{
         /* Conectar a MySQL */
-        $pdo = new PDO("mysql:host=localhost;", $usuarioMySQL, $passwordMySQL);
+        $pdo = new PDO($db_host, $db_user, $db_pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
@@ -20,16 +67,17 @@ function initDB($puertoMySQL, $usuarioMySQL, $passwordMySQL)
 
     // INTENTO CREAR BASE DE DATOS
     try{
-        $sql = "CREATE DATABASE IF NOT EXISTS $nombreDBMySQL";
+        $sql = "CREATE DATABASE IF NOT EXISTS $db_name";
         $pdo->exec($sql);
-        echo "Database created successfully";
+        saveMySQLConfig($db_host,$db_port,$db_name,$db_user,$db_pass);
+        // echo "Database created successfully";
     }catch(PDOException $e){
         die("ERROR: Could not able to execute $sql. " . $e->getMessage());
     }
 
     // INTENTO CREAR TABLA USUARIOS
     try{
-        $sql = "USE $nombreDBMySQL";
+        $sql = "USE $db_name";
         $pdo->exec($sql);
         $sql = "CREATE TABLE usuarios (
             id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -43,19 +91,20 @@ function initDB($puertoMySQL, $usuarioMySQL, $passwordMySQL)
             avatar VARCHAR(100) DEFAULT NULL
         )";
         $pdo->exec($sql);
-        echo "Table created successfully.";
+        // echo "Table created successfully.";
     }catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }
     return $pdo;
-    //CERRAR CONEXION
-    // unset($pdo);
+    // CERRAR CONEXION
+    unset($pdo);
 }
 
-function migrarJsonAMySQL($db, $usuarioMySQL, $passwordMySQL)
+function migrateJsonAMySQL($db_user, $db_pass)
 {
-    $usuariosGuardados = json_decode($db, true);
-    
+    $jdb = file_get_contents("datos.json");
+    $usuariosGuardados = json_decode($jdb, true);
+
     for ($i=0; $i < count($usuariosGuardados['usuarios']); $i++) {
 
         $nombre = $usuariosGuardados['usuarios'][$i]['nombre'];
@@ -67,7 +116,9 @@ function migrarJsonAMySQL($db, $usuarioMySQL, $passwordMySQL)
         $dni = (empty($usuariosGuardados['usuarios'][$i]['dni'])) ? NULL : $usuariosGuardados['usuarios'][$i]['dni'];
 
         try {
-            $query = $db->prepare('INSERT INTO usuarios2(nombre, apellido, email, password, fecha_nac, telefono, dni) VALUES(:nombre, :apellido, :email, :password, :fecha, :tel, :dni)');
+            $guardados = getMySQLConfig();
+            $pdo = newPDO();
+            $query = $pdo->prepare('INSERT INTO usuarios(nombre, apellido, email, password, fecha_nac, telefono, dni) VALUES(:nombre, :apellido, :email, :password, :fecha, :tel, :dni)');
             $query->bindValue(':nombre', $nombre, PDO::PARAM_STR);
             $query->bindValue(':apellido', $apellido, PDO::PARAM_STR);
             $query->bindValue(':email', $email, PDO::PARAM_STR);

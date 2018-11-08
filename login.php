@@ -10,6 +10,7 @@ if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
 // END TEST
 if ($_POST) {
     $errorLogin = Validar::logearUsuario($_POST, $db);
+    // var_dump($errorLogin);
     if(!$errorLogin) {
         header("Location: mi-cuenta.php");
     }
