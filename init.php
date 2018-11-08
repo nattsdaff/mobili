@@ -1,5 +1,5 @@
 <?php
-require 'funciones.php';
+require('config.php');
 if ($_GET) {
     $json_config = file_get_contents("config.json");
     $guardados = json_decode($json_config, true);

@@ -1,6 +1,4 @@
 <?php
-// require('config.php');
-session_start();
 require('Classes/DB.php');
 require('Classes/Mysql.php');
 require('Classes/Json.php');
@@ -70,7 +68,6 @@ function initDB($db_port, $db_user, $db_pass)
         $sql = "CREATE DATABASE IF NOT EXISTS $db_name";
         $pdo->exec($sql);
         saveMySQLConfig($db_host,$db_port,$db_name,$db_user,$db_pass);
-        // echo "Database created successfully";
     }catch(PDOException $e){
         die("ERROR: Could not able to execute $sql. " . $e->getMessage());
     }

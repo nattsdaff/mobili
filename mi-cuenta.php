@@ -1,5 +1,5 @@
 <?php
-require 'funciones.php';
+require('config.php');
 if (!isset($_COOKIE["cookie_recordar"]) && empty($_SESSION))  {
     header("Location: index.php");
 }
