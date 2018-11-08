@@ -1,6 +1,11 @@
 <?php
 require('funciones.php');
-session_start();
+$db = newPDO();
+if(!$db){
+    header("Location:init.php");
+} else {
+    session_start();
+}
 
 // /* Base de datos Mysql */
 // $dsn = 'mysql:host=127.0.0.1;dbname=;port=8889;charset=UTF8';
@@ -17,3 +22,9 @@ session_start();
 
 /* "Base de datos" para Json */
 // $jdb = file_get_contents("datos.json");
+
+require('Classes/DB.php');
+require('Classes/Mysql.php');
+require('Classes/Json.php');
+require('Classes/User.php');
+require('Classes/Validar.php');

@@ -6,8 +6,8 @@ class Mysql extends DB
     {
         try {
             
-            $guardados = getMySQLConfig(); //funciones.php line 10
-            $db = newPDO(); //funciones.php line 16
+            /*$guardados = getMySQLConfig(); //funciones.php line 10
+            $db = newPDO(); //funciones.php line 16*/
 
             $query = $db->prepare('INSERT INTO usuarios(nombre, apellido, email, password, fecha_nac, telefono, dni) VALUES(:nombre, :apellido, :email, :password, :fecha, :tel, :dni)');
             

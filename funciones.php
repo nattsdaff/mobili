@@ -1,9 +1,4 @@
 <?php
-require('Classes/DB.php');
-require('Classes/Mysql.php');
-require('Classes/Json.php');
-require('Classes/User.php');
-require('Classes/Validar.php');
 
 function getMySQLConfig(){
     $json_config = file_get_contents("config.json");
@@ -12,18 +7,21 @@ function getMySQLConfig(){
     }
 
 function newPDO(){
-        $sql_config = getMySQLConfig();
+    $sql_config = getMySQLConfig();
+    $db = null;
+    if($sql_config){
         $dsn = $sql_config['host'].'dbname='.$sql_config['nombre'].';'.'port='.$sql_config['puerto'].';'.'charset=UTF8';
         $db_user = $sql_config['usuario'];
         $db_pass = $sql_config['password'];
         $error = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-    try {
-        $db = new PDO($dsn, $db_user, $db_pass, $error);
-        return $db;
-    }catch (PDOException $Exception) {
-        echo $Exception->getMessage();
+        try {
+            $db = new PDO($dsn, $db_user, $db_pass, $error);
+        }catch (PDOException $Exception) {
+            $db = null;
         }
     }
+    return $db;
+}
 
 function saveMySQLConfig($db_host,$db_port,$db_name,$db_user,$db_pass){
     $json_config = file_get_contents("config.json");
@@ -89,12 +87,13 @@ function initDB($db_port, $db_user, $db_pass)
         )";
         $pdo->exec($sql);
         // echo "Table created successfully.";
+        // CERRAR CONEXION
+        unset($pdo);
+        return true;
     }catch(PDOException $e){
         die("ERROR: Could not connect. " . $e->getMessage());
     }
-    return $pdo;
-    // CERRAR CONEXION
-    unset($pdo);
+    
 }
 
 function migrateJsonAMySQL($db_user, $db_pass)
