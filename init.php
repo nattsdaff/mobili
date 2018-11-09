@@ -48,36 +48,36 @@ if(!$db){
   <body>
     <section class="init">
         <div class="container">
-        <?php echo (isset($warning))?'<header style="background: #1ea0ff;color: white;padding: 1rem;margin-bottom: 5rem;"><p>Atención: La base de datos ya fue creada y la conexión establecida. Si lo desea puede migrar los usuarios guardados en su archivo .json o bien <a style="color: white;font-weight: 600;font-size: 1.1em;text-decoration: underline;" href="index.php">ingresar a mobili</a></p></header>':'<header style="background: #ef4444;color: white;padding: 1rem;margin-bottom: 5rem;"><p style="font-weight:600;">Atención: Este sitio necesita una base de datos para su funcionamiento. Por favor complete el formulario con sus datos para crear una.</p></header>'?>
+        <?php echo (isset($warning))?'<header class="alerta info"><p>Atención: La base de datos ya fue creada y la conexión establecida. Si lo desea puede migrar los usuarios guardados en su archivo .json o bien <a href="index.php">ingresar a mobili</a></p></header>':'<header class="alerta warning"><p>Atención: Este sitio necesita una base de datos para su funcionamiento. Por favor complete el formulario con sus datos para crear una.</p></header>'?>
         <h1 class="alt-title">INICIALIZAR MOBILI</h1>
-            <div class="container-init" style="width: 100%;display: flex;margin-top:1rem;">
-                <form action="init.php" method="POST" style="width: 100%;">
-                    <div class="info" style="padding: 0 2rem;">
+            <div class="container-init">
+                <form action="init.php" method="POST">
+                    <div class="info">
                         <h2 class="alt-title">Paso 1</h2>
                         <p class="register-info">Crear base de datos y tabla "usuarios"</p>
                         <div class="form-item">
                             <!-- PUERTO -->
-                            <label for="db_port" class="form-label">Puerto MYSQL<span style="color:red;">*</span></label>
-                            <input type="text" id="db_port" class="form-field" name="db_port" required placeholder="8889" style="border: 1px #ccc solid;margin-bottom: 0rem;">
+                            <label for="db_port" class="form-label">Puerto MYSQL<span class="required">*</span></label>
+                            <input type="text" id="db_port" class="form-field" name="db_port" required placeholder="8889">
                             <?php echo (isset($errores["db_port"]))?'<div class="form-error"><p>'.$errores["db_port"].'</p></div>':""; ?>
                             <!-- USUARIO -->
-                            <label for="usuarioDb" class="form-label">Usuario MYSQL<span style="color:red;">*</span></label>
-                            <input type="text" id="usuarioDb" class="form-field" name="db_user" required placeholder="root" style="border: 1px #ccc solid;margin-bottom: 0rem;">
+                            <label for="usuarioDb" class="form-label">Usuario MYSQL<span class="required">*</span></label>
+                            <input type="text" id="usuarioDb" class="form-field" name="db_user" required placeholder="root">
                             <?php echo (isset($errores["db_user"]))?'<div class="form-error"><p>'.$errores["db_user"].'</p></div>':""; ?>
                             <!-- CONTRASEÑA -->
-                            <label for="inputPassword" class="form-label">Contraseña MYSQL<span style="color:red;">*</span></label>
-                            <input type="password" id="inputPassword" name="db_pass" class="form-field" required placeholder="root" style="border: 1px #ccc solid;margin-bottom: 0rem;">
+                            <label for="inputPassword" class="form-label">Contraseña MYSQL<span class="required">*</span></label>
+                            <input type="password" id="inputPassword" name="db_pass" class="form-field" required placeholder="root">
                             <?php echo (isset($errores["db_pass"]))?'<div class="form-error"><p>'.$errores["db_pass"].'</p></div>':""; ?>
                         </div>
                         <!--Agregarle un estilo en estado disabled para diferenciar-->
-                        <input type="submit" name="btn_submit" class="btn btn-info" value="CREAR" <?php echo(isset($warning))?'disabled':'' ?> style="width: 100%;"/>
+                        <input type="submit" name="btn_submit" class="btn btn-info" value="CREAR" <?php echo(isset($warning))?'disabled':'' ?> />
                     </div>
                 </form>
-                <form action="" method="GET" style="width: 100%;">
-                    <div class="info" style="padding: 0 2rem;">
+                <form action="" method="GET">
+                    <div class="info">
                         <h2 class="alt-title">Paso 2:</h2>
                         <p class="register-info">Migrar registros desde archivo Json a DB MySQL</p>
-                        <input type="submit" name="btn_submit" class="btn btn-info" value="Migrar"  style="width: 100%;margin-top: 5.3rem;"/>
+                        <input type="submit" name="btn_submit" class="btn btn-info" value="Migrar" />
                     </div>
                 </form>
             </div>            

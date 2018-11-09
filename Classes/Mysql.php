@@ -36,6 +36,7 @@ class Mysql extends DB
             echo $Exception->getMessage();
         }
     }
+    
     public static function buscarUsuario($datosLogin, $db)
     {
         try {

@@ -20,7 +20,7 @@ if ($_POST) {
   $dni = $_POST["dni"];
 
   $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni); 
-  $errores = Validar::validacionRegistro($user, $_POST);
+  $errores = Validar::validacionRegistro($user, $_POST, $db);
   
   if (empty($errores)) {
     $guardado = Mysql::guardarUsuario($user, $db);

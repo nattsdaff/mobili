@@ -1,1 +1,1 @@
-{"host":"mysql:host=localhost;","puerto":"8889","nombre":"mobili","usuario":"root","password":"root","charset":"UTF8","error":"[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]"}
+{"host":"mysql:host=localhost;","puerto":"3306","nombre":"mobili","usuario":"root","password":"root","charset":"UTF8","error":"[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]"}

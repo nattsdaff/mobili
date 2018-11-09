@@ -2,33 +2,22 @@
 
 class Validar
 {
-    public static function validarSiExiste($db, $email)
-    {
-        $datos = json_decode($db, true);
-        $disponible = true;
-
-        for ($i=0; $i < count($datos["usuarios"]); $i++) {
-        //Me fijo si el usuario ingresado ya existe
-        if ($datos["usuarios"][$i]["email"] == $email) {
-            //si existe rompo(false == no esta disponible ese usuario (osea ya existe))
-            return true;
-            }
+    public static function validarSiExiste($email, $db)
+    {   
+        try {
+            $query = $db->prepare('SELECT * FROM usuarios WHERE email=:email');
+            
+            $query->bindValue(':email', $email, PDO::PARAM_STR);
+            
+            $query->execute();
+            $resultado = $query->fetch(PDO::FETCH_ASSOC);
+            return $resultado;
+        } 
+        catch (PDOException $Exception) {
+            echo $Exception->getMessage();
         }
     }
     
-    // public static function validarSiExiste($db, $email)
-    // {
-    //     $dbusuarios = json_decode($db->datos, true);
-
-    //     $disponible = true;
-
-    //     for ($i=0; $i < count($dbusuarios ["usuarios"]); $i++) {
-    //         //Me fijo si el usuario ingresado ya existe
-    //         if($dbusuarios ["usuarios"][$i]["email"] == $email){
-    //             return true; //EXIT
-    //         }
-    //     }
-    // }
     private static function passwordConfirm(User $user, $data)
     {
         $password1 = $user->getPassword();
@@ -36,7 +25,7 @@ class Validar
         
         return $password1 == $password2;
     }
-    public static function validacionRegistro($user, $data)
+    public static function validacionRegistro($user, $data, $db)
     {
         
         $errores=[];
@@ -49,11 +38,11 @@ class Validar
         }
 
         //si es true significa que ya existe el usuario y que no esta disponible
-        /*if (self::validarSiExiste($db::conectorJson(), $user->getEmail())) {
+        if (self::validarSiExiste($user->getEmail(), $db)) {
             //Con self::<nombredemetodo> accedemos a metodos estaticos dentro de la misma
             $errores["email"] ="ya existe este usuario o mail";
 
-        }*/
+        }
 
         if (strlen($user->getPassword())<6) {
             $errores["contrasena"]="Contraseña demasiado cortasss";
@@ -69,8 +58,8 @@ class Validar
     
     public static function logearUsuario($datosLogin, $db)
     {
-        $guardados = getMySQLConfig(); //funciones.php line 10
-        $db = newPDO(); //funciones.php line 16
+        /*$guardados = getMySQLConfig(); //funciones.php line 10
+        $db = newPDO(); //funciones.php line 16*/
         
         $resultado = Mysql::buscarUsuario($datosLogin, $db);
         $error="Datos inválidos";
