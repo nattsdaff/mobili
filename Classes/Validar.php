@@ -31,7 +31,7 @@ class Validar
         $errores=[];
 
         if (strlen($user->getNombre())<2) {
-        $errores["nombre"]="Nombre no válido";
+        $errores["nombre"]="Nombre debe ser mayor a 2 letras";
         } elseif (!preg_match("/^[a-zA-Z áéíóúÁÉÍÓÚñÑüÜ]*$/", ($user->getNombre()))) {
           $errores["nombre"]="Sólo se permiten letras y espacios en blanco";
         } else {
@@ -40,7 +40,7 @@ class Validar
         }
 
         if (strlen($user->getApellido())<2) {
-        $errores["apellido"]="Apellido no válido";
+        $errores["apellido"]="Apellido debe ser mayor a 2 letras";
         } elseif (!preg_match("/^[a-zA-Z áéíóúÁÉÍÓÚñÑüÜ]*$/", ($user->getApellido()))) {
           $errores["apellido"]="Sólo se permiten letras y espacios en blanco";
         } else {
@@ -51,7 +51,7 @@ class Validar
         //si es true significa que ya existe el usuario y que no esta disponible
         if (self::validarSiExiste($user->getEmail(), $db)) {
             //Con self::<nombredemetodo> accedemos a metodos estaticos dentro de la misma
-            $errores["email"] ="Ya existe este usuario o email";
+            $errores["email"] ="Email ya existente";
 
         }
 
@@ -63,7 +63,7 @@ class Validar
         }
 
         if (!filter_var($user->getEmail(), FILTER_VALIDATE_EMAIL)) {
-            $errores["email"]="no ingreso un email valido";
+            $errores["email"]="Formato de email inválido.";
         }
 
         if ((date("Y")-($user->getFNacAnio()))<18) {
@@ -83,7 +83,7 @@ class Validar
         } elseif (strpos($user->getTelefono(), ".")) {
             $errores["telefono"]="Debe ingresar sólo números";
         } elseif ($user->getTelefono() !== "" && ((strlen($user->getTelefono()))<6) || ((strlen($user->getTelefono()))>8)) {
-            $errores["telefono"]="Teléfono inválido";
+            $errores["telefono"]="Teléfono debe ser mayor a 7 dígitos";
         }
 
         if (($user->getTelCod()=="") && (($user->getTelefono()!==""))) {

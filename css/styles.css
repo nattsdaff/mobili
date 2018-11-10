@@ -231,13 +231,13 @@ ul {
     margin-bottom: 2rem;
     font-size: 1.4em; }
   .form-item ::-webkit-input-placeholder {
-    color: #F2F2F2; }
+    color: #707070; }
   .form-item :-ms-input-placeholder {
-    color: #F2F2F2; }
+    color: #707070; }
   .form-item ::-ms-input-placeholder {
-    color: #F2F2F2; }
+    color: #707070; }
   .form-item ::placeholder {
-    color: #F2F2F2; }
+    color: #707070; }
 
 .form-label {
   font-size: 1.4em;
