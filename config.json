@@ -1,1 +1,0 @@
-{"host":"mysql:host=localhost;","puerto":"3306","nombre":"mobili","usuario":"root","password":"","charset":"UTF8","error":"[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]"}
