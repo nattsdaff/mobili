@@ -17,9 +17,9 @@ if(!$db){
             $errores["db_user"] = "El nombre debe tener al menos dos caracteres.";
         }
         // CONTRASEÑA
-        if (strlen($_POST["db_pass"])<2) {
-            $errores["db_pass"] = "La contraseña debe tener al menos dos caracteres.";
-        }
+        // if (strlen($_POST["db_pass"])<2) {
+        //     $errores["db_pass"] = "La contraseña debe tener al menos dos caracteres.";
+        // }
 
         if (empty($errores)) {
             initDB($db_port, $db_user, $db_pass);
@@ -66,7 +66,7 @@ if(!$db){
                             <?php echo (isset($errores["db_user"]))?'<div class="form-error"><p>'.$errores["db_user"].'</p></div>':""; ?>
                             <!-- CONTRASEÑA -->
                             <label for="inputPassword" class="form-label">Contraseña MYSQL<span class="required">*</span></label>
-                            <input type="password" id="inputPassword" name="db_pass" class="form-field" required placeholder="root">
+                            <input type="password" id="inputPassword" name="db_pass" class="form-field" placeholder="root">
                             <?php echo (isset($errores["db_pass"]))?'<div class="form-error"><p>'.$errores["db_pass"].'</p></div>':""; ?>
                         </div>
                         <!--Agregarle un estilo en estado disabled para diferenciar-->
@@ -80,8 +80,8 @@ if(!$db){
                         <input type="submit" name="btn_submit" class="btn btn-info" value="Migrar" />
                     </div>
                 </form>
-            </div>            
-        </div>            
+            </div>
+        </div>
     </section>
     <?php require("inc/scripts.php") ?>
   </body>
