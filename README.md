@@ -2,8 +2,7 @@
 Marketplace de muebles de diseño 
 
 ## CONFIGURACION
-Para guardar los usuarios es necesario contar con un archivo .json con la siguiente estructura:
-{"usuarios":[]}
+El website se inicializa en init.php, en donde se permite crear una base de datos y una tabla usuario. Posilidad de migrar los usuarios guardados en json a la nueva db. 
 
 ## Estructura de archivos
 
