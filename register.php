@@ -1,25 +1,32 @@
 <?php
-require('funciones.php');
+require('config.php');
+
 if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
   header("Location: index.php");
 }
+
 $meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 
 if ($_POST) {
   $email=$_POST["email"];
   $nombre = $_POST["nombre"];
   $apellido = $_POST["apellido"];
-  $dia = $_POST["fnacdia"];
-  $mes = $_POST["fnacmes"];
-  $anio = $_POST["fnacanio"];
+  $password = $_POST["password"];
+  $fnacdia = $_POST["fnacdia"];
+  $fnacmes = $_POST["fnacmes"];
+  $fnacanio = $_POST["fnacanio"];
   $telcod = $_POST["telcod"];
   $telefono = $_POST["telefono"];
   $dni = $_POST["dni"];
 
-  $errores = validacionRegistro($_POST);
+  $user = new User($email, $nombre, $apellido, $password, $fnacdia, $fnacmes, $fnacanio, $telcod, $telefono, $dni); 
+  $errores = Validar::validacionRegistro($user, $_POST, $db);
+  
   if (empty($errores)) {
-    guardarUsuario($_POST);
-    header('Location:exito.php');
+    $guardado = Mysql::guardarUsuario($user, $db);
+    if($guardado) { 
+        header("Location:exito.php"); 
+    }
   }
 }
 ?>
@@ -135,11 +142,11 @@ if ($_POST) {
 
 
               <!-- IMAGEN -->
-              <div class="form-item">
+              <!-- <div class="form-item">
                 <label for="avatar" class="form-label">Foto de perfil <span style="color:red;">*</span></label>
                 <input type="file" id="avatar" name="avatar" class="file" value="">
                 <?php echo (isset($errores["avatar"]))?'<div class="form-error"><p>'.$errores["avatar"].'</p></div>':""; ?>
-              </div>
+              </div> -->
 
               <input type="submit" value="Crear cuenta" class="submit-btn verde">
             </form>

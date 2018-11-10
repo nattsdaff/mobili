@@ -1,150 +1,134 @@
 <?php
-session_start();
-/*
-/* REGISTRO -> VALIDAR CAMPOS DEL FORM REGISTER.PHP
-*/
-function validacionRegistro($datos){
-  $errores=[];
-  // EMAIL
-  if (!filter_var($datos["email"], FILTER_VALIDATE_EMAIL)){
-    $errores["email"] = "Por favor ingrese un e-mail válido";
-  } elseif (validarSiExiste($datos["email"])) {
-    $errores["email"] = "El email ingresado ya se encuentra registrado";
-  }
-  // NOMBRE
-  if (strlen($datos["nombre"])<2) {
-    $errores["nombre"] = "El nombre debe tener al menos dos caracteres.";
-  } elseif (!preg_match("/^[a-zA-Z áéíóúÁÉÍÓÚñÑüÜ]*$/",$datos["nombre"])) {
-    $errores["nombre"] = "Sólo se permiten letras y espacios en blanco.";
-  }
-  // APELLIDO
-  if (strlen($datos["apellido"])<2) {
-    $errores["apellido"] = "El apellido debe tener al menos dos caracteres.";
-  } elseif (!preg_match("/^[a-zA-Z áéíóúÁÉÍÓÚñÑüÜ]*$/",$datos["apellido"])) {
-    $errores["apellido"] = "Sólo se permiten letras y espacios en blanco.";
-  }
-  // CONTRASEÑA
-  if (strlen($datos["password"])<6) {
-    $errores["password"] = "Contraseña inválida.";
-  }
-  // CONFIRMACIÓN DE CONTRASEÑA
-  if ($datos["password"]!==$datos["passwordConfirm"]) {
-    $errores["passwordConfirm"] = "Las contraseñas no coinciden.";
-  }
-  // MAYOR DE 18
-  if (date("Y")-$datos["fnacanio"]<18) {
-    $errores["edad"] = "Debe ser mayor de 18 años";
-  }
-  // CÓDIGO DE ÁREA (TEL)
-  if ((!empty($datos["telcod"])) && ($datos["telcod"]<11 || $datos["telcod"]>3894)) {
-    $errores["telcod"] = "Código de área inválido.";
-  }
-  // NÚMERO DE TELÉFONO
-  if ((!empty($datos["telefono"])) && $datos["telefono"]<1) {
-    $errores["telefono"] = "Número de teléfono inválido.";
-  }
-  // DNI
-  if ((!empty($datos["dni"])) && ($datos["dni"]<1 || $datos["dni"]>100000000)) {
-    $errores["dni"] = "DNI inválido.";
-  }
-  // IMAGEN
-  if ($_FILES["avatar"]["size"] > 500000) {
-    $errores["avatar"] = "El archivo es demasiado grande";
-  } elseif (($_FILES["avatar"]["type"] !== "image/gif") && ($_FILES["avatar"]["type"] !== "image/jpeg") && ($_FILES["avatar"]["type"] !== "image/jpg") && ($_FILES["avatar"]["type"] !== "image/png")) {
-    $errores["avatar"] = "La imagen debe ser .gif, .jpg, .jpeg o .png.";
-  }
-  return $errores;
-}
-/*
-/* REGISTRO -> VALIDAR SI EXISTE USUARIO
-*/
-function validarSiExiste($email){
-  // ABRIMOS EL ARCHIVO
-  $archivo = file_get_contents("datos.json");
-  // LO CONVERTIMOS EN ALGO UTILIZABLE POR PHP
-  $datos = json_decode($archivo, true);
-  // RECORREMOS TODOS LOS USUARIOS
-  for ($i=0; $i < count($datos["usuarios"]); $i++) {
-    // NOS FIJAMOS SI EL EMAIL INGRESADO YA EXISTE
-    if ($datos["usuarios"][$i]["email"]==$email) {
-      return true;
+
+function getMySQLConfig(){
+    $json_config = file_get_contents("config.json");
+    $guardados = json_decode($json_config, true);
+    return $guardados;
     }
-  }
-}
-/*
-/* REGISTRO -> GUARDAR USUARIO
-*/
-function guardarUsuario($datos){
-  // ABRIR ARCHIVO
-  $archivo = file_get_contents("datos.json");
-  // CONVERTIR EL ARCHIVO EN ALGO UTILIZABLE POR PHP
-  $guardados = json_decode($archivo, true);
-  // ENCRIPTAR CONTRASEÑA
-  $datos["password"] = password_hash($datos["password"],PASSWORD_DEFAULT);
-  // BORRADO CONFIRMACIÓN DE CONTRASEÑA (SÓLO PARA VALIDACIÓN)
-  unset($datos["passwordConfirm"]);
-  $ultimoID = (count($guardados["usuarios"]));
-  $target_dir = "assets/uploads/usuarios/$ultimoID/";
-  // TRAIGO ID DEL ÚLTIMO USUARIO
-  $ultimoID = count($guardados["usuarios"]);
-  // RUTA DONDE GUARDAMOS LA Imagen
-  $target_dir = "assets/uploads/usuarios/$ultimoID/";
-  // VEMOS SI EXISTE LA CARPETA CON EL ID DEL USUARIO
-  if (!is_dir($target_dir)){
-    // SI NO EXISTE LA CREAMOS
-    mkdir($target_dir, 0777, true);
-  }
-  // NOMBRE DE LA IMAGEN
-  $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
-  move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file);
-  // GUARDAMOS EN EL ARRAY DONDE VA A ESTAR LA IMAGEN
-  $datos["avatar"] = $target_file;
-  //GUARDO EL LUGAR DONDE ESTA GUARDADO EL AVATAR
-  /*setcookie("cookie_avatar", $datos["avatar"], time() + (86400 * 30));*/
-  //var_dump($_COOKIE['cookie_avatar']);
-  $usuario = $datos;
-  // PUSHEAMOS LOS DATOS A LA POSICIÓN USUARIOS
-  $guardados["usuarios"][]=$usuario;
-  // REESCRIBIMOS LOS DATOS
-  $usuarioJson = json_encode($guardados);
-  file_put_contents("datos.json",$usuarioJson);
-  // header("Location:exito.php");
-    setcookie("cookie_newUser", 1, time()+(17));
-}
-/*
-/* LOGEAR USUARIOS
-*/
-function logearUsuario($datosLogin){
-  $archivo = file_get_contents("datos.json");
-  $datos = json_decode($archivo, true);
-  // RECORREMOS TODOS LOS USUARIOS
-  for ($i=0; $i<count($datos["usuarios"]); $i++) {
-    // VALIDAMOS EL MAIL
-    if ($datos["usuarios"][$i]["email"]==$datosLogin["correo"]) {
-      // VALIDAMOS LA CONTRASEÑA
-      if (password_verify($datosLogin["password"],$datos["usuarios"][$i]["password"])) {
-        // INICIAMOS LA SESIÓN Y GUARDO SU EMAIL EN LA MISMA
-        if (session_status() == PHP_SESSION_NONE) {
-          session_start();
+
+function newPDO(){
+    $sql_config = getMySQLConfig();
+    $db = null;
+    if($sql_config){
+        $dsn = $sql_config['host'].'dbname='.$sql_config['nombre'].';'.'port='.$sql_config['puerto'].';'.'charset=UTF8';
+        $db_user = $sql_config['usuario'];
+        $db_pass = $sql_config['password'];
+        $error = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+        try {
+            $db = new PDO($dsn, $db_user, $db_pass, $error);
+        }catch (PDOException $Exception) {
+            $db = null;
         }
-          if($_COOKIE["cookie_newUser"]==1){
-              setcookie('cookie_newUser', null, -1);
-          }
-        $_SESSION["email"] = $datos["usuarios"][$i]["email"];
-        $_SESSION["nombre"] = $datos["usuarios"][$i]["nombre"];
-        $_SESSION["avatar"] = $datos["usuarios"][$i]["avatar"];
-        // GUARDO EL EMAIL EN UNA COOKIE SI RECORDAR ESTA CHEQUEADO
-        if(!empty($datosLogin["recordar"])){
-          setcookie("cookie_recordar", true, time() + (86400 * 30));
-          //GUARDO EL EMAIL EN UNA COOKIE
-          setcookie("cookie_email", $_SESSION["email"], time() + (86400 * 30));
-          setcookie("cookie_nombre", $_SESSION["nombre"], time() + (86400 * 30));
-          setcookie("cookie_avatar", $_SESSION["avatar"], time() + (86400 * 30));
-        }
-        // REDIRIGIMOS AL INDEX*/
-        header("Location:mi-cuenta.php");
-      }
     }
-  }
-    return "Datos inválidos.";
+    return $db;
+}
+
+function saveMySQLConfig($db_host,$db_port,$db_name,$db_user,$db_pass){
+    $json_config = file_get_contents("config.json");
+    $guardados = json_decode($json_config, true);
+    $datos = array (
+        'host' => $db_host,
+        'puerto' => $db_port,
+        'nombre' => $db_name,
+        'usuario' => $db_user,
+        'password' => $db_pass,
+        'charset' => 'UTF8',
+        'error' => '[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]'
+        );  
+    //SI EXISTEN DATOS, LOS BORRO DEL JSON Y GUARDO LOS NUEVOS.
+    if(!$guardados){
+        $guardados = $datos;
+        $config = json_encode($guardados);
+        file_put_contents("config.json",$config);
+    }else{
+        unset($guardados[0]);
+        $guardados = $datos;
+        $config = json_encode($guardados);
+        file_put_contents("config.json",$config);
+        }
+    }
+  
+function initDB($db_port, $db_user, $db_pass)
+{
+    $db_host = 'mysql:host=localhost;';
+    $db_name = 'mobili';
+    // ABRO CONEXION CON MYSQL
+    try{
+        /* Conectar a MySQL */
+        $pdo = new PDO($db_host, $db_user, $db_pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }catch(PDOException $e){
+        die("ERROR: Could not connect. " . $e->getMessage());
+    }
+
+    // INTENTO CREAR BASE DE DATOS
+    try{
+        $sql = "CREATE DATABASE IF NOT EXISTS $db_name";
+        $pdo->exec($sql);
+        saveMySQLConfig($db_host,$db_port,$db_name,$db_user,$db_pass);
+    }catch(PDOException $e){
+        die("ERROR: Could not able to execute $sql. " . $e->getMessage());
+    }
+
+    // INTENTO CREAR TABLA USUARIOS
+    try{
+        $sql = "USE $db_name";
+        $pdo->exec($sql);
+        $sql = "CREATE TABLE usuarios (
+            id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+            nombre VARCHAR(50) NOT NULL,
+            apellido VARCHAR(50) NOT NULL,
+            email VARCHAR(80) NOT NULL UNIQUE,
+            password VARCHAR(100) NOT NULL,
+            fecha_nac DATETIME NOT NULL,
+            telefono VARCHAR(20) DEFAULT NULL,
+            dni INT(10) UNSIGNED UNIQUE DEFAULT NULL,
+            avatar VARCHAR(100) DEFAULT NULL
+        )";
+        $pdo->exec($sql);
+        // echo "Table created successfully.";
+        // CERRAR CONEXION
+        unset($pdo);
+        return true;
+    }catch(PDOException $e){
+        die("ERROR: Could not connect. " . $e->getMessage());
+    }
+    
+}
+
+function migrateJsonAMySQL($db_user, $db_pass)
+{
+    $jdb = file_get_contents("datos.json");
+    $usuariosGuardados = json_decode($jdb, true);
+
+    for ($i=0; $i < count($usuariosGuardados['usuarios']); $i++) {
+
+        $nombre = $usuariosGuardados['usuarios'][$i]['nombre'];
+        $apellido = $usuariosGuardados['usuarios'][$i]['apellido'];
+        $email = $usuariosGuardados['usuarios'][$i]['email'];
+        $password = $usuariosGuardados['usuarios'][$i]['password'];
+        $fecha = $usuariosGuardados['usuarios'][$i]['fnacanio'].'-'.$usuariosGuardados['usuarios'][$i]['fnacmes'].'-'.$usuariosGuardados['usuarios'][$i]['fnacdia'];
+        $tel = (empty($usuariosGuardados['usuarios'][$i]['telefono'].$usuariosGuardados['usuarios'][$i]['telefono'])) ? NULL : $usuariosGuardados['usuarios'][$i]['telefono'];
+        $dni = (empty($usuariosGuardados['usuarios'][$i]['dni'])) ? NULL : $usuariosGuardados['usuarios'][$i]['dni'];
+
+        try {
+            $guardados = getMySQLConfig();
+            $pdo = newPDO();
+            $query = $pdo->prepare('INSERT INTO usuarios(nombre, apellido, email, password, fecha_nac, telefono, dni) VALUES(:nombre, :apellido, :email, :password, :fecha, :tel, :dni)');
+            $query->bindValue(':nombre', $nombre, PDO::PARAM_STR);
+            $query->bindValue(':apellido', $apellido, PDO::PARAM_STR);
+            $query->bindValue(':email', $email, PDO::PARAM_STR);
+            $query->bindValue(':password', $password, PDO::PARAM_STR);
+            $query->bindValue(':fecha', $fecha, PDO::PARAM_STR);
+            $query->bindValue(':tel', $tel, PDO::PARAM_STR);
+            $query->bindValue(':dni', $dni, PDO::PARAM_INT);
+            
+            $query->execute();
+            // setcookie("cookie_newUser", 1, time()+(17));
+        }
+        catch (PDOException $Exception){
+            echo $Exception->getMessage();
+        }
+
+    }
 }

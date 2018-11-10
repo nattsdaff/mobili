@@ -1,6 +1,6 @@
 <?php 
-    session_start();
-    if (!isset($_COOKIE["cookie_newUser"])){
+require('config.php');
+if (!isset($_COOKIE["cookie_newUser"])){
         header("Location: index.php");
     }
 ?>

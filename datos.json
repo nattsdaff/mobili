@@ -1,1 +1,40 @@
-{"usuarios":[{"email":"damian.bertazza@gmail.com","nombre":"Damian","apellido":"Bertazza","password":"$2y$10$4TwTF77SSMS3i\/kje1ZbMez.EZhqXoM0xi9Smu3m0viQkNzVip69C","fnacdia":"1","fnacmes":"12","fnacanio":"1988","telcod":"011","telefono":"12345678","dni":"34382765","avatar":"assets\/uploads\/usuarios\/0\/duty_free_argentina_@2x-final.png"},{"email":"test@test.com","nombre":"test","apellido":"test","password":"$2y$10$pyeJFZybHRO7xt\/pxB.ei.DXKXvS5ZcIjSf5gFsaGX3KtbayWhSbO","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":"","avatar":"assets\/uploads\/usuarios\/1\/helport.jpg"},{"email":"asd@asd.com","nombre":"asd","apellido":"asd","password":"$2y$10$gcBnIB7\/y4wUj5glMigInO7RyVUnXwUV5niQrFxjr\/twYtv9\/A9He","fnacdia":"1","fnacmes":"1","fnacanio":"1903","telcod":"","telefono":"","dni":"","avatar":"assets\/uploads\/usuarios\/2\/meta.png"}]}
+{
+  "usuarios": [
+    {
+      "email": "damian.bertazza@gmail.com",
+      "nombre": "Damian",
+      "apellido": "Bertazza",
+      "password": "$2y$10$P/kN9NyTG47KwUqqakKfLO0ucSLaKZQ7tQbZhCBoIf4dCClisV0Bi",
+      "fnacdia": "1",
+      "fnacmes": "1",
+      "fnacanio": "1903",
+      "telcod": "",
+      "telefono": "",
+      "dni": "11111111"
+    },
+    {
+      "email": "test@test.com",
+      "nombre": "Test",
+      "apellido": "Tester",
+      "password": "$2y$10$9DYiiJNmgZ7RBYaAz/8.tOIlXSSzHODeiRhY9nx9pxY70niPOQb6u",
+      "fnacdia": "1",
+      "fnacmes": "1",
+      "fnacanio": "1903",
+      "telcod": "",
+      "telefono": "",
+      "dni": "22222222"
+    },
+    {
+      "email": "pepe@gmail.com",
+      "nombre": "Damian",
+      "apellido": "Bertazza",
+      "password": "$2y$10$zFGJHTy1uxvggtsBe4hD6uXa9c./3A708X4REtOZvt.sqGL5AqxsO",
+      "fnacdia": "1",
+      "fnacmes": "1",
+      "fnacanio": "1903",
+      "telcod": "011",
+      "telefono": "33333333",
+      "dni": "33333333"
+    }
+  ]
+}

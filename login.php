@@ -1,5 +1,5 @@
 <?php
-require('funciones.php');
+require('config.php');
 if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
   header("Location: index.php");
 }
@@ -9,7 +9,11 @@ if (isset($_COOKIE["cookie_recordar"]) || !empty($_SESSION))  {
     // var_dump($has_session);
 // END TEST
 if ($_POST) {
-  $error = logearUsuario($_POST);
+    $errorLogin = Validar::logearUsuario($_POST, $db);
+    // var_dump($errorLogin);
+    if(!$errorLogin) {
+        header("Location: mi-cuenta.php");
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -34,7 +38,7 @@ if ($_POST) {
             <div class="form-item">
               <label for="inputPassword" class="form-label">Contraseña <span style="color:red;">*</span></label>
               <input type="password" id="inputPassword" name="password" class="form-field" required>
-              <?php echo (isset($error))?'<div class="form-error"><p>'.$error.'</p></div>':""; ?>
+              <?php echo (isset($errorLogin)) ? '<div class="form-error"><p>'.$errorLogin.'</p></div>':""; ?>
 
             </div>
 
